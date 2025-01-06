@@ -30,9 +30,6 @@ assignees: ''
 - [Resource 1]
 - [Resource 2]
 
-## Related Case
-[Link to the parent case, if applicable]
-
 ## Risks and Mitigation
 - Risk: [Describe risk]
   Mitigation: [Describe mitigation strategy]
