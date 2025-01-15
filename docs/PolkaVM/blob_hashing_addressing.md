@@ -34,7 +34,7 @@ Let's say Alice uploads a PolkaVM blob. Her account ID is `Alice`.
 2. Upon uploading, a new `BlobMetadata` is created with `owner = Alice` and `version = 1`.
 3. The hash of this metadata, `H(Alice, 1)`, becomes the blob's address.
 4. The blob's bytecode is stored under `Code[H(Alice, 1)]`.
-5. The `BlobMetadata` (including the address `H(Alice, 1)`) is stored under `CodeMetadata[Alice]`.
+5. The `BlobMetadata` is stored under `CodeMetadata[Alice]`.
 
 Later, if Alice uploads a new version:
 
