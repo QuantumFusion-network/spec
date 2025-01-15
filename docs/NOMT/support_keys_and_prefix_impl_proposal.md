@@ -4,11 +4,11 @@ This document describe NOMT problems and solutions.
 
 ## Problems at Dec 2024 - Jan 2025
 
-(1) Data mingration into the NOMT for existing chains.
-(2) NOMT developments: prefix and bound operation, iterators
-(3) Integrate NOMT for parachains;
-(4) collator optimization;
-(5) Also should mention: ZK Proof disscutions; it could add more tickets to NOMT and to Substrate;
+(1) Data mingration into the NOMT for existing chains.__
+(2) NOMT developments: prefix and bound operation, iterators.__
+(3) Integrate NOMT for parachains..__
+(4) collator optimization.__
+(5) Also should mention: ZK Proof disscutions; it could add more tickets to NOMT and to Substrate.__
 
 Important things for us: For our project the most importants things are (2) and (3).
 
@@ -17,8 +17,10 @@ References:
 - https://layerzero.network/publications/QMDB_13Jan2025_v1.0.pdf
 
 ## Possible solution for (2)
-::warning: Pseudo code can be changed & corrected while we are develop & test the solution as well as
+
+:warning: Pseudo code can be changed & corrected while we are develop & test the solution as well as
 performance section.
+
 ### Pseudo code
 
 - At [https://github.com/thrumdev/nomt/blob/master/nomt/src/beatree/ops/mod.rs](https://github.com/thrumdev/nomt/blob/master/nomt/src/beatree/ops/mod.rs):
