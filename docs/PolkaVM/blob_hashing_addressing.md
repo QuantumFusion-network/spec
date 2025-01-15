@@ -12,9 +12,9 @@ PolkaVM blobs, representing compiled programs, are stored on-chain. To manage th
     - `owner`: The account ID of the user who uploaded the blob.
     - `version`: A monotonically increasing version number for blobs uploaded by the same owner. This ensures unique addresses even when the same code is re-uploaded.
 
-2. **Hash Calculation:** The hash of the `BlobMetadata` struct (which includes the owner and version) is computed using `T::Hashing::hash_of`. This hash serves as the address of the PolkaVM blob. Because the version is part of the metadata, different versions of a blob will result in different addresses, even if the blob's code is exactly the same.
+2. **Hash Calculation:** The hash of the `BlobMetadata` struct (which includes the owner and version) is computed using `T::Hashing::hash_of`, which in this pallet is [BLAKE2-256](https://en.wikipedia.org/wiki/BLAKE_(hash_function)#BLAKE2). This hash serves as the address of the PolkaVM blob. Because the version is part of the metadata, different versions of a blob will result in different addresses, even if the blob's code is exactly the same.
 
-3. **Storage:** The PolkaVM blob's bytecode (`raw_blob`) is stored in the `Code` storage map, keyed by the calculated hash (address). The `BlobMetadata` is also stored, keyed by the owner's account ID. This allows tracking of the latest version.  Execution results are stored separately in the `CalculationResult` storage map, keyed by a tuple of the code address and the executor's account ID.
+3. **Storage:** The PolkaVM blob's bytecode (`raw_blob`) is stored in the `Code` storage map, keyed by the calculated hash (address). The `BlobMetadata` is also stored, keyed by the owner's account ID. This allows tracking of the latest version. Execution results are stored separately in the `CalculationResult` storage map, keyed by a tuple of the code address and the executor's account ID.
 
 
 ## How the Address is Used in Transactions
