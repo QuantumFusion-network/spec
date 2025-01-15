@@ -42,7 +42,7 @@ Later, if Alice uploads a new version:
 2. A new `BlobMetadata` is created with `owner = Alice` and `version = 2`.
 3. The new address `H(Alice, 2)` is calculated.
 4. The new bytecode is stored under `Code[H(Alice, 2)]`.
-5. The updated `BlobMetadata` (including the address `H(Alice, 2)`) is stored under `CodeMetadata[Alice]`.  (Note: the previous `CodeMetadata` is overwritten)
+5. The updated `BlobMetadata` is stored under `CodeMetadata[Alice]`.  (Note: the previous `CodeMetadata` is overwritten)
 
 If Bob wants to execute Alice's latest code:
 
