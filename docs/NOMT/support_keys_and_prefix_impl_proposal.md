@@ -4,13 +4,13 @@ This document describe NOMT problems and solutions.
 
 ## Problems at Dec 2024 - Jan 2025
 
-(1) Data mingration into the NOMT for existing chains.__
-(2) NOMT developments: prefix and bound operation, iterators.__
-(3) Integrate NOMT for parachains..__
-(4) collator optimization.__
-(5) Also should mention: ZK Proof disscutions; it could add more tickets to NOMT and to Substrate.__
+- (1) Data mingration into the NOMT for existing chains.
+- (2) NOMT developments: prefix and bound operation, iterators.
+- (3) Integrate NOMT for parachains.
+- (4) collator optimization.
+- (5) Also should mention: ZK Proof disscutions; it could add more tickets to NOMT and to Substrate.
 
-Important things for us: For our project the most importants things are (2) and (3).
+**Important things for us:** For our project the most importants things are (2) and (3).
 
 References:
 - https://github.com/paritytech/polkadot-sdk/issues/5614
