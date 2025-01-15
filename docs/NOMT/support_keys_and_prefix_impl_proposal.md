@@ -73,16 +73,13 @@ return values
 ```
 
 ### O (n)
-**\- Functions**
-    o lookup\_pallet
-      This function uses beatree and btree to search 128 bit pallet prefix key so takes at most O(N/16) \= O(32)
-        o next\_branch
-	  This function traverses btree to find next branch, takes O(32)
-        o get\_leafs
-	  This function gets all leaf nodes and get values from them. A branch has 16 children and takes O(16).
-
-**\- Operations**
-    o Overall processing of all accounts of a pallet takes O(N \* logN)
+- lookup_pallet__
+This function uses beatree and btree to search 128 bit pallet prefix key; it takes at most O(N/16) = O(32)
+- next_branch__
+This function traverses btree to find next branch; it takes O(32).
+-- get_leafs__
+- This function gets all leaf nodes and get values from them. A branch has 16 children and it takes O(16).
+- Overall processing of all accounts of a pallet takes O(N * logN)
 
 ## Next steps & questions
 - Processing pallet accounts inside of the beatree to improve iterating performance O(N + N/15). Performance is not the best since it's a brute force approach.
