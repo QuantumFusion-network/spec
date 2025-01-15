@@ -17,7 +17,7 @@ References:
 - https://layerzero.network/publications/QMDB_13Jan2025_v1.0.pdf
 
 ## Possible solution for (2)
-: warning Pseudo code can be changed & corrected while we are develop & test the solution as well as
+::warning: Pseudo code can be changed & corrected while we are develop & test the solution as well as
 performance section.
 ### Pseudo code
 
