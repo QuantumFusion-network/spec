@@ -9,8 +9,6 @@ This crate uses crate [trie-db][2] underhood.
 We are going to switch from [trie-db][2] to [qmdb][3].
 
 
-Links:
-
-[1]: https://github.com/QuantumFusion-network/polkadot-sdk/tree/master/substrate/primitives/trie (sp-trie)
-[2]: https://github.com/paritytech/trie (trie-db)
-[3]: https://github.com/LayerZero-Labs/qmdb (qmdb)
+[1]: <https://github.com/QuantumFusion-network/polkadot-sdk/tree/master/substrate/primitives/trie> "sp-trie"
+[2]: <https://github.com/paritytech/trie> "trie-db"
+[3]: <https://github.com/LayerZero-Labs/qmdb> "qmdb"
