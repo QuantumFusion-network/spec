@@ -5,8 +5,8 @@ Also please pay attention that some repositories has more complicated rules, the
 
 # Code style guide
 
-- Rust: we respect (rust code style guide)[https://doc.rust-lang.org/nightly/style-guide/] and we should follow it. Exception: if repository has own code style guide (ex: (polkadot-sdk)[https://github.com/paritytech/substrate/blob/master/docs/STYLE_GUIDE.md]) we should use it.
-- JS: we respect (Google JS Style guide)[https://google.github.io/styleguide/jsguide.html]
+- Rust: we respect [rust code style guide](https://doc.rust-lang.org/nightly/style-guide/) and we should follow it. Exception: if repository has own code style guide (ex: (polkadot-sdk)[https://github.com/paritytech/substrate/blob/master/docs/STYLE_GUIDE.md]) we should use it.
+- JS: we respect [Google JS Style guide](https://google.github.io/styleguide/jsguide.html)
 - Bash/Python/Other languages: please remember about basic styles and try to do not reach 80 columns limit.
 
 # Develop and version guide
@@ -22,10 +22,10 @@ Also please pay attention that some repositories has more complicated rules, the
 
 ### Only for Fastchain
 - Only `polkadot-sdk` master branch SHOULD be used to develop new features like SPIN, QMDB, etc.
-- All changes SHOULD be stored at our fork of `polkadot-sdk` (repo)[https://github.com/QuantumFusion-network/polkadot-sdk] in master branch, (qf-solochain)[https://github.com/QuantumFusion-network/qf-solochain] depends on this repo.
+- All changes SHOULD be stored at our fork of `polkadot-sdk` [repo](https://github.com/QuantumFusion-network/polkadot-sdk) in master branch, [qf-solochain](https://github.com/QuantumFusion-network/qf-solochain) depends on this repo.
 - Please pay attention that we sync latest master time-to-time, please merge your branch to our master often. Else you may have unexpected broken build.
 
 ### Obly for Parachain
 - Only `polkadot-sdk` RELEASE (branch)[https://github.com/paritytech/polkadot-sdk/releases] SHOULD be used to develop new features.
-- All changes SHOULD be stored at our fork of `polkadot-sdk` (repo)[https://github.com/QuantumFusion-network/polkadot-sdk] in release branch.
+- All changes SHOULD be stored at our fork of `polkadot-sdk` [repo](https://github.com/QuantumFusion-network/polkadot-sdk) in release branch.
 - Please pay attention that we sync latest release branches time-to-time, please merge your branch to our master often. Else you may have unexpected broken build.
