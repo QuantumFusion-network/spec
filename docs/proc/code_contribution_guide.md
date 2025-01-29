@@ -5,7 +5,7 @@ Also please pay attention that some repositories has more complicated rules, the
 
 # Code style guide
 
-- Rust: we respect [rust code style guide](https://doc.rust-lang.org/nightly/style-guide/) and we should follow it. Exception: if repository has own code style guide (ex: (polkadot-sdk)[https://github.com/paritytech/substrate/blob/master/docs/STYLE_GUIDE.md]) we should use it.
+- Rust: we respect [rust code style guide](https://doc.rust-lang.org/nightly/style-guide/) and we should follow it. Exception: if repository has own code style guide (ex: [polkadot-sdk](https://github.com/paritytech/substrate/blob/master/docs/STYLE_GUIDE.md)) we should use it.
 - JS: we respect [Google JS Style guide](https://google.github.io/styleguide/jsguide.html)
 - Bash/Python/Other languages: please remember about basic styles and try to do not reach 80 columns limit.
 
