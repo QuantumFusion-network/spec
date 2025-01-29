@@ -3,7 +3,7 @@ Here you can find how we are working in the dev team and what dev team members
 should to help other members be on the same page.
 
 # Code contribution guide
-Please find and read document `docs/proc/code_contribution_guide.md`.
+Please find and read document [code_contribution_guide](code_contribution_guide.md).
 
 # Releases
 Each repository SHOULD have a release tag, and each tag should have a strong formatted text, which is: MAJOR-MINOR-PATCH. For forked repos that we are changing SHOULD be: FORKED_REPOS_MAJOR-FORKED_REPOS_MINOR-FORKED_REPOS_PATCH-MAJOR-MINOR-PATCH.
