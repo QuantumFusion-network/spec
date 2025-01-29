@@ -18,7 +18,7 @@ Each team member responsible for development SHOULD post a daily status report t
 ### Case: NAME OF THE CASE (link to GH ticket)
 ### Experment: NAME OF THE EXPEREMENT (link to GH ticket)
 ### List of tickets for today:
-- [NAME OF THE TICKET] (link to GH ticket), estimation to done: DAYS, current status: A LINK TO LATEST GH comment (preferred) or TEXT - -
+- [NAME OF THE TICKET] (link to GH ticket), estimation to done: DAYS, current status: A LINK TO LATEST GH comment (preferred) or TEXT
 - ...
 
 ### List of tickets for tommorrow:
