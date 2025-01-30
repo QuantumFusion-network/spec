@@ -28,4 +28,4 @@ Also please pay attention that some repositories has more complicated rules, the
 ### Only for Parachain
 - Only `polkadot-sdk` RELEASE (branch)[https://github.com/paritytech/polkadot-sdk/releases] SHOULD be used to develop new features.
 - All changes SHOULD be stored at our fork of `polkadot-sdk` [repo](https://github.com/QuantumFusion-network/polkadot-sdk) in release branch.
-- Please pay attention that we sync latest release branches time-to-time, please merge your branch to our master often. Else you may have unexpected broken build.
+- Please pay attention that we sync latest release branches from time to time, please merge your branch to our master often. Else you may have unexpected broken build.
