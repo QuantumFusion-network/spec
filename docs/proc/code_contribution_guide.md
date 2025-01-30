@@ -12,7 +12,7 @@ Also please pay attention that some repositories has more complicated rules, the
 # Develop and version guide
 
 ## General develop and version guide
-- Each new feature or a fix SHOULD have a branch name with ticket number. Format: $username/issue-$number. If you have a huge ticket and dont have issue, please create a ticket.
+- Each new feature or a fix SHOULD have a branch name with ticket number. Format: `$username/issue-$number`. If you have a huge ticket and dont have issue, please create a ticket.
 - Each PR SHOULD contain a reference to releated ticket and please check our repo protected rules.
 - After PR is merged ticket could be set to done, else it's in progress. And reviwing process is on developer side. Please feel free to ping other team mebers to done with review.
 - A commit message SHOULD be clear but short, else PR could be rejected.
