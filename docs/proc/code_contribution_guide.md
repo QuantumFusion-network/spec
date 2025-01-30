@@ -25,7 +25,7 @@ Also please pay attention that some repositories has more complicated rules, the
 - All changes SHOULD be stored at our fork of `polkadot-sdk` [repo](https://github.com/QuantumFusion-network/polkadot-sdk) in master branch, [qf-solochain](https://github.com/QuantumFusion-network/qf-solochain) depends on this repo.
 - Please pay attention that we sync latest master time-to-time, please merge your branch to our master often. Else you may have unexpected broken build.
 
-### Obly for Parachain
+### Only for Parachain
 - Only `polkadot-sdk` RELEASE (branch)[https://github.com/paritytech/polkadot-sdk/releases] SHOULD be used to develop new features.
 - All changes SHOULD be stored at our fork of `polkadot-sdk` [repo](https://github.com/QuantumFusion-network/polkadot-sdk) in release branch.
 - Please pay attention that we sync latest release branches time-to-time, please merge your branch to our master often. Else you may have unexpected broken build.
