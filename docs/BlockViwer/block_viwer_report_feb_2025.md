@@ -44,7 +44,7 @@ work well with latest PolkaSDK. Last update was about 3 - 4 years ago.
 #### List of non-free solutions
 - (subscan.io)[subscan.io]: closed source and non-free solution.
 
-#### Conclution
+#### Conclusion
 `squid-sdk`, open source'ed components of `subscan` and `subql` look popular and great for
 QF. However no UI component that can work with modern PolkaDot, only closed and non free is available, which is subscan.io.
 
