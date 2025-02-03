@@ -18,31 +18,31 @@ All solutions from this list have been tested with our DevNet and all solutions
 be researched through reading codes and/or posted GH issues.
 
 ##### W/o UI (only Date exporter, Indexer and Quiry language)
-- (squid-sdk)[https://github.com/subsquid/squid-sdk]: QF uses it for exporting data. GH: 1.2k starts at Feb 3 2025.
-- (subql)[https://github.com/subquery/subql]: the same as squid-sdk. GH: 18k starts
+- [squid-sdk](https://github.com/subsquid/squid-sdk): QF uses it for exporting data. GH: 1.2k starts at Feb 3 2025.
+- [subql](https://github.com/subquery/subql): the same as squid-sdk. GH: 18k starts
 at Feb 3 2025.
-- (subscan-essentials)[https://github.com/subscan-explorer/subscan-essentials]:
+- [subscan-essentials](https://github.com/subscan-explorer/subscan-essentials):
 GH: 198 start at Feb 3 2025. So it's less popular solution and focused on
 subscan products only.
 
 ##### W/ UI
-- (polkastats)[https://github.com/polkastats/polkastats]: does not work with
-latest PolkaSDK. Last update was about 2 years ago (today is Feb 3 2025).
-- (statescan-v2)[https://github.com/opensquare-network/statescan-v2]: does not
+- [polkastats](https://github.com/polkastats/polkastats): does not work with
+latest PolkaSDK. Last update was about 2 years ago at Feb 3 2025.
+- [statescan-v2](https://github.com/opensquare-network/statescan-v2): does not
 support many chains and does not look like production ready solution, i.e. https://github.com/opensquare-network/statescan-v2/issues - has perf issues and we have 0.1s blocks, https://github.com/opensquare-network/statescan-v2/issues/987 and https://github.com/opensquare-network/statescan-v2/blob/main/backend/packages/server/.env.example#L23 - limited numbers of chain supported.
-- (explorer)[https://github.com/polkascan/explorer]: does not work with latest
+- [explorer](https://github.com/polkascan/explorer): does not work with latest
 PolkaSDK. Last update was (not including Dockerfile) about 2 years ago at Feb 3
 2025.
-- (explorer-ui)[https://github.com/polkascan/explorer-ui]: does not work well
+- [explorer-ui](https://github.com/polkascan/explorer-ui): does not work well
 with latest PolkaSDK. Last update was about 2 - 3 years ago at Feb 3 2025.
-- (substrate-archive)[https://github.com/paritytech/substrate-archive]: does not
+- [substrate-archive](https://github.com/paritytech/substrate-archive): does not
 work well with latest PolkaSDK. Last update was about 3 - 4 years ago.
 
 ##### UI Kits (Frameworks)
-- (subscan-widget-interface)[https://github.com/subscan-explorer/widget-interface]: compatible with subscan products.
+- [subscan-widget-interface](https://github.com/subscan-explorer/widget-interface): compatible with subscan products.
 
 #### List of non-free solutions
-- (subscan.io)[subscan.io]: closed source and non-free solution.
+- [subscan.io](https://subscan.io): closed source and non-free solution.
 
 #### Conclusion
 `squid-sdk`, open source'ed components of `subscan` and `subql` look popular and great for
