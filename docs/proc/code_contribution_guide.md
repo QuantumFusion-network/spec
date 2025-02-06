@@ -22,9 +22,9 @@ Also please pay attention that some repositories has more complicated rules, the
 ## Additinitional guide for polkadot-sdk
 
 ### Only for Fastchain
-- Only `polkadot-sdk` master branch SHOULD be used to develop new features like SPIN, QMDB, etc.
+- Only our `polkadot-sdk` master branch SHOULD be used to develop new features like SPIN, QMDB, etc.
 - All changes SHOULD be stored at our fork of `polkadot-sdk` (repo)[https://github.com/QuantumFusion-network/polkadot-sdk] in master branch, (qf-solochain)[https://github.com/QuantumFusion-network/qf-solochain] depends on this repo.
-- Please pay attention that we sync latest master time-to-time, please merge your branch to our master often. Else you may have unexpected broken build.
+- Please pay attention that we sync latest master time-to-time, please merge your merge our master into your branch often for Fast Chain and release branch into Slow Chain. Else you may have unexpected broken build.
 
 ### Only for Parachain
 - Only `polkadot-sdk` RELEASE [branch](https://github.com/paritytech/polkadot-sdk/releases) SHOULD be used to develop new features.
