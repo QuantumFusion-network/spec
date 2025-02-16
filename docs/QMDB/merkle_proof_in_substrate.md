@@ -23,6 +23,8 @@ All functionality to work with Merkle Proof is located in crate [sp-trie]. This 
 
 We are going to switch from [trie-db] to [qmdb]. For prefixes and iterators we have two possible solutions: full scan of the trie with dirty reads (QMDB is multy thread solution, and we can't lock for long time), introduce a new indexer; it's already used by QMDB for internal purposes.
 
+For getting more information please read a scheme `docs/QMDB/QMDB_prefix_indexer.drawio` and a comment to the scheme `docs/QMDB/QMDB_prefix_indexer.md`.
+
 ## Benchmark & Stability
 TBD
 
