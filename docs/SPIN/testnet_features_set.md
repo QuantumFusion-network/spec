@@ -5,7 +5,6 @@
 * Blocks are produced every 100 ms (on average) during a leader's tenure.
 * Fast finality (notarization) from committee votes within seconds.
 * Secure finality from the Polkadot testnet (Paseo) within tens of seconds.
-* Configurable leader rotation period.
 * Permissionless leader candidate accounts and committee accounts sets with stake requirements.
 * Configurable leader tenure duration.
 
@@ -21,7 +20,7 @@
 * A new leader is selected at the end of recovery.
 * The new leader resumes block production on top of the finalized block.
 
-## Post testnet-launch
+## Post testnet launch
 
 * High availability support for the leader node.
 * High availability support for committee node.
