@@ -2,6 +2,31 @@
 Here you can find how we are working in the dev team and what dev team members
 should to help other members be on the same page.
 
+# PolkaDot SDK upstream update
+- Repo: https://github.com/QuantumFusion-network/polkadot-sdk.
+- Freeze version for a new milestone; update to new version once for milestone.
+- Use the last stable release version during the freeze, links: https://github.com/paritytech/polkadot-sdk/releases or https://github.com/paritytech/polkadot-sdk/releases/latest.
+- Ad hoc version updates allowed
+
+# PolkaJS
+- Repo: https://github.com/QuantumFusion-network/apps.
+- Once per 4 weeks or fix version for new milestone.
+- Freeze version for a new milestone; update to new version once for milestone.
+- Stable version is version that can work with current PolkaDot SDK release.
+- Ad hoc version updates allowed.
+
+# Polka telemetry
+- Repo: https://github.com/QuantumFusion-network/substrate-telemetry.
+- Not updating while working well
+
+# Qf-squid
+- Repo: https://github.com/QuantumFusion-network/qf-squid.
+- Not updating while working well.
+
+# PolkaVM
+- Repo: https://github.com/QuantumFusion-network/qf-solochain/blob/main/.gitmodules.
+- Update version or not while checking the difference of upstream once per 3 weeks.
+
 # Code contribution guide
 Please find and read document [code_contribution_guide](code_contribution_guide.md).
 
