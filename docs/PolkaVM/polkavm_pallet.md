@@ -68,9 +68,9 @@ extern "C" fn call_transfer() -> u64 {
 ```
 
 Supported functions:
-- transfer (trasfering tokens),
-- balance (get balance info),
-- print (for logging).
+- transfer(A, b): trasfering tokens,
+- balance(): get balance info,
+- print(): for logging.
 
 All of this avaliable in QF DevNet (http://dev.qfnetwork.xyz).
 
