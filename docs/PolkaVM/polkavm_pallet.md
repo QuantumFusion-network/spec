@@ -30,8 +30,8 @@ Team planing to improve this solution in the future.
 
 ## QF Framework for Smart Contracts PolkaVM v2
 
-The first implementation of the frame work is to low level, here is an example
-of it:
+The first implementation of the QF Framework is too low level.
+Here is an example of Smart contract code:
 
 ```rust
 #![no_std]
