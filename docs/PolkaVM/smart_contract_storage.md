@@ -19,10 +19,10 @@ The references:
 
 For getting a non-mutable reference to data.
 ```
-storage.get(X) = any_of (bool, u{8,16,32,64,128}, i{8,16,32,64,128}, String, tuples, arrays, None),
+storage.get(X) = K -> any_of (bool, u{8,16,32,64,128}, i{8,16,32,64,128}, String, tuples, arrays, None),
 Where:
 - X is a key with type String;
-- Iff any_of === None means no value found by given key;
+- If K = None means no value found by given key;
 - the returned data is not a reference and can't be used for mutating a value.
 ```
 
@@ -30,9 +30,9 @@ Where:
 
 For storing a data by given key.
 ```
-storage.set(X, V) = any_of(true or false)
+storage.set(X, V) = K -> any_of(true or false)
 Where:
-- X is a key with type String.
+- X is a key with type String;
 - returns true, if value is stored, false if not.
 ```
 
@@ -40,7 +40,9 @@ Where:
 
 For purge all storated data in one call.
 ```
-storage.purge() = any_of(true or false)
+storage.purge() = K -> any_of(true or false)
+Where:
+- returns true, if value is stored, false if not.
 ```
 
 ### List
