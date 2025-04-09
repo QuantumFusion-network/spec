@@ -1,0 +1,29 @@
+# Terms not used in QF project
+
+This table contains terms that represent blockchain concepts, architectures, and technologies that are referenced in the glossary but are not currently implemented in QF Project. These terms are included for comparative understanding and to provide context about alternative approaches in the broader blockchain ecosystem. They may represent concepts that were considered but not adopted, or technologies that are common in other blockchain systems but not relevant to QF Project's specific design choices.
+
+| Term | Abbreviation | Description | Category | Comment | Source |
+|------|--------------|-------------|----------|---------|--------|
+| Two-Phase Commit | 2PC | Protocol that ensures that a distributed transaction either commits all changes or rolls them back. Involves a preparation phase followed by a commit phase. | Protocol | This protocol involves a:<br>- preparation phase where nodes agree to commit, followed by a <br>- commit phase where the changes are finalized | https://martinfowler.com/articles/patterns-of-distributed-systems/two-phase-commit.html |
+| Three-Phase Commit | 3PC | An extension of Two-Phase Commit used in blockchain to increase reliability and reduce the chance of blocking. It adds a pre-commit phase to enhance fault tolerance. | Protocol |  | https://en.wikipedia.org/wiki/Three-phase_commit_protocol |
+| Account-based Architecture |  | A blockchain design pattern where participants have accounts and balances, and transactions modify the state of these accounts. It commonly supports smart contracts  | Architecture | Common in Ethereum-style chains. | https://ethereum.org/en/developers/docs/accounts/ |
+| Authority Node |  | A node with special permissions in a Proof of Authority (PoA) consensus system. | Node Types | There are no permissioned nodes that occupy a special position in the network.<br>It differs from a validator in how one becomes it – a validator stakes money, while an authority node is appointed |  |
+| Balancer |  | Distributes transactions or workloads evenly across multiple nodes to prevent any single node from becoming a bottleneck, thus optimizing resource use and improving network performance | Infrastructure |  |  |
+| Bloom filter |  | Data structure used to filter likely matches.<br>Used in blockchain systems to filter transaction ownership. | Storage | Different from traditional database use where it determines which partition does not have data. | https://ethereum.stackexchange.com/questions/3418/how-does-ethereum-make-use-of-bloom-filters |
+| Border coordinator |  | Handles the interactions and coordination between different domains or subnetworks within a blockchain ecosystem. | Architecture | Ensures domain-level synchronization, seamless communication and data consistency across boundaries. |  |
+| Coordinator |  | A node or process that manages and controls the synchronization and consistency of operations across different nodes | Architecture | Ensures transactions and state changes are correctly propagated throughout the network. |  |
+| delegated Proof of Stake | dePOS | Consensus mechanism where coin holders can delegate their staking rights to other nodes. | Consensus | This allows participants with small amounts of coins to participate in the validation process. |  |
+| Domain |  | Logical segment of the network where nodes and resources are managed collectively. | Architecture | Used to isolate workloads and scale the network. | https://docs.polkadot.network/docs/learn-parathreads |
+| Domain coordinator |  | Handles the coordination tasks within a specific part of the network. | Architecture | Ensures operations within a domain are synchronized and consistent with the overall blockchain. |  |
+| Lightning node |  | A node in the Lightning Network for Bitcoin. | Node Types |  |  |
+| Master node |  | A central node with special permissions in some blockchain architectures. | Node Types |  |  |
+| Maximal Extractable Value | MEV | The value that can be extracted from block production beyond standard block rewards. | Consensus |  | https://ethereum.org/en/developers/docs/mev/ |
+| Miner node |  | A node that performs Proof of Work mining (block production). | Node Types |  |  |
+| Proof of Authority | POA | Consensus mechanism where the right to create blocks is granted to pre-defined nodes considered reliable and trustworthy. | Consensus | Used mostly in private blockchains |  |
+| Proof of Stake | POS | Consensus mechanism where nodes holding a certain amount of coins can add new blocks to the blockchain. | Consensus | Used in Cardano, Solana, Ethereum<br>Penalties are imposed for invalid blocks. The more nodes that send invalid blocks, the higher the penalty (it is assumed that the network is under attack). In this way, we confiscate the stake, preventing them from voting. |  |
+| Proof of Work | POW | Consensus mechanism where nodes must solve complex computational puzzles to add a new block to the blockchain. | Consensus | Used in Bitcoin |  |
+| Regular Node |  | A node with storage volume between light and full node. | Node Types |  |  |
+| Seed |  | A dedicated machine that stores information about network participants and provides information about the network's topology to new nodes. | Infrastructure | In future implementation may be proactive and scan net for new and active users.<br>Futher may proiritize some user nodes using some metrics (eg latency).<br>Often runs 24/7 for reliability. |  |
+| Sequencer node |  | A special node that determines the order of transactions. | Node Types |  | https://megaeth.systems/research |
+| Sparkling node |  | A term for specialized nodes in some blockchain systems. | Node Types |  |  |
+| Super node |  | A node with enhanced capabilities in some blockchain architectures. | Node Types |  |  |
