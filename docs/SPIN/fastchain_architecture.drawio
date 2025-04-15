@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36" version="26.2.12" pages="2">
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36" version="26.2.12">
   <diagram name="Page-1" id="Hq2oylgoZ-r4-cWgSaQW">
-    <mxGraphModel dx="1580" dy="1033" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="998" dy="653" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -159,7 +159,7 @@
         <mxCell id="OwdUGj6-u8Bn-2lvrahr-16" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="OwdUGj6-u8Bn-2lvrahr-65">
           <mxGeometry x="980" y="170" width="40" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="OwdUGj6-u8Bn-2lvrahr-17" value="SPIN: Single leader per session" style="text;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;fontStyle=0;fontSize=15;" vertex="1" parent="OwdUGj6-u8Bn-2lvrahr-65">
+        <mxCell id="OwdUGj6-u8Bn-2lvrahr-17" value="SPIN: Leader tenure duration" style="text;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;fontStyle=0;fontSize=15;" vertex="1" parent="OwdUGj6-u8Bn-2lvrahr-65">
           <mxGeometry x="370" y="10" width="250" height="30" as="geometry" />
         </mxCell>
         <mxCell id="OwdUGj6-u8Bn-2lvrahr-18" value="" style="shape=curlyBracket;whiteSpace=wrap;html=1;rounded=1;labelPosition=left;verticalLabelPosition=middle;align=right;verticalAlign=middle;direction=south;" vertex="1" parent="OwdUGj6-u8Bn-2lvrahr-65">
@@ -180,8 +180,8 @@
             <mxPoint x="1110" y="189.5" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="OwdUGj6-u8Bn-2lvrahr-24" value="Session length" style="text;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="OwdUGj6-u8Bn-2lvrahr-65">
-          <mxGeometry x="650" y="230" width="100" height="30" as="geometry" />
+        <mxCell id="OwdUGj6-u8Bn-2lvrahr-24" value="Leader tenure duration" style="text;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="OwdUGj6-u8Bn-2lvrahr-65">
+          <mxGeometry x="625" y="230" width="150" height="30" as="geometry" />
         </mxCell>
         <mxCell id="OwdUGj6-u8Bn-2lvrahr-34" value="" style="endArrow=classic;startArrow=classic;html=1;rounded=0;" edge="1" parent="OwdUGj6-u8Bn-2lvrahr-65">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
@@ -205,80 +205,6 @@
           <mxGeometry width="50" height="50" relative="1" as="geometry">
             <mxPoint x="269.95" y="560" as="sourcePoint" />
             <mxPoint x="269.38" y="850" as="targetPoint" />
-          </mxGeometry>
-        </mxCell>
-      </root>
-    </mxGraphModel>
-  </diagram>
-  <diagram id="y_qvbfiE74yPXbXx9W98" name="Page-2">
-    <mxGraphModel dx="948" dy="620" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
-      <root>
-        <mxCell id="0" />
-        <mxCell id="1" parent="0" />
-        <mxCell id="khJzTtd24MpFyNkr3jPx-1" value="Финализация Блоков" style="whiteSpace=wrap;strokeWidth=2;" vertex="1" parent="1">
-          <mxGeometry x="453" y="502" width="330" height="128" as="geometry" />
-        </mxCell>
-        <mxCell id="khJzTtd24MpFyNkr3jPx-2" value="Производство Блоков" style="whiteSpace=wrap;strokeWidth=2;" vertex="1" parent="1">
-          <mxGeometry x="20" y="502" width="413" height="315" as="geometry" />
-        </mxCell>
-        <mxCell id="khJzTtd24MpFyNkr3jPx-3" value="Управление Валидаторами" style="whiteSpace=wrap;strokeWidth=2;" vertex="1" parent="1">
-          <mxGeometry x="70" y="20" width="631" height="392" as="geometry" />
-        </mxCell>
-        <mxCell id="khJzTtd24MpFyNkr3jPx-4" value="pallet_staking" style="whiteSpace=wrap;strokeWidth=2;" vertex="1" parent="1">
-          <mxGeometry x="314" y="45" width="161" height="54" as="geometry" />
-        </mxCell>
-        <mxCell id="khJzTtd24MpFyNkr3jPx-5" value="pallet_session" style="whiteSpace=wrap;strokeWidth=2;" vertex="1" parent="1">
-          <mxGeometry x="310" y="189" width="164" height="54" as="geometry" />
-        </mxCell>
-        <mxCell id="khJzTtd24MpFyNkr3jPx-6" value="Комитет Валидаторов" style="whiteSpace=wrap;strokeWidth=2;" vertex="1" parent="1">
-          <mxGeometry x="284" y="333" width="221" height="54" as="geometry" />
-        </mxCell>
-        <mxCell id="khJzTtd24MpFyNkr3jPx-7" value="AURA: Выбор Лидера" style="whiteSpace=wrap;strokeWidth=2;" vertex="1" parent="1">
-          <mxGeometry x="55" y="539" width="215" height="54" as="geometry" />
-        </mxCell>
-        <mxCell id="khJzTtd24MpFyNkr3jPx-8" value="Новый Блок" style="whiteSpace=wrap;strokeWidth=2;" vertex="1" parent="1">
-          <mxGeometry x="174" y="738" width="147" height="54" as="geometry" />
-        </mxCell>
-        <mxCell id="khJzTtd24MpFyNkr3jPx-9" value="GRANDPA: Голосование и Финализация" style="whiteSpace=wrap;strokeWidth=2;" vertex="1" parent="1">
-          <mxGeometry x="488" y="527" width="260" height="78" as="geometry" />
-        </mxCell>
-        <mxCell id="khJzTtd24MpFyNkr3jPx-10" value="Определяет валидаторов на основе стейкинга" style="curved=1;startArrow=none;endArrow=block;exitX=0.5;exitY=1;entryX=0.5;entryY=0;rounded=0;" edge="1" parent="1" source="khJzTtd24MpFyNkr3jPx-4" target="khJzTtd24MpFyNkr3jPx-5">
-          <mxGeometry relative="1" as="geometry">
-            <Array as="points" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="khJzTtd24MpFyNkr3jPx-11" value="Формирует активный комитет" style="curved=1;startArrow=none;endArrow=block;exitX=0.5;exitY=1;entryX=0.5;entryY=0;rounded=0;" edge="1" parent="1" source="khJzTtd24MpFyNkr3jPx-5" target="khJzTtd24MpFyNkr3jPx-6">
-          <mxGeometry relative="1" as="geometry">
-            <Array as="points" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="khJzTtd24MpFyNkr3jPx-12" value="По круговому расписанию выбирается лидер" style="curved=1;startArrow=none;endArrow=block;exitX=0;exitY=0.96;entryX=0.5;entryY=0.01;rounded=0;" edge="1" parent="1" source="khJzTtd24MpFyNkr3jPx-6" target="khJzTtd24MpFyNkr3jPx-7">
-          <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="163" y="412" />
-            </Array>
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="khJzTtd24MpFyNkr3jPx-13" value="Лидер создает блок" style="curved=1;startArrow=none;endArrow=block;exitX=0.5;exitY=1.01;entryX=0.31;entryY=0;rounded=0;" edge="1" parent="1" source="khJzTtd24MpFyNkr3jPx-7" target="khJzTtd24MpFyNkr3jPx-8">
-          <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="163" y="684" />
-            </Array>
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="khJzTtd24MpFyNkr3jPx-14" value="Все валидаторы голосуют" style="curved=1;startArrow=none;endArrow=block;exitX=1;exitY=0.98;entryX=0.5;entryY=0;rounded=0;" edge="1" parent="1" source="khJzTtd24MpFyNkr3jPx-6" target="khJzTtd24MpFyNkr3jPx-9">
-          <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="618" y="412" />
-            </Array>
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="khJzTtd24MpFyNkr3jPx-15" value="Подтверждение и окончательное закрепление блока" style="curved=1;startArrow=none;endArrow=block;exitX=0.5;exitY=1;entryX=0.69;entryY=0;rounded=0;" edge="1" parent="1" source="khJzTtd24MpFyNkr3jPx-9" target="khJzTtd24MpFyNkr3jPx-8">
-          <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="618" y="630" />
-              <mxPoint x="332" y="684" />
-            </Array>
           </mxGeometry>
         </mxCell>
       </root>
