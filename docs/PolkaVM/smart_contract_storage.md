@@ -28,7 +28,7 @@ The references:
 
 For getting a non-mutable reference to data.
 ```
-storage.get(X) = K -> any_of (bool, u{8,16,32,64,128}, i{8,16,32,64,128}, String, tuples, arrays, None),
+storage.get(X) :: get(String) -> Option<bool | u{8,16,32,64,128} | i{8,16,32,64,128} | String | tuples | arrays>,
 Where:
 - X is a key with type String;
 - If K = None means no value found by given key;
