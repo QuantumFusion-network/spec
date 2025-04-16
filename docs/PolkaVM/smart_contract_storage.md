@@ -5,7 +5,8 @@ The QF PolkaVM Smart contract storage design and requirements.
 ## Features
 
 - Allows to store on chain data using key-value like API.
-- Allows to read/write stored data only by owner (i.e. data belongs to account) of this data.
+- Allows to read/write stored data only by owner (i.e. data belongs to account) of this data, example: Alice runs a smart contract that stores Value by key K, only Alice may read or/and modify this data.
+K = account_uniq_hash + key_str, where account_uniq_hash sets by runtime key_str is a string set by Alice.
 - Supports encode/decode complex sturctures [not in the first implmentation]: bool, u{8,16,32,64,128}, i{8,16,32,64,128}, String, tuples, and arrays.
 
 The references:
