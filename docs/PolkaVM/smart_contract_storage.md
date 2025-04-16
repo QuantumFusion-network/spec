@@ -39,7 +39,7 @@ Where:
 
 For storing a data by given key.
 ```
-storage.set(X, V) = K -> any_of(true or false)
+storage.set(X, V) :: set(String,  bool | u{8,16,32,64,128} | i{8,16,32,64,128} | String | tuples | arrays) -> bool
 Where:
 - X is a key with type String;
 - returns true, if value is stored, false if not.
