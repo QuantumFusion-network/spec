@@ -1,0 +1,8 @@
+{
+    "tlaplus.tlc.modelChecker.options": "-dump dot,colorize ${modelName}.dot -deadlock",
+    "[tlaplus]": {
+        "editor.codeActionsOnSave": {
+            "source": "explicit"
+        }
+    }
+}
