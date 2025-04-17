@@ -1,0 +1,23 @@
+strict digraph DiskGraph {
+node [shape=box,style=rounded]
+edge [colorscheme="paired12"]
+nodesep=0.35;
+subgraph cluster_graph {
+color="white";
+-8857019723714639812 [label="state = \"operational\"",style = filled]
+-8857019723714639812 -> 4466091959303920822 [label="",color="2",fontcolor="2"];
+4466091959303920822 [label="state = \"fastChainFinalityProved\"",tooltip="state = \"fastChainFinalityProved\""];
+-8857019723714639812 -> 5376352793141087770 [label="",color="2",fontcolor="2"];
+5376352793141087770 [label="state = \"fastChainFinalityNotProved\"",tooltip="state = \"fastChainFinalityNotProved\""];
+4466091959303920822 -> -8857019723714639812 [label="",color="2",fontcolor="2"];
+5376352793141087770 -> -3097599280067440227 [label="",color="2",fontcolor="2"];
+-3097599280067440227 [label="state = \"recovery\"",tooltip="state = \"recovery\""];
+-3097599280067440227 -> -1367225398818136591 [label="",color="2",fontcolor="2"];
+-1367225398818136591 [label="state = \"recoveryEnded\"",tooltip="state = \"recoveryEnded\""];
+-1367225398818136591 -> -8857019723714639812 [label="",color="2",fontcolor="2"];
+{rank = same; -8857019723714639812;}
+{rank = same; 4466091959303920822;5376352793141087770;}
+{rank = same; -3097599280067440227;}
+{rank = same; -1367225398818136591;}
+}
+}
