@@ -48,3 +48,6 @@ tools/
 
 # Ignore directory created by Apalache
 _apalache-out
+
+## Don't ignore Graphviz files
+!*.dot
