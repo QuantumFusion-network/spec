@@ -22,7 +22,6 @@ Notarization (fast finality) fork timeline
 
 ![Notarization fast finality fork timeline drawio diagram](./SPIN-Fast-path-3.drawio.png)
 
-
 ## Testnet features set
 
 See the [Testnet features set page](./testnet_features_set.md).
