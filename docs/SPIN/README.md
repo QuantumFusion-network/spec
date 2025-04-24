@@ -21,3 +21,11 @@ Leader and committee member use cases
 Notarization (fast finality) fork timeline
 
 ![Notarization fast finality fork timeline drawio diagram](./SPIN-Fast-path-3.drawio.png)
+
+## Testnet features set
+
+See the [Testnet features set page](./testnet_features_set.md).
+
+## Fast path Testnet architecture
+
+Check [this page](./testnet_architecture.md).
