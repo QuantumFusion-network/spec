@@ -4,13 +4,12 @@ Docs index & references of QF TestNet.
 
 # Description
 
-### TestNet infra:
-- 3 nodes of QF Collator + Validator with SPIN consensus.
-- 1 + 1 nodes of QF RPC (Full node with RPC). These nodes will be avaliable via DNS rpc.qfnetwork.xyz.
+### TestNet public infra:
+- 3 nodes of QF Collator + Validator with SPIN consensus. These nodes restricted by access by RPC protocol.
+- 1 + 1 nodes of QF RPC (Full node with RPC). These nodes will be avaliable via DNS wss://test.qfnetwork.xyz.
 - 1 + 1 nodes of QF Archive (Archive node with RPC and GQL server). These nodes will be avaliable via DNS scan.qfnetwork.xyz.
-- Cloudflare for DNS balancing and for L7 balancing and for caching static
-resources.
-- Please find more information in High level design of TestNet: `docs/TestNet/TestNet.drawio`.
+- VMs for PolkaJS Portal & telemetry, e.i.: portal.qfnetwork.xyz/, telemetry.qfnetwork.xyz.
+- Cloudflare for DNS balancing and for a few L7 balancing scenarios.
 
 ### TestNet internal infra:
 - RPC nodes, 1 + 1 nodes internal do failover by L7 balancing with active healthchecks.
