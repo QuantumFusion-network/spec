@@ -13,7 +13,7 @@ The QF PolkaVM Smart contract storage design and requirements.
 > `contract_address` is an address of smart contract (`docs/PolkaVM/blob_hashing_addressing.md`).
 > For getting value from the storage the same rule is applied.
 >
-> Hence: storage.get(), storage.set(), storage.erase(), storage.purge() and storage.list() are protecting data from reading/writing storated values from different accounts by design, since address of Alice != addres of Bob.
+> Hence: storage.get(), storage.set(), storage.delete(), storage.purge() and storage.list() are protecting data from reading/writing storated values from different accounts by design, since address of Alice != addres of Bob.
 >
 - Supports encode/decode complex sturctures [not in the first implmentation]: bool, u{8,16,32,64,128}, i{8,16,32,64,128}, String, tuples, and arrays.
 
@@ -45,10 +45,10 @@ Where:
 - returns true, if value is stored, false if not.
 ```
 
-### Erase stored value by key
+### Delete stored value by key
 For erasing a data by given key.
 ```
-storage.erase(X) = K -> any_of(true or false)
+storage.delete(X) = K -> any_of(true or false)
 Where:
 - X is a key with type String;
 - returns true, if value is removed or not existed, false if error occured.
