@@ -57,4 +57,5 @@ decoding it on UI/client side.
 ## Implementation Notes
 
 ## References
+`docs/ADR/0008_Research_Code_Encoder.drawio`
 
