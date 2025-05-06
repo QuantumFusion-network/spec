@@ -2,6 +2,8 @@
 
 Docs index & references of QF TestNet.
 
+![alt text](https://github.com/QuantumFusion-network/spec/blob/main/docs/TestNet_infra/TestNet.drawio.png)
+
 # Description
 
 ### TestNet public infra:
@@ -20,7 +22,7 @@ Docs index & references of QF TestNet.
 - HLD (High level design) of TestNet: `docs/TestNet/TestNet.drawio`
 
 ### Additinition information:
-- [TCO of TestNet (allowed only for team members)] (https://github.com/QuantumFusion-network/infra/tree/main/docs/test_net_tco_Mar_2025.md)
-- [Provisioning & CI/CD] (https://github.com/QuantumFusion-network/infra/blob/main/docs/provisioning_and_telemetry.md)
-- [How we work with versions & upstream updates] (`docs/proc/how_we_work_in_the_team.md`)
+- [TCO of TestNet (allowed only for team members)](https://github.com/QuantumFusion-network/infra/tree/main/docs/testnet_tco_Mar_2025.md)
+- [Provisioning & CI/CD](https://github.com/QuantumFusion-network/infra/blob/main/docs/provisioning_and_telemetry.md)
+- [How we work with versions & upstream updates](https://github.com/QuantumFusion-network/spec/blob/issue/infra_updates_1/docs/proc/how_we_work_in_the_team.md)
 
