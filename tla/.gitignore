@@ -1,0 +1,53 @@
+## Ignore all files by default
+*
+
+## Don't ignore TLA+ files
+!*.tla
+
+## Don't ignore TLC model config and results
+!*.cfg
+!*.out  ## Usually .out files are small
+
+## Don't ignore Toolbox model metadata
+!*.launch
+
+## Don't ignore Toolbox spec metadata
+!.project
+!*.prefs
+
+## Don't ignore PDFs
+!*.pdf
+
+## Don't ignore all folders
+!*/
+
+## Ignore TLAPS cache folder
+## See https://github.com/tlaplus/tlapm/issues/16
+__tlacache__
+.tlacache
+
+## Don't ignore CI files
+!.github/**
+
+## Don't ignore READMEs
+!*.md
+
+## Ignore Python artifacts
+__pycache__
+pyvenv.cfg
+
+## Ignore directories used for local CI testing
+deps/
+tree-sitter-tlaplus/
+
+# Ignore TTrace specs
+*_TTrace_*.tla
+
+## Ignore tools/ folder created by .devcontainer.json
+tools/
+
+# Ignore directory created by Apalache
+_apalache-out
+
+## Don't ignore Graphviz files
+!*.dot
