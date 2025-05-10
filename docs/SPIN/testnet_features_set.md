@@ -26,6 +26,9 @@
 * High availability support for committee node.
 * Leader rewards and penalties.
 * Committee rewards and penalties.
+* Secure finality data access via the fast chain RPC.
+* Secure finality acquisition message for transaction status listener.
+* Display fast chain block time and secure finality data in the Polkadot/Substrate Portal.
 
 ### Yell message framework
 
