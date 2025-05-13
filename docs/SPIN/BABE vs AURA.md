@@ -1,25 +1,25 @@
-# Evaluation of BABE vs. AURA as Base Consensus for QF Blockchain's SPIN Protocol
+# Evaluation of BABE vs. AURA as Base Block Authoring Mechanisms for QF Blockchain's SPIN Protocol
 
 ## Introduction
 
-This document evaluates two Substrate consensus mechanisms - BABE (Blind Assignment for Blockchain Extension) and AURA (Authority-based Round-Robin Scheduling) - and presents the justification for selecting AURA as the base consensus mechanism for QF blockchain's SPIN protocol implementation.
+This document evaluates two Substrate block authoring algorithms - BABE (Blind Assignment for Blockchain Extension) and AURA (Authority-based Round-Robin Scheduling) - and presents the justification for selecting AURA as the base block authoring layer for QF blockchain's SPIN protocol implementation.
 
 ## SPIN Protocol Context
 
 The SPIN consensus protocol is a hybrid approach where:
-- The "Fast Chain" (QF) produces blocks rapidly (100ms target)
-- A Primary Leader produces blocks during its Tenure
-- Validators finalize blocks using native consensus
-- Additional security comes from anchoring to Polkadot
-- The base consensus (AURA or BABE) determines the block production mechanism
+- The **Fast Chain** (QF) produces blocks rapidly (100ms target)
+- A **Primary Leader** produces blocks during its _tenure_
+- Validators finalize blocks using native finality gadget (GRANDPA, f.e.)
+- Added security comes from anchoring to Polkadot through a **Bridging Gadget** (a light-client FSM that relays Fast-Chain proofs to the Anchor chain and vice-versa)
+- Lightweight block authoring algorithm
 
 ## Comparative Analysis
 
 ### 1. Leader Selection
 
 **AURA:**
-- Implements deterministic round-robin scheduling using a simple formula: `author = authorities[slot % n]`
-- Future block producers are predictable indefinitely in advance
+- Implements deterministic round-robin scheduling using a simple formula: `author = authorities[slot % n]`, where `n` is the length of the current `authorities` list.
+- Future block producers are predictable indefinitely - as long as the authorities list remains unchanged
 - Provides consistent and predictable block production schedule
 - Simpler to reason about and implement
 
@@ -29,12 +29,13 @@ The SPIN consensus protocol is a hybrid approach where:
 - Exact block authors are revealed only when blocks appear
 - Adds cryptographic unpredictability to block production
 
-**Note:** SPIN already groups many 100ms slots into a longer Tenure handled by one Primary Leader, making AURA's deterministic scheduling a natural fit for this architecture.
+**Note:** SPIN already groups many 100ms slots into a single _tenure_ handled by one Primary Leader, making AURA's deterministic scheduling a natural fit for this architecture.
 
 ### 2. Computational Complexity
 
 **AURA:**
-- Requires only one modulo operation plus block assembly
+- Requires only one modulo operation for slot assignment calculation
+- Additional computational work includes verifying that the given header is sealed by the rightful author of the block
 - Minimizes CPU usage on validator nodes
 - Maintains consistent performance across all nodes
 - Provides more computational headroom for transaction processing
@@ -56,14 +57,14 @@ The SPIN consensus protocol is a hybrid approach where:
 - Minimizes network bandwidth requirements
 - Reduces propagation latency with fewer messages
 - Provides more predictable network utilization
-- Scales better with increasing validator count
+- Lower baseline traffic; scales better because traffic grows linearly with validator count.
 
 **BABE:**
 - Can produce one to many headers per slot depending on how many validators qualify
 - Creates orphan blocks that waste network resources
 - Increases bandwidth usage as slots become shorter
 - Shows higher network traffic in testing
-- Network congestion risk increases with validator count
+- Network congestion risk increases with validator count as more validators may produce competing blocks for the same slot
 
 **Note:** Lower baseline traffic with AURA is particularly valuable for SPIN.
 
@@ -95,16 +96,24 @@ The SPIN consensus protocol is a hybrid approach where:
 - Better facilitates future modifications and optimizations
 
 **BABE:**
-- Contains more components, which increases code complexity.
+- Contains more components, which increases code complexity
 - Includes built-in secondary authoring that SPIN replaces anyway
 - Requires more extensive testing
 - Has more potential for subtle bugs in edge cases
 - More difficult to customize for SPIN's specific requirements
 
-**Note:** A simpler base consensus makes debugging SPIN's recovery mechanisms easier and reduces overall system complexity, leading to a more maintainable codebase.
+**Note:** A simpler base block authoring mechanism makes debugging SPIN's recovery mechanisms easier and reduces overall system complexity, leading to a more maintainable codebase.
 
 ## Final Justification
 
 AURA naturally fits into a long Tenure, providing validator CPU efficiency, while SPIN's Secondary-Leader mechanism, Bridging-Gadget slashing, and Polkadot finality effectively neutralize AURA's security disadvantages.
 
 Therefore, **AURA is the deliberate and best-fitting choice** for QF's SPIN consensus layer.
+
+## Further Research Required
+
+1. **Timing-Manipulation Attack**  
+   We must analyse the slot-time manipulation attack described by Xinrui Zhang et al., "[Time-manipulation Attack: Breaking Fairness against Proof of Authority Aura](https://fififish.github.io/sisiduan/files/time-www23-compressed.pdf)" (The Web Conf (WWW) ’23) and adapt AURA or SPIN parameters if the attack proves practical in a 100 ms-slot, long-Tenure setting.
+
+2. **AURA Fork-Rate under Long Tenure** 
+    Further analyze AURA's fork behavior under SPIN's long tenure mechanics to ensure proper functioning and identify any potential issues.
