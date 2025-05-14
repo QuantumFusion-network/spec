@@ -2,7 +2,7 @@
 
 This document describe: key features of PolkaVM v2.
 [High level design](https://github.com/QuantumFusion-network/spec/blob/main/docs/PolkaVM/PolkaVMv2.drawio).
-![alt text](docs/PolkaVM/PolkaVMv2.drawio.png)
+![alt text](https://github.com/QuantumFusion-network/spec/blob/main/docs/PolkaVM/PolkaVMv2.drawio.png)
 
 Polka VM Pallet has two type of extrinsic: uploading PolkaVM compiled blob and execute it via given address.
 Both extrinsics are avaliable via Substrate RPC.
