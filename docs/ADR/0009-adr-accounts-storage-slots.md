@@ -55,10 +55,10 @@ The methodology of keys are described in [this section](https://github.com/Quant
 
 NOTES:
 - [VM limits](https://docs.rs/pallet-contracts/latest/pallet_contracts/struct.Limits.html) could be changed via sudo.
-- [1] [pallet-contract](https://docs.rs/pallet-contracts/latest/pallet_contracts/index.html)
-- [2] [Cargo for contract projects](https://use.ink/docs/v5/getting-started/calling-your-contract)
-- [3] [RPC calls](https://docs.rs/pallet-contracts/latest/pallet_contracts/pallet/struct.Pallet.html#method.upload_code) for account's storage managment (set(), e.g. rewrite, get(), delete(), upload())
-- [4] [No versioning or nonce](https://docs.rs/pallet-contracts/latest/pallet_contracts/pallet/struct.Pallet.html#method.upload_code): "If the code does not already exist a deposit is reserved from the caller and unreserved only when Self::remove_code is called. The size of the reserve depends on the size of the supplied code."
+- [pallet-contract](https://docs.rs/pallet-contracts/latest/pallet_contracts/index.html)
+- [Cargo for contract projects](https://use.ink/docs/v5/getting-started/calling-your-contract)
+- [RPC calls](https://docs.rs/pallet-contracts/latest/pallet_contracts/pallet/struct.Pallet.html#method.upload_code) for account's storage managment (set(), e.g. rewrite, get(), delete(), upload())
+- [No versioning or nonce](https://docs.rs/pallet-contracts/latest/pallet_contracts/pallet/struct.Pallet.html#method.upload_code): "If the code does not already exist a deposit is reserved from the caller and unreserved only when Self::remove_code is called. The size of the reserve depends on the size of the supplied code."
 
 ## Problem
 The limited number of stored contract by 1.
