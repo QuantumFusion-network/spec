@@ -23,12 +23,14 @@ Last status update: 2025-05-14
 - [ ] Discontinued
 
 ## People
-- **Decision-makers**: [List of people who made the decision]
-- **Consulted**: [List of subject matter experts consulted]
+- **Decision-makers**: 
+  - [ ] Vas
+  - [ ] Alisher
+- **Consulted**: Alisher
 - **Informed**: 
-  - [ ] [Person 1] 
-  - [ ] [Person 2]
-  - [ ] [Person 3]
+  - [ ] Dastan
+  - [ ] Svat
+  - [ ] Andrew
   
 *Note: People listed in "Informed" should submit a PR to check their name after reading this ADR. This can be done during the initial review process of the ADR upload/commit PR (when the file is first uploaded to GitHub and the author requests reviews), or in a separate PR after the ADR is merged.*
 
@@ -77,11 +79,14 @@ upload_code(account, contract_code) ->
 ```
 References: [uploading of the contract](https://docs.rs/pallet-contracts/latest/src/pallet_contracts/lib.rs.html#860), [call of the contract](https://docs.rs/pallet-contracts/latest/src/pallet_contracts/lib.rs.html#954)
 - Extend account's contract storege slots limit to theoretical maximum
-- Add managment functions for account's contract storage, ex:
+
+### Next steps:
+- ADRs describes managment functions for account's contract storage, ex:
 ```
 - set_code(account, contract_code) -> bool
 - delete_code(account) -> bool
 ```
+- ADRs describes depositing.
 
 References: [set_code](https://docs.rs/pallet-contracts/latest/src/pallet_contracts/lib.rs.html#893), [delete_code](https://docs.rs/pallet-contracts/latest/src/pallet_contracts/lib.rs.html#869)
 
