@@ -33,71 +33,57 @@ Last status update: 2025-05-14
 *Note: People listed in "Informed" should submit a PR to check their name after reading this ADR. This can be done during the initial review process of the ADR upload/commit PR (when the file is first uploaded to GitHub and the author requests reviews), or in a separate PR after the ADR is merged.*
 
 ## Context
-qf-solochain has limited number of contract by 1 for an account. For blockchain it's too low lomit. Team need to find how we should extend it.
+qf-solochain has limited number of contract by 1 per account.
 
-Account's contract storage is Hash-like datastorage: hash_table[key] = contract, where key is string-like data and contract is a binary data (contract itself).
+Account's contract storage is Hash-like datastorage (e.g. pallet storage): [hash_table[key] = contract](https://docs.rs/pallet-contracts/latest/src/pallet_contracts/lib.rs.html#1326), where key is string-like data and contract is a binary data (contract itself).
 
-The methodology of keys are described in [this section](https://github.com/QuantumFusion-network/spec/blob/main/docs/PolkaVM/blob_hashing_addressing.md#how-hash-and-address-are-set-for-an-uploaded-pvm-blob), e.g. (owner, version) = contract in short words.
+The methodology of adressing are described  in [this document](https://github.com/QuantumFusion-network/spec/blob/main/docs/PolkaVM/blob_hashing_addressing.md#how-hash-and-address-are-set-for-an-uploaded-pvm-blob).
 
 ### Solana account storage limitations
 - Max contact size: 10 Mb
-- Has a rent for contact storing: yes
+- Has a rent for contact storing: yes (a rent)
 - Max key size: 256b
-- Number of storage slots: theoretical the size of storage hash table.
+- Number of storage slots: the size of storage hash table.
 
-[1] [Ref](https://solana.com/docs/core/accounts#:~:text=Accounts%20can%20store%20up%20to,account%20has%20a%20program%20owner).
+[1] [Ref. and more details about Solana](https://solana.com/docs/core/accounts#:~:text=Accounts%20can%20store%20up%20to,account%20has%20a%20program%20owner).
 
 ### PolkaDot account storage limitations
-- Max contact size: undefined
-- Has a rent for contact storing: no
-- Max key size: undefined
-- Number of storage slots: theoretical the size of storage hash table
+- Max contact size: not defined directly
+- Has a rent for contact storing: yes (deposit)
+- Max key size: not defined directly
+- Number of storage slots: the size of storage hash table
 
 NOTES:
 - [VM limits](https://docs.rs/pallet-contracts/latest/pallet_contracts/struct.Limits.html) could be changed via sudo.
 - [pallet-contract](https://docs.rs/pallet-contracts/latest/pallet_contracts/index.html)
 - [Cargo for contract projects](https://use.ink/docs/v5/getting-started/calling-your-contract)
-- [RPC calls](https://docs.rs/pallet-contracts/latest/pallet_contracts/pallet/struct.Pallet.html#method.upload_code) for account's storage managment (set(), e.g. rewrite, get(), delete(), upload())
-- [No versioning or nonce](https://docs.rs/pallet-contracts/latest/pallet_contracts/pallet/struct.Pallet.html#method.upload_code): "If the code does not already exist a deposit is reserved from the caller and unreserved only when Self::remove_code is called. The size of the reserve depends on the size of the supplied code."
+- [RPC calls](https://docs.rs/pallet-contracts/latest/pallet_contracts/pallet/struct.Pallet.html#method.upload_code) for account's storage managment (set(), e.g. rewrite, get via storage, delete(), upload())
+- [No direct versioning](https://docs.rs/pallet-contracts/latest/pallet_contracts/pallet/struct.Pallet.html#method.upload_code): "If the code does not already exist a deposit is reserved from the caller and unreserved only when Self::remove_code is called. The size of the reserve depends on the size of the supplied code."
 
 ## Problem
 The limited number of stored contract by 1.
 
 ## Decision
-- Add `nonce` or `versioning` of the contract to upload(contract, version)
-- Rewrite a contract, if hash is the same during the upload:
+Logic:
 ```
-upload(contract [, version]) ->
-    version = 0 if version == None
-    hash_table[H(owner, version)] = contract
+upload_code(account, contract_code) ->
+    key = H(contract_code)
+    if hash_table[key] != None:
+        return
+    else:
+        hash_table[key] = contract_code
+    , where hash_table is a storage_map<T>,
+            H is a hash function for hash from the contract_code (vec8)
 ```
+References: [uploading of the contract](https://docs.rs/pallet-contracts/latest/src/pallet_contracts/lib.rs.html#860), [call of the contract](https://docs.rs/pallet-contracts/latest/src/pallet_contracts/lib.rs.html#954)
 - Extend account's contract storege slots limit to theoretical maximum
 - Add managment functions for account's contract storage, ex:
 ```
-- set(key, contract, nonce) -> bool
-- get(key) -> contract or None
-- delete(key) -> bool
+- set_code(account, contract_code) -> bool
+- delete_code(account) -> bool
 ```
 
-### Alternatives Considered (Optional)
-- Alternative 1: Extend account's contract slots limit to 100, and allow to extend it via sudo
-- Alternative 2: Replace `version` to `nonce` for adressing
-
-
-#### Alternative 1: [Name/Title]
-**Description**: [Explanation of the approach]
-
-**Pros**:
-- [Advantage 1]
-- [Advantage 2]
-
-**Cons**:
-- [Disadvantage 1]
-- [Disadvantage 2]
-
-**Why Not Selected**: [Reasons for rejection]
-
-Repeat for each alternative considered.]
+References: [set_code](https://docs.rs/pallet-contracts/latest/src/pallet_contracts/lib.rs.html#893), [delete_code](https://docs.rs/pallet-contracts/latest/src/pallet_contracts/lib.rs.html#869)
 
 ### Consequences (Optional)
 - **Positive**: [List positive impacts of this decision]
