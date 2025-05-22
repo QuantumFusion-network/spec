@@ -35,7 +35,7 @@ execute(origin, contract_address, to, value, user_data, gas_limit, gas_price)
 - `origin` is a caller address,
 - `contract_address` is an adress of stored onchain contract,
 - `to` is an account_id used for transfer() and balance_of(), these are contract functions,
-- `value` is a value for balance_transfer(), the contract functions,
+- `value` is a value for transfer(), the contract functions,
 - `user_data` is SCALE encoded structures passed to the contract's main() function,
 - `gas_limit` is a limit of the gas for executing of the contract behind contract_address,
 - `gas_price` is a price of the gas for auction; this argument is not Implemented, it's for the future.
