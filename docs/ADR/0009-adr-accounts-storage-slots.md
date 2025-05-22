@@ -39,7 +39,7 @@ qf-solochain has limited number of contract by 1 per account.
 
 Account's contract storage is Hash-like datastorage (e.g. pallet storage): [hash_table[key] = contract](https://docs.rs/pallet-contracts/latest/src/pallet_contracts/lib.rs.html#1326), where key is string-like data and contract is a binary data (contract itself).
 
-The methodology of adressing are described  in [this document](https://github.com/QuantumFusion-network/spec/blob/main/docs/PolkaVM/blob_hashing_addressing.md#how-hash-and-address-are-set-for-an-uploaded-pvm-blob).
+The methodology of addressing are described  in [this document](https://github.com/QuantumFusion-network/spec/blob/main/docs/PolkaVM/blob_hashing_addressing.md#how-hash-and-address-are-set-for-an-uploaded-pvm-blob).
 
 ### Solana account storage limitations
 - Max contact size: 10 Mb
@@ -68,14 +68,45 @@ The limited number of stored contract by 1.
 ## Decision
 Logic:
 ```
+#
+# NOTE `contract_address` is described in
+# https://github.com/QuantumFusion-network/spec/blob/issues/329/docs/PolkaVM/blob_hashing_addressing.md
+#
 upload_code(account, contract_code) ->
-    key = H(contract_code)
-    if hash_table[key] != None:
-        return
+
+    metadata_key = H(contract_address + contract_code)
+
+    #
+    # Metadata structure:
+    # KEY = {
+    #   versions = [{version: INT8, contract_storage_key: STR, acc_addr: STR}]
+    # }
+    #
+    metadata = contract_metadata_hash_table[key]
+    contract_storage_key = metadata.versions.back().contract_storage_key
+
+    if contract_storage_key == None:
+        contract_version = 0
+        contract_storage_key = H(contract_code + contract_version)
+        contract_metadata_hash_table[metadata_key] = {
+            .versions = [{0, contract_storage_key, account}]
+        }
+        hash_table[contract_storage_key] = contract_code
     else:
-        hash_table[key] = contract_code
-    , where hash_table is a storage_map<T>,
-            H is a hash function for hash from the contract_code (vec8)
+        contract_version = metadata.back().version + 1
+        contract_storage_key = H(contract_code + contract_version)
+        push_back(metadata.versions, {version: contract_version,
+                                      contract_storage_key: contract_storage_key,
+                                      acc_addr: account})
+        hash_table[contract_storage_key] = contract_code
+
+    , where hash_table is a storage_map<T> for storing contract code,
+            contract_metadata_hash_table is a storage_map<T> for storing
+            metadata of the contract, including owner and version of the
+            contract.
+            A value of contract_metadata_hash_table could be used to find
+            associated contract code. For example: iteration other this map
+            allows to get all uploaded `contract_code` by `account`.
 ```
 References: [uploading of the contract](https://docs.rs/pallet-contracts/latest/src/pallet_contracts/lib.rs.html#860), [call of the contract](https://docs.rs/pallet-contracts/latest/src/pallet_contracts/lib.rs.html#954)
 - Extend account's contract storege slots limit to theoretical maximum
