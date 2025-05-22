@@ -1,4 +1,4 @@
-## Title: Design of Polka VM pallet's execute() extrinsics
+## Title: Design of Polka VM pallet's execute() extrinsic
 
 ## Date
 2025-05-20
