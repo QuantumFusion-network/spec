@@ -33,7 +33,7 @@ We have introduced [pallet's execute method](https://github.com/QuantumFusion-ne
 execute(origin, contract_address, to, value, user_data, gas_limit, gas_price)
 ```, where:
 - `origin` is a caller address,
-- `contract_address` is an adress of stored onchain contract,
+- `contract_address` is an address of stored on-chain contract,
 - `to` is an account_id used for transfer() and balance_of(), these are contract functions,
 - `value` is a value for transfer(), the contract functions,
 - `user_data` is [SCALE] encoded structures passed to the contract's main() function,
