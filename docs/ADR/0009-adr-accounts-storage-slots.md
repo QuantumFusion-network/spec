@@ -89,7 +89,7 @@ upload_code(account, contract_code) ->
         contract_version = 0
         contract_storage_key = H(contract_code + contract_version)
         contract_metadata_hash_table[metadata_key] = {
-            .versions = [{0, contract_storage_key, account}]
+            versions: [{0, contract_storage_key, account}]
         }
         hash_table[contract_storage_key] = contract_code
     else:
