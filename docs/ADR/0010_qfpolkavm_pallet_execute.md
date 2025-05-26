@@ -19,8 +19,8 @@ Last status update: 2025-05-21
 - [ ] Discontinued
 
 ## People
-- **Decision-makers**: Andrew, Alisher, Vas
-- **Consulted**: KP
+- **Decision-makers**: KP, Vas
+- **Consulted**: Andrew, Alisher
 - **Informed**:
   - Svat
 
