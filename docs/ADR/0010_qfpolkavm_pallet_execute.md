@@ -6,14 +6,14 @@ Last status update: 2025-05-21
 
 ## Status
 - [X] Proposed
-- [ ] Accepted
+- [X] Accepted
 - [ ] Rejected
 - [ ] Deprecated
 - [ ] Superseded by ADR #X
 
 ### Implementation Status
 - [ ] Planned
-- [ ] In Development
+- [X] In Development
 - [ ] Implemented
 - [ ] Verified
 - [ ] Discontinued
@@ -31,11 +31,10 @@ For running a smart contract we have to have implemented pallet's extrinsic exec
 We have introduced [pallet's execute method](https://github.com/QuantumFusion-network/qf-solochain/blob/main/pallets/qf-polkavm/src/lib.rs#L333), it has signature:
 ```
 execute(origin, contract_address, to, value, user_data, gas_limit, gas_price)
-```, where:
+```
+, where:
 - `origin` is a caller address,
 - `contract_address` is an address of stored on-chain contract,
-- `to` is an account_id used for transfer() and balance_of(), these are contract functions,
-- `value` is a value for transfer(), the contract functions,
 - `user_data` is [SCALE] encoded structures passed to the contract's main() function,
 - `gas_limit` is a limit of the gas for executing of the contract behind contract_address,
 - `gas_price` is a price of the gas for auction; this argument is not implemented, it's for the future.
@@ -46,7 +45,8 @@ As we can see the signature looks at least strage and contains legacy (from PoC)
 Change signature of pallet's extrinsic to:
 ```
 execute(origin, contract_address, data, gas_limit, storage_deposit_limit, gas_price)
-```, where:
+```
+, where:
 - `origin` is a caller address,
 - `contract_address` is an address of stored on-chain contract,
 - `data` is [SCALE] encoded structures passed to the contract's main() function,
@@ -55,15 +55,11 @@ execute(origin, contract_address, data, gas_limit, storage_deposit_limit, gas_pr
 - `gas_price` is a price of the gas for auction; this argument is not implemented, it's for the future.
 
 
-## Implementation Notes (Optional)
-[Any specific guidance for implementing this decision, including:
-- Required dependencies
-- Migration steps
-- Testing considerations]
-
 ## References
 [Ref to pallet contracts](https://docs.rs/pallet-contracts/latest/pallet_contracts/pallet/struct.Pallet.html#method.call)
 [Concern: value](https://docs.rs/pallet-contracts/latest/pallet_contracts/pallet/struct.Pallet.html#method.call)
 Research result: seems `value` introduced for optimization puposes for balance transfering and balance_of. I don't find any other reasons.
 [Storage deposit limit explanation](https://github.com/paritytech/substrate-contracts-node/issues/23#issuecomment-1008751578)
 [SCALE]: https://github.com/paritytech/parity-scale-codec
+[Purpose of `value` param in `pallet-contracts::call` extrinsic?](https://substrate.stackexchange.com/questions/12363/purpose-of-value-param-in-pallet-contractscall-extrinsi)
+
