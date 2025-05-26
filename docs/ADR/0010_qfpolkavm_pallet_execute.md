@@ -49,11 +49,10 @@ execute(origin, contract_address, data, gas_limit, storage_deposit_limit, gas_pr
 , where:
 - `origin` is a caller address,
 - `contract_address` is an address of stored on-chain contract,
-- `data` is [SCALE] encoded structures passed to the contract's main() function,
+- `data` is [SCALE] encoded structures passed to the contract's context and available via host function call,
 - `gas_limit` is a limit of the gas for executing of the contract behind contract_address,
-- `storage_deposit_limit` is a limit of how many storage space could be used for storing data during contract execution, if out of this limit, then transaction fail with Out of Storage limit error message and no data stored. Thing about this case: we have a huge `gas_limit` and trying to save inside a contract, by mistaken, a huge blob of data. This argument is not implemented, it's for the future.
+- `storage_deposit_limit` is a limit of how many storage space could be used for storing data during contract execution, if out of this limit, then transaction fail with Out of Storage limit error message and no data stored. Thing about this case: we have a huge `gas_limit` and trying to save inside a contract, by mistaken, a huge blob of data. This argument is not implemented, it's for the future. Unit: bytes per a storage slot.
 - `gas_price` is a price of the gas for auction; this argument is not implemented, it's for the future.
-
 
 ## References
 [Ref to pallet contracts](https://docs.rs/pallet-contracts/latest/pallet_contracts/pallet/struct.Pallet.html#method.call)
