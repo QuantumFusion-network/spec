@@ -98,6 +98,7 @@ upload_code(account, contract_code) ->
         push_back(metadata.versions, {version: contract_version,
                                       contract_storage_key: contract_storage_key,
                                       acc_addr: account})
+     contract_metadata_hash_table[metadata_key] = metadata
         hash_table[contract_storage_key] = contract_code
 
     , where hash_table is a storage_map<T> for storing contract code,
