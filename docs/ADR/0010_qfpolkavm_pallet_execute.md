@@ -20,7 +20,7 @@ Last status update: 2025-05-21
 
 ## People
 - **Decision-makers**: KP, Vas
-- **Consulted**: Andrew, Alisher
+- **Consulted**: Andrei, Alisher
 - **Informed**:
   - Sviat
 
