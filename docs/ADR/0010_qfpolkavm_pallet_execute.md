@@ -51,7 +51,7 @@ execute(origin, contract_address, data, gas_limit, storage_deposit_limit, gas_pr
 - `contract_address` is an address of stored on-chain contract,
 - `data` is [SCALE] encoded bytes passed to the contract's context and available via host function call,
 - `gas_limit` is a limit of the gas for execution of the contract behind `contract_address`,
-- `storage_deposit_limit` is a limit of how many storage space could be used for storing data during contract execution, if out of this limit, then transaction fail with Out of Storage limit error message and no data stored. Thing about this case: we have a huge `gas_limit` and trying to save inside a contract, by mistaken, a huge blob of data. This argument is not implemented, it's for the future. Unit: bytes per a storage slot.
+- `storage_deposit_limit` is a maximum amount of balance that can be charged from the caller to pay for the storage consumed during contract execution. If this limit is exceeded, then transaction fails with `Out of Storage limit` error message and no data stored. Thing about this case: we have a huge `gas_limit` and trying to save inside a contract, by mistaken, a huge blob of data. This argument is not implemented, it's for the future. Unit: balance.
 - `gas_price` is a price of the gas for auction; this argument is not implemented, it's for the future.
 
 
