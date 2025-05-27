@@ -39,7 +39,7 @@ execute(origin, contract_address, to, value, user_data, gas_limit, gas_price)
 - `gas_limit` is a limit of the gas for executing of the contract behind contract_address,
 - `gas_price` is a price of the gas for auction; this argument is not implemented, it's for the future.
 
-As we can see the signature looks at least strage and contains legacy (from PoC) arguments, which are `to`, `value`.
+As we can see, the signature includes legacy arguments like `to` and `value`, inherited from PoC development.
 
 ## Decision
 ### Change signature of pallet's extrinsic to:
