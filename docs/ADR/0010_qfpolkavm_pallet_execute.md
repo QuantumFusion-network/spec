@@ -22,7 +22,7 @@ Last status update: 2025-05-21
 - **Decision-makers**: KP, Vas
 - **Consulted**: Andrew, Alisher
 - **Informed**:
-  - Svat
+  - Sviat
 
 ## Context
 For running a smart contract we have to have implemented pallet's extrinsic `execute()` and at least one method inside the contract to run it (i.e. `main()`).
