@@ -25,7 +25,7 @@ Last status update: 2025-05-21
   - Svat
 
 ## Context
-For running a smart contract we have to have implemented pallet's extrinsic execute() and at least one method inside the contract to run it (i.e. main()).
+For running a smart contract we have to have implemented pallet's extrinsic `execute()` and at least one method inside the contract to run it (i.e. `main()`).
 
 ## Problem
 We have introduced [pallet's execute method](https://github.com/QuantumFusion-network/qf-solochain/blob/main/pallets/qf-polkavm/src/lib.rs#L333), it has signature:
