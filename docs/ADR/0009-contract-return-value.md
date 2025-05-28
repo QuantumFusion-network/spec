@@ -107,8 +107,13 @@ pub fn gas_price() -> u64;
 #### Alternative 1: Primary
 
 - Remove the saving of smart contract return values.
+    1. Remove `ExecutionResult` storage item (with its data deletion using a migration).
+    1. Update `execute` extrinsic removing `ExecutionResult` usage.
+    1. Update affected smart contract examples.
 - Reserve the return value for future use, such as acting as a "pointer" to a composite return type (e.g., `SomeVec<AccountId>`).
 - Allow execution of read-only functions without requiring a transaction.
+    1. Implement dry run functionality in form of the runtime API.
+    1. Add minimal support for getters in form of a macros for restricting mutating host functions usage in the smart contract function body.
 
 **Pros:**
 
