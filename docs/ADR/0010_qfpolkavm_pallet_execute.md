@@ -20,12 +20,12 @@ Last status update: 2025-05-21
 
 ## People
 - **Decision-makers**: KP, Vas
-- **Consulted**: Andrew, Alisher
+- **Consulted**: Andrei, Alisher
 - **Informed**:
-  - Svat
+  - Sviat
 
 ## Context
-For running a smart contract we have to have implemented pallet's extrinsic execute() and at least one method inside the contract to run it (i.e. main()).
+For running a smart contract we have to have implemented pallet's extrinsic `execute()` and at least one method inside the contract to run it (i.e. `main()`).
 
 ## Problem
 We have introduced [pallet's execute method](https://github.com/QuantumFusion-network/qf-solochain/blob/main/pallets/qf-polkavm/src/lib.rs#L333), it has signature:
@@ -39,7 +39,7 @@ execute(origin, contract_address, to, value, user_data, gas_limit, gas_price)
 - `gas_limit` is a limit of the gas for executing of the contract behind contract_address,
 - `gas_price` is a price of the gas for auction; this argument is not implemented, it's for the future.
 
-As we can see the signature looks at least strage and contains legacy (from PoC) arguments, which are `to`, `value`.
+As we can see, the signature includes legacy arguments like `to` and `value`, inherited from PoC development.
 
 ## Decision
 ### Change signature of pallet's extrinsic to:
@@ -52,11 +52,14 @@ execute(origin, contract_address, data, gas_limit, storage_deposit_limit, gas_pr
 - `data` is encoded structures [_maybe_ SCALE encoded] passed to the contract's context and available via host function call,
 - `gas_limit` is a limit of the gas for executing of the contract behind contract_address,
 - `storage_deposit_limit` is a limit of how many storage space could be used for storing data during contract execution, if out of this limit, then transaction fail with Out of Storage limit error message and no data stored. Thing about this case: we have a huge `gas_limit` and trying to save inside a contract, by mistaken, a huge blob of data. This argument is not implemented, it's for the future. Unit: bytes per a storage slot.
+- `data` is [SCALE] encoded bytes passed to the contract's context and available via host function call,
+- `gas_limit` is [Weight](https://docs.rs/sp-weights/31.1.0/sp_weights/struct.Weight.html) a limit of the gas for execution of the contract behind `contract_address`; [implementation reference](https://docs.rs/pallet-revive/latest/src/pallet_revive/lib.rs.html#727),
+- `storage_deposit_limit` is a maximum amount of balance that can be charged from the caller to pay for the storage consumed during contract execution. If this limit is exceeded, then transaction fails with `Out of Storage limit` error message and no data stored. Thing about this case: we have a huge `gas_limit` and trying to save inside a contract, by mistaken, a huge blob of data. This argument is not implemented, it's for the future. Unit: balance.
 - `gas_price` is a price of the gas for auction; this argument is not implemented, it's for the future.
 
 
 ### Update function signatures
-`transfer()` and `balance_of` should read address and value from the `data` instead of `to` and `value`.
+`transfer()` and `balance_of()` should read address and value from the `data` instead of `to` and `value`.
 
 ## References
 [Ref to pallet contracts](https://docs.rs/pallet-contracts/latest/pallet_contracts/pallet/struct.Pallet.html#method.call)
