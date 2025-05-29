@@ -62,10 +62,15 @@ execute(origin, contract_address, data, gas_limit, storage_deposit_limit, gas_pr
 `transfer()` and `balance_of()` should read address and value from the `data` instead of `to` and `value`.
 
 ## References
+
 [Ref to pallet contracts](https://docs.rs/pallet-contracts/latest/pallet_contracts/pallet/struct.Pallet.html#method.call)
+
 [Concern: value](https://docs.rs/pallet-contracts/latest/pallet_contracts/pallet/struct.Pallet.html#method.call)
 Research result: seems `value` introduced for optimization puposes for balance transfering and balance_of. I don't find any other reasons.
+
 [Storage deposit limit explanation](https://github.com/paritytech/substrate-contracts-node/issues/23#issuecomment-1008751578)
+
 [SCALE]: https://github.com/paritytech/parity-scale-codec
+
 [Purpose of `value` param in `pallet-contracts::call` extrinsic?](https://substrate.stackexchange.com/questions/12363/purpose-of-value-param-in-pallet-contractscall-extrinsi)
 
