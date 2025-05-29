@@ -2,15 +2,15 @@
 
 ## Context
 
-A PolkaVM program is expected to return a numeric value, such as a `u64`, as shown below:
+A PolkaVM program is expected to return a numeric value, such as a `u64`, as shown below.
 
 ```rust
 extern "C" fn main() -> u64 {
 ```
 
-Currently, the smart contract's `main()` function follows this convention.
+The smart contracts' `main()` function must follow this convention and have the same signature.
 
-This return value is used as the execution result of the smart contract in `pallet-qf-polkavm` and is stored after each call.
+Currently, in the QF Network Smart Contracts platform, the return value is used as the computation result handler from the smart contract to the `pallet-qf-polkavm` runtime module. And it is stored on-chain after each call.
 
 ```rust
 let result: u64 = instance.call_typed_and_get_result::<u64, ()>(&mut state, "main", ());
@@ -40,11 +40,39 @@ ExecutionResult::<T>::insert(
 
 ### Current Implementation
 
-- Always stores the contract execution result of type `u64` in on-chain storage.
-- Limits future support for cross-contract calls.
-- Requires a transaction for every smart contract function invocation, even for read-only functions.
+- Each smart contract call writes the return value to the on-chain storage.
+- Existing implementation limits future support for cross-contract calls, return values handing over the oh-chain storage is inefficient.
+- Even read-only smart contract's functions require a transaction to get the computation result.
 
 ## Decision
+
+### Proposed Solution
+
+#### Alternative 1: Primary
+
+- Remove the saving of smart contract return values.
+    1. Remove `ExecutionResult` storage item (with its data deletion using a migration).
+    1. Update `execute` extrinsic removing `ExecutionResult` usage.
+    1. Update affected smart contract examples.
+- Reserve the return value for future use (see Alternative 2, Alternative 3).
+- Consider read-only functions invocation without a transaction (through the "dry run") separately.
+    1. Blockchain data, thus the contract state, is available for UIs over RPC. Keys are known in advance as well as the value decoding algorithm.
+    1. Currently all smart contracts state is written to the pallet storage item and can be easily retrieved over the Polkadot/Substrate Portal RPC without an additional UI. See https://youtu.be/Xs_uBU86XIE?si=MvOd0-qqw13-nSkL.
+
+**Pros:**
+
+- Prevents unnecessary on-chain storage growth and unifies smart contract data writing (writes are defined within the contract body).
+- Doesn't prevent efficient cross-contract calls implementation with return value exchange over the non-persistent memory.
+- Defers the decision on how to utilize return values until it is actually needed.
+
+#### Implementation Notes
+
+- Live networks, such as the QF Network Testnet, may require a migration to remove the `ExecutionResult` storage item.
+- Existing examples will need to be updated to remove reliance on return value storage.
+
+### Alternative 2: return value is an error code
+
+### Alternative 3: return value is a pointer to a larger struct
 
 ### Comparison
 
@@ -101,32 +129,3 @@ pub fn set_storage(
 
 pub fn gas_price() -> u64;
 ```
-
-### Proposed Solution
-
-#### Alternative 1: Primary
-
-- Remove the saving of smart contract return values.
-    1. Remove `ExecutionResult` storage item (with its data deletion using a migration).
-    1. Update `execute` extrinsic removing `ExecutionResult` usage.
-    1. Update affected smart contract examples.
-- Reserve the return value for future use, such as acting as a "pointer" to a composite return type (e.g., `SomeVec<AccountId>`).
-- Allow execution of read-only functions without requiring a transaction.
-    1. Implement dry run functionality in form of the runtime API.
-    1. Add minimal support for getters in form of a macros for restricting mutating host functions usage in the smart contract function body.
-
-**Pros:**
-
-- Prevents unnecessary on-chain storage growth and unifies smart contract data writing (writes are defined within the contract body).
-- Defers the decision on how to utilize return values until it is actually needed.
-- Enables getter functions similar to those in Polkadot SDK's `pallet-contracts` and ink!, allowing dApp developers to define state-reading logic within the contract itself (so UIs are not limited to raw state keys).
-
-#### Implementation Notes
-
-- Live networks, such as the QF Network Testnet, may require a migration to remove the `ExecutionResult` storage item.
-- Existing examples will need to be updated to remove reliance on return value storage.
-- Supporting read-only function dispatch without a transaction will require significant changes across multiple layers and may necessitate additional architectural decisions.
-
-### Alternative 2: return value is an error code
-
-### Alternative 3: return value is a pointer to a larger struct
