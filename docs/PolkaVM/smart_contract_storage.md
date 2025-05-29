@@ -79,7 +79,7 @@ Where:
 
 #### Option #1: For list storated data of the currenct smart contract. All returned values are non-mutable.
 
-#### Option #2: For list storated data of the currenct smart contract of current caller. All returned values are non-mutable.
+#### Option #2: For list storated data of the currenct smart contract of the current caller. All returned values are non-mutable.
 
 ```
 storage.list(limit, offset) :: storage.list(Option<u16>, Option<u16>) -> Vec<(Vec<u8>, Vec<u8>)>
