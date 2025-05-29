@@ -110,7 +110,7 @@ upload_code(account, contract_code) ->
             allows to get all uploaded `contract_code` by `account`.
 ```
 References: [uploading of the contract](https://docs.rs/pallet-contracts/latest/src/pallet_contracts/lib.rs.html#860), [call of the contract](https://docs.rs/pallet-contracts/latest/src/pallet_contracts/lib.rs.html#954)
-- Extend account's contract storege slots limit to theoretical maximum
+- Extend account's contract storage slots limit to theoretical maximum
 
 ### Next steps:
 - ADRs describes managment functions for account's contract storage, ex:
