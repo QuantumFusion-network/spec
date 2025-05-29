@@ -55,7 +55,7 @@ ExecutionResult::<T>::insert(
     1. Update `execute` extrinsic removing `ExecutionResult` usage.
     1. Update affected smart contract examples.
 - Reserve the return value for future use (see Alternative 2, Alternative 3).
-- Consider read-only functions invocation without a transaction (through the "dry run") separately.
+- Consider read-only functions invocation without a transaction (through the "dry run"[^1]) separately.
     1. Blockchain data, thus the contract state, is available for UIs over RPC. Keys are known in advance as well as the value decoding algorithm.
     1. Currently all smart contracts state is written to the pallet storage item and can be easily retrieved over the Polkadot/Substrate Portal RPC without an additional UI. See https://youtu.be/Xs_uBU86XIE?si=MvOd0-qqw13-nSkL.
 
@@ -129,3 +129,5 @@ pub fn set_storage(
 
 pub fn gas_price() -> u64;
 ```
+
+[^1]: See https://use.ink/docs/v5/getting-started/calling-your-contract/#dry-run-via-rpc.
