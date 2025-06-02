@@ -1,4 +1,33 @@
-# Smart Contract Return Value
+# ADR: Smart Contract Return Value
+
+## Date
+
+2025-05-02
+Last status update: 2025-05-02
+
+## Status
+
+- [ ] Proposed
+- [x] Accepted
+- [ ] Rejected
+- [ ] Deprecated
+- [ ] Superseded by ADR #X
+
+### Implementation Status
+
+- [x] Planned
+- [ ] In Development
+- [ ] Implemented
+- [ ] Verified
+- [ ] Discontinued
+
+## People
+
+- **Decision-makers**: KP
+- **Consulted**: @dedok, @andor0
+- **Informed**:
+  - [x] @rnbta
+  - [x] @zotho
 
 ## Context
 
