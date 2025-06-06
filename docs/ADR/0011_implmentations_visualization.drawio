@@ -1,0 +1,234 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/26.2.15 Chrome/134.0.6998.205 Electron/35.2.1 Safari/537.36" version="26.2.15" pages="3">
+  <diagram name="I1" id="1V84IKj4cAygSRz5fwjd">
+    <mxGraphModel dx="885" dy="676" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="Rlj-HJBOZ1Pucc56wmNp-1" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;Implementation #1&lt;/h1&gt;" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="40" y="40" width="760" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="Rlj-HJBOZ1Pucc56wmNp-2" value="RPC Node or Full Node" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;" vertex="1" parent="1">
+          <mxGeometry x="520" y="320" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Rlj-HJBOZ1Pucc56wmNp-3" value="Validator Node" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;" vertex="1" parent="1">
+          <mxGeometry x="520" y="400" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Rlj-HJBOZ1Pucc56wmNp-5" value="RPC interface" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;rotation=-90;" vertex="1" parent="1">
+          <mxGeometry x="430" y="360" width="140" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Rlj-HJBOZ1Pucc56wmNp-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;startArrow=classic;startFill=1;" edge="1" parent="1" source="Rlj-HJBOZ1Pucc56wmNp-6" target="Rlj-HJBOZ1Pucc56wmNp-5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Rlj-HJBOZ1Pucc56wmNp-8" value="RPC storage_List(owner)" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="Rlj-HJBOZ1Pucc56wmNp-7">
+          <mxGeometry x="-0.0421" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Rlj-HJBOZ1Pucc56wmNp-6" value="Alice" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" vertex="1" parent="1">
+          <mxGeometry x="250" y="360" width="30" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Rlj-HJBOZ1Pucc56wmNp-10" value="On-Chain Execution" style="swimlane;whiteSpace=wrap;html=1;dashed=1;" vertex="1" parent="1">
+          <mxGeometry x="430" y="260" width="270" height="280" as="geometry" />
+        </mxCell>
+        <mxCell id="Rlj-HJBOZ1Pucc56wmNp-11" value="Off-Chain Execution" style="swimlane;whiteSpace=wrap;html=1;dashed=1;" vertex="1" parent="1">
+          <mxGeometry x="160" y="260" width="270" height="280" as="geometry" />
+        </mxCell>
+        <mxCell id="Rlj-HJBOZ1Pucc56wmNp-13" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;dashed=1;startArrow=oval;startFill=1;endArrow=oval;endFill=1;" edge="1" parent="1" source="Rlj-HJBOZ1Pucc56wmNp-12">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="400" y="410" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="505" y="510" />
+              <mxPoint x="400" y="510" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Rlj-HJBOZ1Pucc56wmNp-12" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;Explanation&amp;nbsp;&lt;/h1&gt;&lt;p&gt;(1) Alice requests all keys, that belongs to owner (which is Alice)&lt;br&gt;(2) RPC call returns all keys&amp;nbsp;&lt;br&gt;(3) Alice can use it for any purposes&lt;/p&gt;" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;fontSize=8;" vertex="1" parent="1">
+          <mxGeometry x="350" y="650" width="310" height="80" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram name="I2" id="nzgVbKwK2QPUCrWiXq4-">
+    <mxGraphModel dx="885" dy="676" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="BlJJScKhA-xKySNnRBy--0" />
+        <mxCell id="BlJJScKhA-xKySNnRBy--1" parent="BlJJScKhA-xKySNnRBy--0" />
+        <mxCell id="BlJJScKhA-xKySNnRBy--2" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;Implementation #2&lt;/h1&gt;" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;" vertex="1" parent="BlJJScKhA-xKySNnRBy--1">
+          <mxGeometry x="40" y="40" width="760" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="ORsdJYvZETdaunFQb_8I-0" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;dashed=1;" edge="1" parent="BlJJScKhA-xKySNnRBy--1" source="BlJJScKhA-xKySNnRBy--3" target="BlJJScKhA-xKySNnRBy--4">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="570" y="600" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ORsdJYvZETdaunFQb_8I-8" value="Syncing ..." style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="ORsdJYvZETdaunFQb_8I-0">
+          <mxGeometry x="-0.5" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="BlJJScKhA-xKySNnRBy--3" value="Full Node" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;" vertex="1" parent="BlJJScKhA-xKySNnRBy--1">
+          <mxGeometry x="520" y="320" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="BlJJScKhA-xKySNnRBy--9" value="On-Chain Execution" style="swimlane;whiteSpace=wrap;html=1;dashed=1;" vertex="1" parent="BlJJScKhA-xKySNnRBy--1">
+          <mxGeometry x="430" y="260" width="270" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="BlJJScKhA-xKySNnRBy--10" value="Off-Chain Execution" style="swimlane;whiteSpace=wrap;html=1;dashed=1;" vertex="1" parent="BlJJScKhA-xKySNnRBy--1">
+          <mxGeometry x="160" y="260" width="270" height="410" as="geometry" />
+        </mxCell>
+        <mxCell id="BlJJScKhA-xKySNnRBy--8" value="Alice" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" vertex="1" parent="BlJJScKhA-xKySNnRBy--10">
+          <mxGeometry x="60" y="60" width="30" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ORsdJYvZETdaunFQb_8I-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;dashed=1;" edge="1" parent="BlJJScKhA-xKySNnRBy--10" source="BlJJScKhA-xKySNnRBy--4" target="ORsdJYvZETdaunFQb_8I-1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ORsdJYvZETdaunFQb_8I-7" value="Tranform &amp;amp; indexing" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="ORsdJYvZETdaunFQb_8I-2">
+          <mxGeometry x="0.0333" y="2" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="BlJJScKhA-xKySNnRBy--4" value="Archive Node" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;" vertex="1" parent="BlJJScKhA-xKySNnRBy--10">
+          <mxGeometry x="70" y="310" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ORsdJYvZETdaunFQb_8I-3" value="Tools interface" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;startArrow=classic;startFill=1;dashed=1;" edge="1" parent="BlJJScKhA-xKySNnRBy--10" source="ORsdJYvZETdaunFQb_8I-1" target="BlJJScKhA-xKySNnRBy--8">
+          <mxGeometry x="0.0059" relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="130" y="90" />
+            </Array>
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ORsdJYvZETdaunFQb_8I-1" value="Alice&#39;s Blockchain ETL tools" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;" vertex="1" parent="BlJJScKhA-xKySNnRBy--10">
+          <mxGeometry x="70" y="190" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="BlJJScKhA-xKySNnRBy--11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;dashed=1;startArrow=oval;startFill=1;endArrow=oval;endFill=1;" edge="1" parent="BlJJScKhA-xKySNnRBy--1" source="BlJJScKhA-xKySNnRBy--12">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="400" y="410" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="505" y="510" />
+              <mxPoint x="400" y="510" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="BlJJScKhA-xKySNnRBy--12" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;Explanation&amp;nbsp;&lt;/h1&gt;&lt;p&gt;(1) Alice or ? has installed Archive Node and Blockchain ETL tools (e.g. squid)&lt;br&gt;(2) Archive node always connected to FullNode for syncing the state&lt;br&gt;(3) Alice uses ETL tools interface for getting information about stored items&amp;nbsp;&lt;/p&gt;" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;fontSize=8;" vertex="1" parent="BlJJScKhA-xKySNnRBy--1">
+          <mxGeometry x="380" y="800" width="310" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="ORsdJYvZETdaunFQb_8I-6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;dashed=1;startArrow=oval;startFill=1;endArrow=oval;endFill=1;" edge="1" parent="BlJJScKhA-xKySNnRBy--1" source="ORsdJYvZETdaunFQb_8I-5" target="BlJJScKhA-xKySNnRBy--4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ORsdJYvZETdaunFQb_8I-5" value="Alice&#39;s or other Archive Node&amp;nbsp;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="BlJJScKhA-xKySNnRBy--1">
+          <mxGeometry x="130" y="740" width="90" height="60" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram name="l3" id="jIwhLldPRf3YBttRUHTI">
+    <mxGraphModel dx="1357" dy="1036" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="vFjUTCb2EibgEmQaoIYe-0" />
+        <mxCell id="vFjUTCb2EibgEmQaoIYe-1" parent="vFjUTCb2EibgEmQaoIYe-0" />
+        <mxCell id="vFjUTCb2EibgEmQaoIYe-2" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;Implementation #3&lt;/h1&gt;" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;" vertex="1" parent="vFjUTCb2EibgEmQaoIYe-1">
+          <mxGeometry x="40" y="40" width="760" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="vFjUTCb2EibgEmQaoIYe-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;dashed=1;" edge="1" parent="vFjUTCb2EibgEmQaoIYe-1" source="vFjUTCb2EibgEmQaoIYe-5" target="hoFb15si7bl_A9FKcZH5-4">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="350" y="600" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="720" y="350" />
+              <mxPoint x="720" y="510" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="vFjUTCb2EibgEmQaoIYe-4" value="Syncing ..." style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="vFjUTCb2EibgEmQaoIYe-3">
+          <mxGeometry x="-0.5" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="vFjUTCb2EibgEmQaoIYe-5" value="Full Node" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;" vertex="1" parent="vFjUTCb2EibgEmQaoIYe-1">
+          <mxGeometry x="520" y="320" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="vFjUTCb2EibgEmQaoIYe-6" value="On-Chain Execution" style="swimlane;whiteSpace=wrap;html=1;dashed=1;" vertex="1" parent="vFjUTCb2EibgEmQaoIYe-1">
+          <mxGeometry x="430" y="260" width="270" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="vFjUTCb2EibgEmQaoIYe-7" value="Off-Chain Execution" style="swimlane;whiteSpace=wrap;html=1;dashed=1;" vertex="1" parent="vFjUTCb2EibgEmQaoIYe-1">
+          <mxGeometry x="160" y="260" width="270" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="vFjUTCb2EibgEmQaoIYe-8" value="Alice" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" vertex="1" parent="vFjUTCb2EibgEmQaoIYe-7">
+          <mxGeometry x="60" y="60" width="30" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="hoFb15si7bl_A9FKcZH5-9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;dashed=1;startArrow=oval;startFill=1;endArrow=oval;endFill=1;" edge="1" parent="vFjUTCb2EibgEmQaoIYe-1" source="vFjUTCb2EibgEmQaoIYe-15">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="640" y="740" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="vFjUTCb2EibgEmQaoIYe-15" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;Explanation&amp;nbsp;&lt;/h1&gt;&lt;p&gt;Alice uses QF service for getting stored items via GQL or UI&lt;br&gt;&lt;br&gt;&lt;/p&gt;" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;fontSize=8;" vertex="1" parent="vFjUTCb2EibgEmQaoIYe-1">
+          <mxGeometry x="260" y="910" width="310" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="hoFb15si7bl_A9FKcZH5-0" value="QF Off-Chain Execution" style="swimlane;whiteSpace=wrap;html=1;dashed=1;" vertex="1" parent="vFjUTCb2EibgEmQaoIYe-1">
+          <mxGeometry x="425" y="410" width="270" height="410" as="geometry" />
+        </mxCell>
+        <mxCell id="hoFb15si7bl_A9FKcZH5-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;dashed=1;" edge="1" parent="hoFb15si7bl_A9FKcZH5-0" source="hoFb15si7bl_A9FKcZH5-4" target="hoFb15si7bl_A9FKcZH5-6">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="135" y="160" />
+              <mxPoint x="220" y="160" />
+              <mxPoint x="220" y="270" />
+              <mxPoint x="110" y="270" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="hoFb15si7bl_A9FKcZH5-3" value="Tranform &amp;amp; indexing" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="hoFb15si7bl_A9FKcZH5-2">
+          <mxGeometry x="0.0333" y="2" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="hoFb15si7bl_A9FKcZH5-4" value="Archive Node" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;" vertex="1" parent="hoFb15si7bl_A9FKcZH5-0">
+          <mxGeometry x="55" y="70" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="hoFb15si7bl_A9FKcZH5-6" value="QF-squid &amp;amp; Hasura Blockchain ETL tools" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;" vertex="1" parent="hoFb15si7bl_A9FKcZH5-0">
+          <mxGeometry x="50" y="175" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="hoFb15si7bl_A9FKcZH5-7" value="Web UI" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;" vertex="1" parent="hoFb15si7bl_A9FKcZH5-0">
+          <mxGeometry x="50" y="290" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="hoFb15si7bl_A9FKcZH5-10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.4;entryDx=0;entryDy=0;entryPerimeter=0;startArrow=classic;startFill=1;dashed=1;" edge="1" parent="hoFb15si7bl_A9FKcZH5-0" source="hoFb15si7bl_A9FKcZH5-7" target="hoFb15si7bl_A9FKcZH5-6">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="30" y="320" />
+              <mxPoint x="30" y="199" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="hoFb15si7bl_A9FKcZH5-11" value="GQL API" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="hoFb15si7bl_A9FKcZH5-10">
+          <mxGeometry x="-0.1553" y="-1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="vFjUTCb2EibgEmQaoIYe-12" value="UI interaction or GQL Interaction" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;startArrow=classic;startFill=1;dashed=1;" edge="1" parent="vFjUTCb2EibgEmQaoIYe-1" source="hoFb15si7bl_A9FKcZH5-7" target="vFjUTCb2EibgEmQaoIYe-8">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="300" y="560" as="sourcePoint" />
+            <Array as="points">
+              <mxPoint x="535" y="790" />
+              <mxPoint x="290" y="790" />
+              <mxPoint x="290" y="350" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="hoFb15si7bl_A9FKcZH5-12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.75;entryDx=0;entryDy=0;dashed=1;startArrow=classic;startFill=1;" edge="1" parent="vFjUTCb2EibgEmQaoIYe-1" source="vFjUTCb2EibgEmQaoIYe-8" target="hoFb15si7bl_A9FKcZH5-6">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="290" y="350" />
+              <mxPoint x="290" y="720" />
+              <mxPoint x="400" y="720" />
+              <mxPoint x="400" y="630" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="hoFb15si7bl_A9FKcZH5-8" value="CloudFlare" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;" vertex="1" parent="vFjUTCb2EibgEmQaoIYe-1">
+          <mxGeometry x="230" y="560" width="120" height="60" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
