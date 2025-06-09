@@ -1,6 +1,6 @@
 # ADR Template
 
-## Title: [Descriptive title of the architectural decision]
+## Title: Deposit system for the on chain storage & list, purge possible implmentation
 
 ## Date
 2025-06-05
