@@ -4,7 +4,7 @@
 
 ## Date
 2025-06-05
-Last status update: 2025-06-05
+Last status update: 2025-09-05
 
 ## Status
 - [X] Proposed
@@ -21,28 +21,33 @@ Last status update: 2025-06-05
 - [ ] Discontinued
 
 ## People
-- **Decision-makers**: [List of people who made the decision]
-- **ПConsulted**: [List of subject matter experts consulted]
-- **Informed**: 
-  - [ ] [Person 1] 
-  - [ ] [Person 2]
-  - [ ] [Person 3]
+- **Decision-makers**: Vas, Alisher, Andrew
+- **Consulted**: KP
+- **Informed**:
+  - [1] Svyat
+  - [2] Max
 
 ## Context
 
-### Question 1:
-Fee logic for the storaging items, and runing operations on top of it, moving forward the PolkaDot logic respects an idea that everething is going to be fee'ed and every stored item should be deposited, see more at [2] and [3].
+The ADR try to answer on two questions. Please see secgions `Question 1` and `Question 2`.
 
-Case to explain logic: Alice stores two contracts and two random value, means Alice would have
-deposite'd tokens for storing these data [4], and also fee would be run over
-transaction [2].
+### Question 1:
+How the fee logic for the storing on chain items, and running operations on top of it?
+Answer on this: the PolkaDot logic respects an idea that everething is going to be fee'ed and every stored item should be deposited, see more at [2] and [3]. For instance:
+```
+Alice stores two contracts and two random value, means Alice has been deposite'd  for storing these data [4], and also fee would be run over transaction [2]. For return token back Alice have to remove stored contracts and random values.
+```
+
+This logic allows to protect the system from the case 'store everething and forever w/o any regulation and pinalties', ex: Eth. stores everething and forever that a huge issue of Eth, since storage size is growing forever and _NOT_ regulated.
+
+Based on this QF should have `deposit system` for storing _ANY_ data on chain.
 
 #### Proposed deposit system changes
-For deposit system suggested to copy-past (but with tuned runtime config[5]) and
+For the base of deposit system I suggested to copy-past (but with tuned runtime config[5]) and
 new benchmarks original polkadot's logic, else we would meet with issue that Alise could store
-any number of data unless she has token for the fee.
+any number of data unless she has token for the *fee.
 
-Fee не будет рассмотрено -- это отдельная сущьность. И будет рассмотрено в будущем.
+*The fee is not an object for this ADR, so it would be in the further ADRs that.
 
 ### Question 2:
 We declared in [1] a methods `list()` and `purge()`, the first one allows to
@@ -114,34 +119,19 @@ be: O(n). With `purge` would be O(1) for the Alice.
 
 ## Decision
 ### Question 1:
+Copy existed PolkaDot deposit system for any type of storing items, and prepare ADR for understanding the `depositing` logic for QFNetwork.
 
 ### Question 2:
 #### For the listing of the keys:
 - Suggest to introduce #1 and #3
-- Key motivation: both are the most user and developer frendly solutions.
-- Key technical detail could be found in the [document]()
+- Motivation: both are the most user and developer frendly solutions.
+
 #### For the purge of the keys and its values:
 - Suggest to introduce it, since it's much frendly for cleaning the owner's storage on chain.
 
 ### Alternatives Considered
 ### For the listing of the data:
 - Suggest to users and developers use #3 (but w/o UI) and #5.
-
-**Detailed Analysis Approach**:
-For a more thorough analysis, consider this structure for each alternative:
-
-#### Alternative 1: [Name/Title]
-**Description**: [Explanation of the approach]
-
-**Pros**:
-- [Advantage 1]
-- [Advantage 2]
-
-**Cons**:
-- [Disadvantage 1]
-- [Disadvantage 2]
-
-**Why Not Selected**: [Reasons for rejection]
 
 ## References
 - [1] [Contract storage](docs/PolkaVM/smart_contract_storage.md)
