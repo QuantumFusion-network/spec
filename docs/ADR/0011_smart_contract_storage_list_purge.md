@@ -50,21 +50,19 @@ any number of data unless she has token for the *fee.
 *The fee is not an object for this ADR, so it would be in the further ADRs that.
 
 ### Question 2:
-We declared in [1] a methods `list()` and `purge()`, the first one allows to
+We declared in [1] methods `list()` and `purge()`, the first one allows to
 list() stored keys releated to owner of the data, the second one allows to
 delete everething that stored by owner of the data.
 
-Both methods are not typical for the blockchains. This ADR tries to find a user
-cases there these methods could be helpful.
+Both methods are not typical for the blockchains. This ADR tries to find and describe user cases for both.
 
 #### Basic scenario for the list (AKA lising of the keys)
-Getting all keys of stored onchain values via RPC call.
+Getting all stored on chain values keys via RPC call and inside the contract via SDK (SDL's `list` is optional, could be implemented just because it's easy-to-be-done).
 
-The key scenario: Alice has 10 tokens, she spent 9 token for storing 5 values and she does not know these keys; she migth run one of implementations for getting all keys for 0.1 token. Using these keys Alice can remove a _few_ or all values from the storage.
-If we have easy-to-use `lising of the keys` then Alice could solve the task _flawless_ and with less _fees_.
+_The scenario_: Alice has 10 tokens, she spent 9 token for storing 5 values and she does not know keys. She migth run one of implementations (via RPS or SDK) for getting all keys for 0.1 token. Using output of `list` Alice can remove a _few_ or all values from the storage and return back deposited tokens. If QF has easy-to-use `lising of the keys` then Alice could solve the task _flawless_, else see `possible implmentations`.
 
-##### Possible implmentation #1
-Alice can use `list()` for N token for getting all keys implmented by QF team.
+##### Possible implmentation #1: RPC list
+Alice can use `list()` for getting all keys via single RPC call.
 ###### Pros:
 - Easy to implement and could be effective to use (no extra load, like sync of blocks, for RPC nodes
 and for user).
@@ -72,21 +70,20 @@ and for user).
 - Does not required any other subsystem.
 - UI ready solution
 ###### Cons:
-- Not a free-to-use for a user, it requires fee to be run. Alisher consern: extr vs just RPC call?
-  Desidion: Need Arch
 - Require to be supported by DevTeam.
 
-#### Possible implmentation #2
-Alice can run archive node and connect it to one or RPC nodes to collect all
-blocks and analise own transactions using squid, etc.
-##### Pros:
-- Does not required to implement by DevTeam since it's buitin feature.
-##### Cons:
-- Not a user frendly. User should be very expirienc'ed.
-- Extra load for RPC nodes.
-- Not a UI ready solution.
+#### Possible implmentation #2: self hosted archive node or Alice saves reminders somehow
+Alice can install (or have installed) archive node and connect it to one or QF Full Node to collect all blocks. The sync is finished Alice can traverse over self hosted arhive node directly or via ETL tooling (like squid).
 
-#### Possible implmentation #3
+Or/And Alice can save keys inside the notes or/and inside the contract code, etc. So she is storing it somehow off chain.
+
+##### Pros:
+- Does not required to implement anything by DevTeam - it's buitin feature of Substrate.
+##### Cons:
+- Not a user frendly. Alice have to be very experienced.
+- Extra load for QF nodes.
+
+#### Possible implmentation #3: QF hosted service
 Alice can use UI on top of QFNetwork's qf-squid and its GQL API for searching keys in the block history.
 Also QF can introduce UI for simplification of the search of such data.
 ##### Pros:
@@ -98,22 +95,14 @@ Also QF can introduce UI for simplification of the search of such data.
 
 TODO: Alisher add class of the programs + cases
 
-#### Possible implmentation #4
-Alice can save keys inside the notes or/and inside the contract code, etc. So
-store it localy somehow.
-##### Pros:
-- Does not required anything from DevTeam.
-##### Cons:
-- The most not user frendly solution.
-
-#### Possible implmentation #5
+#### Possible implmentation #4: mix
 All of these implmentation could be exist.
 Pros & Cons it's a combination.
 
 #### Basic scenario for the purge()
 Delete all items that releated to the owner via RPC call.
 
-The key scenario: Alice wishes to clean up the mess w/o extra `remove` calls,
+_The key scenario_: Alice wishes to clean up the mess w/o extra `remove` calls,
 since remove much expensive operation. I.e. remove complexity via RPC would
 be: O(n). With `purge` would be O(1) for the Alice.
 
