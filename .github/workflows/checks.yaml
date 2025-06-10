@@ -1,0 +1,25 @@
+name: Checks
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    types: [opened, synchronize, reopened]
+  workflow_dispatch:
+
+jobs:
+  check-markdown:
+    name: Check Markdown
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # Update files to resolve fixable issues:
+      # `markdownlint-cli2 "**/*.md" --fix`.
+      - name: Check Markdown
+        uses: DavidAnson/markdownlint-cli2-action@v19
+        with:
+          globs: '**/*.md'
