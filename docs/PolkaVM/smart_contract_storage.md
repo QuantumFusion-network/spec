@@ -58,20 +58,33 @@ Where:
 
 For purge all caller's storated data in one call.
 ```
-storage.purge() = K -> any_of(true or false)
+storage.purge() = K -> any_of(u32)
 Where:
-- returns true, if value is stored, false if not.
+- returns number of deleted items
 ```
 ### Count elements
 For get number of storated values (i.e. value is a tuple, values are tuples).
 ```
-storage.count() = K -> any_of(u16)
+storage.count() = K -> any_of(u32)
 Where:
-- returns number of stored tuples, 0 if no data stored.
+- returns number of stored items, 0 if no data stored.
 ```
 
 ### List
 For list all caller's storated data. All returned values are non-mutable.
+
+#### Case description
+
+Let's say `ALICE` has two contracts with addresses `A1` and `A2`, and
+contract `A1` stored inside storage tuples: tuple(K11, V11) and tuple(K12, V12),
+and contract `A2` stored inside storage tuple: tuple(K22, V22).
+Hence: if ALICE runs `list()` inside `A1`, then `list()` returns [K11, K12] array of
+tuples.
+
+Let's say `BOB` does not have stored contracts, and if `BOB` runs `ALICE`'s `A1` contract, then `BOB` retrives the same data as `ALICE` does, i.e. `list()` returns [K11, K12] array of tuples.
+
+The `ALICE`'s `A2` contract has the same properties as `A1` contract.
+
 ```
 storage.list([limit, offset]) = K -> any_of([tuples])
 Where:
