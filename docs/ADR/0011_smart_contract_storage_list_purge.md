@@ -61,8 +61,11 @@ Getting all stored on chain values keys via RPC call and inside the contract via
 
 _The scenario_: Alice has 10 tokens, she spent 9 token for storing 5 values and she does not know keys. She migth run one of implementations (via RPS or SDK) for getting all keys for 0.1 token. Using output of `list` Alice can remove a _few_ or all values from the storage and return back deposited tokens. If QF has easy-to-use `lising of the keys` then Alice could solve the task _flawless_, else see `possible implmentations`.
 
-##### Possible implmentation #1: RPC list
+##### Possible implmentation #1: RPC's list
 Alice can use `list()` for getting all keys via single RPC call.
+
+The scenario and the concept of architecture could be found at [page I1](docs/ADR/0011_implmentations_visualization.drawio).
+
 ###### Pros:
 - Easy to implement and could be effective to use (no extra load, like sync of blocks, for RPC nodes
 and for user).
@@ -77,6 +80,8 @@ Alice can install (or have installed) archive node and connect it to one or QF F
 
 Or/And Alice can save keys inside the notes or/and inside the contract code, etc. So she is storing it somehow off chain.
 
+The scenario and the concept of architecture could be found at [page I2](docs/ADR/0011_implmentations_visualization.drawio).
+
 ##### Pros:
 - Does not required to implement anything by DevTeam - it's buitin feature of Substrate.
 ##### Cons:
@@ -86,6 +91,9 @@ Or/And Alice can save keys inside the notes or/and inside the contract code, etc
 #### Possible implmentation #3: QF hosted service
 Alice can use UI on top of QFNetwork's qf-squid and its GQL API for searching keys in the block history.
 Also QF can introduce UI for simplification of the search of such data.
+
+The scenario and the concept of architecture could be found at [page I3](docs/ADR/0011_implmentations_visualization.drawio).
+
 ##### Pros:
 - UI easy to implement by our DevTeam.
 - Very user frendly solution.
@@ -128,3 +136,5 @@ Copy existed PolkaDot deposit system for any type of storing items, and prepare 
 - [3] [Example of optimising of storage deposit](https://github.com/paritytech/polkadot-sdk/issues/5012)
 - [4] [FRAME references for revive](https://github.com/paritytech/polkadot-sdk/blob/master/substrate/frame/revive/src/storage.rs)
 - [5] [For pallets](https://docs.polkadot.com/polkadot-protocol/basics/blocks-transactions-fees/fees/), [Base runtime formula](https://docs.polkadot.com/polkadot-protocol/basics/blocks-transactions-fees/fees/#how-fees-are-calculated), [Auto generated weights](https://github.com/paritytech/substrate/blob/master/frame/examples/basic/src/weights.rs#L18)
+- [6] [The scenario and the concept of architecture](docs/ADR/0011_implmentations_visualization.drawio)]
+
