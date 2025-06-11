@@ -69,6 +69,7 @@ storage.count() = K -> any_of(u16)
 Where:
 - returns number of stored tuples, 0 if no data stored.
 ```
+Please find more information in the [ADR](docs/ADR/0011_smart_contract_storage_list_purge.md).
 
 ### List
 For list all caller's storated data. All returned values are non-mutable.
@@ -79,4 +80,7 @@ Where:
 - offset shift from begining of storated tuples
 - returns array of storate tuples, array could be empty, if no data storated.
 ```
+Please find more information in the [ADR](docs/ADR/0011_smart_contract_storage_list_purge.md).
 
+### Refs:
+[1] [Releated ADR](docs/ADR/0011_smart_contract_storage_list_purge.md)
