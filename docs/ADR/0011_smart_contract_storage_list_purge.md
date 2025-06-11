@@ -61,6 +61,9 @@ Getting all stored on chain values keys via RPC call and inside the contract via
 
 _The scenario_: Alice has 10 tokens, she spent 9 token for storing 5 values and she does not know keys. She migth run one of implementations (via RPS or SDK) for getting all keys for 0.1 token. Using output of `list` Alice can remove a _few_ or all values from the storage and return back deposited tokens. If QF has easy-to-use `lising of the keys` then Alice could solve the task _flawless_, else see `possible implmentations`.
 
+For getting more details please find [List | User case](docs/ADR/0011_implmentations_visualization.drawio) that shows search cases.
+
+
 ##### Possible implmentation #1: RPC's list
 Alice can use `list()` for getting all keys via single RPC call.
 
