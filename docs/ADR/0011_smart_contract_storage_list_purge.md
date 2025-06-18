@@ -1,6 +1,6 @@
 # ADR Template
 
-## Title: Deposit system for the on chain storage & list, purge possible implmentation
+## Title: Deposit system for the on chain storage & list, purge possible implementation
 
 ## Date
 2025-06-05
