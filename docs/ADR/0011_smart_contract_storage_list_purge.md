@@ -24,8 +24,8 @@ Last status update: 2025-09-05
 - **Decision-makers**: Vas, Alisher, Andrew
 - **Consulted**: KP
 - **Informed**:
-  - [1] Svyat
-  - [2] Max
+  - Sviat
+  - Max
 
 ## Context
 
