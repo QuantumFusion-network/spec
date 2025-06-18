@@ -29,7 +29,7 @@ Last status update: 2025-09-05
 
 ## Context
 
-The ADR try to answer on two questions. Please see secgions `Question 1` and `Question 2`.
+The ADR tries to answer on two questions. Please see sections `Question 1` and `Question 2`.
 
 ### Question 1:
 How the fee logic for the storing on chain items, and running operations on top of it?
