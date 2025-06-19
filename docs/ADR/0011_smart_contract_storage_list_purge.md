@@ -35,7 +35,7 @@ The ADR tries to answer on two questions. Please see sections `Question 1` and `
 How the fee logic for the storing on chain items, and running operations on top of it?
 Answer on this: the Polkadot logic respects an idea that everything is going to be fee'd and every stored item should be deposited, see more at [2] and [3]. For instance:
 - Alice stores two contracts and two random value.
-- Means Alice has been spent (freezed) tokens, i.e. deposite, for storing these data [4][2].
+- Means Alice has been spent (frozen) tokens, i.e. made deposit, for storing this data [4][2].
 - To return deposit'ed tokens back: Alice would have to removed stored contracts and random values.
 
 This logic allows to protect the system from the case 'store everething and forever w/o any regulation and pinalties', ex: Eth. stores everething and forever that a huge issue of Eth, since storage size is growing forever and _NOT_ regulated.
