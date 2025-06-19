@@ -38,7 +38,7 @@ Answer on this: the Polkadot logic respects an idea that everything is going to 
 - Means Alice has been spent (frozen) tokens, i.e. made deposit, for storing this data [4][2].
 - To return deposit'ed tokens back: Alice would have to removed stored contracts and random values.
 
-This logic allows to protect the system from the case 'store everething and forever w/o any regulation and pinalties', ex: Eth. stores everething and forever that a huge issue of Eth, since storage size is growing forever and _NOT_ regulated.
+This logic allows to protect the system from the case 'store everything and forever w/o any regulation and penalties', ex: Ethereum. stores everything and forever that a huge issue of Ethereum, since storage size is growing forever and _NOT_ regulated.
 
 Based on this QF should have `deposit system` for storing _ANY_ data on chain.
 
