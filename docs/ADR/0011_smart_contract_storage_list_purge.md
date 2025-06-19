@@ -47,7 +47,7 @@ For the base of deposit system I suggested to copy-and-paste (but with tuned run
 new benchmarks original polkadot's logic, else we would meet with issue that Alise could store
 any number of data unless she has token for the *fee.
 
-*The fee is not an object for this ADR, so it would be in the further ADRs that.
+*The fee is not an object for this ADR, so it would be in the further ADRs.
 
 ### Question 2:
 We declared in [1] methods `list()` and `purge()`, the first one allows to
