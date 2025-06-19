@@ -44,7 +44,7 @@ Based on this QF should have `deposit system` for storing _ANY_ data on chain.
 
 #### Proposed deposit system changes
 For the base of deposit system I suggested to copy-and-paste (but with tuned runtime config[5]) and
-new benchmarks original polkadot's logic, else we would meet with issue that Alise could store
+new benchmarks original Polkadot logic, else we would meet with issue that Alice could store
 any number of data unless she has token for the *fee.
 
 *The fee is not an object for this ADR, so it would be in the further ADRs.
