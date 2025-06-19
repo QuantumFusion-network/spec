@@ -134,10 +134,10 @@ Copy existed Polkadot deposit system for any type of storing items, and prepare 
 - Suggest to users and developers use #3 (but w/o UI) and #5.
 
 ## References
-- [1] [Contract storage](docs/PolkaVM/smart_contract_storage.md)
-- [2] [Fees](https://docs.polkadot.com/polkadot-protocol/basics/blocks-transactions-fees/fees/), [R/W operations fees](https://docs.polkadot.com/polkadot-protocol/basics/blocks-transactions-fees/fees/#weights-and-database-readwrite-operations), [W3 research respected by PolkaDot](https://research.web3.foundation/Polkadot/overview/token-economics#relay-chain-transaction-fees-and-per-block-transaction-limits)
-- [3] [Example of optimising of storage deposit](https://github.com/paritytech/polkadot-sdk/issues/5012)
-- [4] [FRAME references for revive](https://github.com/paritytech/polkadot-sdk/blob/master/substrate/frame/revive/src/storage.rs)
-- [5] [For pallets](https://docs.polkadot.com/polkadot-protocol/basics/blocks-transactions-fees/fees/), [Base runtime formula](https://docs.polkadot.com/polkadot-protocol/basics/blocks-transactions-fees/fees/#how-fees-are-calculated), [Auto generated weights](https://github.com/paritytech/substrate/blob/master/frame/examples/basic/src/weights.rs#L18)
-- [6] [The scenario and the concept of architecture](docs/ADR/0011_implmentations_visualization.drawio)]
+[^1] [Contract storage](docs/PolkaVM/smart_contract_storage.md)
+[^2] [Fees](https://docs.polkadot.com/polkadot-protocol/basics/blocks-transactions-fees/fees/), [R/W operations fees](https://docs.polkadot.com/polkadot-protocol/basics/blocks-transactions-fees/fees/#weights-and-database-readwrite-operations), [W3 research respected by PolkaDot](https://research.web3.foundation/Polkadot/overview/token-economics#relay-chain-transaction-fees-and-per-block-transaction-limits)
+[^3] [Example of optimising of storage deposit](https://github.com/paritytech/polkadot-sdk/issues/5012)
+[^4] [FRAME references for revive](https://github.com/paritytech/polkadot-sdk/blob/master/substrate/frame/revive/src/storage.rs)
+[^5] [For pallets](https://docs.polkadot.com/polkadot-protocol/basics/blocks-transactions-fees/fees/), [Base runtime formula](https://docs.polkadot.com/polkadot-protocol/basics/blocks-transactions-fees/fees/#how-fees-are-calculated), [Auto generated weights](https://github.com/paritytech/substrate/blob/master/frame/examples/basic/src/weights.rs#L18)
+[^6] [The scenario and the concept of architecture](docs/ADR/0011_implmentations_visualization.drawio)]
 
