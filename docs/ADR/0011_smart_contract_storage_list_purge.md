@@ -88,7 +88,7 @@ The scenario and the concept of architecture could be found at [page I2](docs/AD
 ##### Pros:
 - The DevTeam does not need to implement anything - it's a built-in feature of Substrate.
 ##### Cons:
-- Not a user frendly. Alice have to be very experienced.
+- It's not user-friendly. Alice has to be very experienced.
 - Extra load for QF nodes.
 
 #### Possible implmentation #3: QF hosted service
