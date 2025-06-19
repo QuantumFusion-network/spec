@@ -102,7 +102,7 @@ The scenario and the concept of architecture could be found at [page I3](docs/AD
 - Very user-friendly solution.
 ##### Cons:
 - Support of UI.
-- Extra load for qf-squid and hasura GQL.
+- Extra load for qf-squid and Hasura GraphQL.
 
 TODO: Alisher add class of the programs + cases
 
