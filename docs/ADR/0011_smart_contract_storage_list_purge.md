@@ -119,7 +119,7 @@ be: O(n). With `purge` would be O(1) for the Alice.
 
 ## Decision
 ### Question 1:
-Copy existed PolkaDot deposit system for any type of storing items, and prepare ADR for understanding the `depositing` logic for QFNetwork.
+Copy existed Polkadot deposit system for any type of storing items, and prepare ADR for understanding the `depositing` logic for QFNetwork.
 
 ### Question 2:
 #### For the listing of the keys:
