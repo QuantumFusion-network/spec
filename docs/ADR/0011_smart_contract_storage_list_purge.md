@@ -99,7 +99,7 @@ The scenario and the concept of architecture could be found at [page I3](docs/AD
 
 ##### Pros:
 - UI easy to implement by our DevTeam.
-- Very user frendly solution.
+- Very user-friendly solution.
 ##### Cons:
 - Support of UI.
 - Extra load for qf-squid and hasura GQL.
