@@ -92,7 +92,7 @@ The scenario and the concept of architecture could be found at [page I2](docs/AD
 - Extra load for QF nodes.
 
 #### Possible implmentation #3: QF hosted service
-Alice can use UI on top of QFNetwork's qf-squid and its GQL API for searching keys in the block history.
+Alice can use UI on top of QFNetwork's qf-squid and its GraphQL API for searching keys in the block history.
 Also QF can introduce UI for simplification of the search of such data.
 
 The scenario and the concept of architecture could be found at [page I3](docs/ADR/0011_implmentations_visualization.drawio).
