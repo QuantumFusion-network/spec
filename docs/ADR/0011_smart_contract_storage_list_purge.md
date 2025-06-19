@@ -59,7 +59,7 @@ Both methods are not typical for the blockchains. This ADR tries to find and des
 #### Basic scenario for the list (AKA listing of the keys)
 Getting all stored on chain values keys via RPC call and inside the contract via SDK (SDL's `list` is optional, could be implemented just because it's easy-to-be-done).
 
-_The scenario_: Alice has 10 tokens, she spent 9 token for storing 5 values and she does not know keys. She migth run one of implementations (via RPS or SDK) for getting all keys for 0.1 token. Using output of `list` Alice can remove a _few_ or all values from the storage and return back deposited tokens. If QF has easy-to-use `lising of the keys` then Alice could solve the task _flawless_, else see `possible implmentations`.
+_The scenario_: Alice has 10 tokens, she spent 9 tokens for storing 5 values and she does not know keys. She might run one of implementations (via RPC or SDK) for getting all keys for 0.1 token. Using output of `list` Alice can remove a _few_ or all values from the storage and return back deposited tokens. If QF has easy-to-use `listing of the keys` then Alice could solve the task _flawlessly_, else see `possible implementations`.
 
 For getting more details please find [List | User case](docs/ADR/0011_implmentations_visualization.drawio) that shows search cases.
 
