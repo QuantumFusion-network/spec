@@ -43,7 +43,7 @@ This logic allows to protect the system from the case 'store everything and fore
 Based on this QF should have `deposit system` for storing _ANY_ data on chain.
 
 #### Proposed deposit system changes
-For the base of deposit system I suggested to copy-past (but with tuned runtime config[5]) and
+For the base of deposit system I suggested to copy-and-paste (but with tuned runtime config[5]) and
 new benchmarks original polkadot's logic, else we would meet with issue that Alise could store
 any number of data unless she has token for the *fee.
 
