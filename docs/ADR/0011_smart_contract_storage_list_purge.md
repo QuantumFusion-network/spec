@@ -51,8 +51,8 @@ any number of data unless she has token for the *fee.
 
 ### Question 2:
 We declared in [1] methods `list()` and `purge()`, the first one allows to
-list() stored keys releated to owner of the data, the second one allows to
-delete everething that stored by owner of the data.
+list() stored keys related to owner of the data, the second one allows to
+delete everything that's stored by owner of the data.
 
 Both methods are not typical for the blockchains. This ADR tries to find and describe user cases for both.
 
