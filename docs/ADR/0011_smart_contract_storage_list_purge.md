@@ -86,7 +86,7 @@ Or/And Alice can save keys inside the notes or/and inside the contract code, etc
 The scenario and the concept of architecture could be found at [page I2](docs/ADR/0011_implmentations_visualization.drawio).
 
 ##### Pros:
-- Does not required to implement anything by DevTeam - it's buitin feature of Substrate.
+- The DevTeam does not need to implement anything - it's a built-in feature of Substrate.
 ##### Cons:
 - Not a user frendly. Alice have to be very experienced.
 - Extra load for QF nodes.
