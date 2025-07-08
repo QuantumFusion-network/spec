@@ -50,7 +50,7 @@ The template sections can be completed out of order.
 ### Method 1: Sequential Writing Process
 
 #### Step 1: Create ADR and Announce Decision Process
-1. **Create new ADR** from template
+1. **Create new ADR** from [template](./adr-template.md)
 2. **Assign unique ADR_id**
 3. **Set descriptive title** reflecting the decision question
 4. **Set status** to "Proposed"
