@@ -7,14 +7,14 @@ Last status update: YYYY-MM-DD
 
 ## Status
 
-- [ ] Proposed
+- [x] Proposed
 - [ ] Accepted
 - [ ] Deprecated
 - [ ] Superseded
 
 ### Implementation Status
 
-- [ ] Planned
+- [x] Planned
 - [ ] In Development
 - [ ] Implemented
 - [ ] Verified
@@ -26,76 +26,15 @@ Last status update: YYYY-MM-DD
 
 - Alisher Khassanov, [@khssnv](https://github.com/khssnv)
 
-### Consulted (Subject Matter Experts)
+### Consulted
 
-[List of people with relevant expertise who provided advice]
-
-- [Person 1]
-- [Person 2]
-- [Person 3]
-
-### Informed (Affected Parties)
-
-[People/teams affected by this decision who should be aware]
-
-- [ ] [Person 1]
-- [ ] [Person 2]
-- [ ] [Person 3]
-
-*Note: People listed in "Informed" should submit a PR to check their name after reading this ADR. This can be done during the initial review process of the ADR upload/commit PR (when the file is first uploaded to GitHub and the author requests reviews), or in a separate PR after the ADR is merged.*
+### Informed
 
 ## Decision
 
-[Briefly describe the decision made in "We will..." format. This section should be concise - it's a declaration of intent for implementers. Detailed reasoning belongs in other sections.]
-
-## Context
-
-[Describe the situation that calls for a decision. Focus on forces, constraints, and circumstances that led to needing this decision. Answer "What is the problem?" not "What's the solution?" Include:
-
-- Technical, business, and organizational context
-- Applicable requirements (functional and cross-functional)
-- Current state and why change is needed
-- Key stakeholders and their concerns]
-
-### Decision Criteria (Optional)
-
-[Explicit criteria for evaluating options, such as:
-
-- Performance requirements
-- Cost constraints
-- Security requirements
-- Maintainability needs
-- Time-to-market considerations]
-
-## Problem (Optional)
-
-[Clearly state the problem being addressed. What issue or opportunity requires this architectural decision?]
-
-## Decision in Details (Optional)
-
-[Describe in details the decision made, including:
-
-- Key technical details
-- Implementation approach
-- Timeline considerations
-- Who is responsible for implementation]
-
-### Decision Drivers (Optional)
-
-- [Driver 1: Key force or requirement influencing the decision]
-- [Driver 2: Another key consideration]
-- [...]
+We will create a set of initial precompiles for the smart contracts platform.
 
 ## Options
-
-[Briefly list the considered options. Each option is numbered for easy reference, with the selected option marked clearly as `(SELECTED)`. Aim for 3-5 options minimum. Always include at least "do nothing" option. A detailed description of each option can be written in the Consequences section below.]
-
-1. (SELECTED) [Name of selected option]
-2. [Name of alternative option]
-3. [Name of alternative option]
-4. [Do nothing / Status quo option]
-
-## Consequences (Optional)
 
 ### Option 1: [Name of option] (SELECTED)
 
@@ -121,38 +60,34 @@ Last status update: YYYY-MM-DD
 **Failure Recovery:**
 [How will we recover if this option fails?]
 
-### Option 2: [Name of alternative option]
+### Option 2: Expose governance functionality to smart contracts
 
-[Brief description of this option.]
+See <https://github.com/paritytech/polkadot-sdk/issues/8366>.
 
 **Rejected because:**
 
-- [Critical drawback 1 - reason for rejection]
-- [Critical drawback 2 - reason for rejection]
+- Implementation already taken by Polkadot Technical Fellowship member.
 
 **Rejected despite:**
 
 - [Potential benefit 1 we're giving up]
 - [Potential benefit 2 we're giving up]
 
-*(Repeat for additional options if applicable)*
+### Option 3: ERC721, ERC1155 for `pallet-nfts`
 
-## Implementation Notes (Optional)
+**Rejected because:**
 
-[Any specific guidance for implementing this decision, including:
+- Not related to QF Network priorities.
 
-- Required dependencies
-- Migration steps
-- Testing considerations
-- Failure Recovery / Rollback procedures]
+### Option 4: Utility pallets interface
 
-## Confirmation (Optional)
+- `pallet-scheduler` for scheduling runtime calls to occur at a specified block number or at a specified period.
+- `pallet-multisig` to access existing multisig functionality from a smart contract.
+- `pallet-indices` for smart contracts to be able to use short form address.
 
-[Describe how the implementation of this decision will be verified. Include:
+### Option 5: XCM precompile
 
-- Acceptance criteria
-- Testing approach
-- Automated verification methods]
+- Proxy to Ethereum smart contracts. Data availability restrictions.
 
 ## Advice (Optional)
 
@@ -161,29 +96,12 @@ Last status update: YYYY-MM-DD
 - [Advice given] ([Advice-giver's name, role], YYYY-MM-DD)
 - [Advice given] ([Advice-giver's name, role], YYYY-MM-DD)
 
-## Glossary (Optional)
+## Glossary
 
-- **[Term]**: [Definition]
+- **Precompile**: runtime function available to smart contracts via a cross-contract call.
 
 ## References
 
-- [Related documents, links, and research materials]
-- [Previous ADRs that influence this decision]
-- [External resources that informed this decision]
-- [Requirements or standards]
-
-## ADR Relationships
-
-[Fill in the section if applicable or leave blank for further filling.]
-
-### Supersedes
-
-- ADR #[X]: [Brief description of superseded decision]
-
-### Superseded By
-
-- ADR #[X]: [Brief description of superseding decision]
-
-### Related ADRs
-
-- ADR #[X]: [Brief description of relationship]
+- Revive project review, <https://coda.io/d/_df6rzXCWZj8/Revive-project-review_suwtiLjr>.
+- How precompiles work, <https://coda.io/d/QF-Network_df6rzXCWZj8/How-precompiles-work_supZxHtN>.
+- Governance for modifying precompiles set, <https://coda.io/d/_df6rzXCWZj8/Governance-for-modifying-precompiles-set_suEXoFy->.
