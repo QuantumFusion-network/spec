@@ -2,13 +2,13 @@
 
 ## Date
 
-Decision date: 2025-07-16
-Last status update: YYYY-MM-DD
+Decision date: 2025-07-16.  
+Last status update: 2025-07-17.
 
 ## Status
 
-- [x] Proposed
-- [ ] Accepted
+- [ ] Proposed
+- [x] Accepted
 - [ ] Deprecated
 - [ ] Superseded
 
@@ -24,23 +24,18 @@ Last status update: YYYY-MM-DD
 
 ### Author/Decision Owner
 
-Alisher Khassanov, @khssnv
+Alisher Khassanov, [@khssnv](https://github.com/khssnv).
 
 ### Consulted
 
-- Alex Vyatkin, @actinfer
-- Denis Pisarev, @TriplEight
-- @MemechiKekamoto
+- Denis Pisarev, [@TriplEight](https://github.com/TriplEight).
+- Memechi Kekamoto, [@MemechiKekamoto](https://github.com/MemechiKekamoto).
 
 ### Informed
 
-<!-- TODO(khssnv) -->
-
-- [ ] [Person 1]
-- [ ] [Person 2]
-- [ ] [Person 3]
-
-*Note: People listed in "Informed" should submit a PR to check their name after reading this ADR. This can be done during the initial review process of the ADR upload/commit PR (when the file is first uploaded to GitHub and the author requests reviews), or in a separate PR after the ADR is merged.*
+- [ ] Alex Vyatkin, [@actinfer](https://github.com/actinfer).
+- [ ] Alexander Lygin, [@alexlygin](https://github.com/AlexLgn).
+- [ ] Sviatoslav Alekseev, [@zotho](https://github.com/zotho).
 
 ## Decision
 
@@ -103,16 +98,16 @@ This is a popular choice for EVM compatibility in Polkadot SDK-based blockchains
 
 ## References
 
+- Revive project review, <https://coda.io/d/QF-Network_df6rzXCWZj8/Revive-project-review_suwtiLjr>.
+
 ## ADR Relationships
 
 ### Supersedes
 
-- ADR #[X]: [Brief description of superseded decision]
+Supersedes the following ADRs related to the in-house smart contracts platform:
 
-### Superseded By
+- [ADR #0008 Scale Coder Decoder](https://github.com/QuantumFusion-network/spec/blob/ec3f35d/docs/ADR/0008-adr-scale-coder-decoder.md).
 
-- ADR #[X]: [Brief description of superseding decision]
+- [ADR #0009 Smart Contract Return Value](https://github.com/QuantumFusion-network/spec/blob/ec3f35d/docs/ADR/0009-contract-return-value.md).
 
-### Related ADRs
-
-- ADR #[X]: [Brief description of relationship]
+- [ADR #0010 Design of Polka VM pallet's execute() extrinsic](https://github.com/QuantumFusion-network/spec/blob/ec3f35d/docs/ADR/0010_qfpolkavm_pallet_execute.md).
