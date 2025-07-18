@@ -146,7 +146,7 @@ An on-chain storage with REST-like interface.
 - There is also insecure randomness in Polkadot and we can also implement the precompile for it (Alisher Khassanov, 2025-07-17)
 - I think insecure randomness is a good starting point (Memechi Kekamoto, 2025-07-17)
 - Explore a REST-like storage for precompile ... provide an interface for easy access to storage with methods like update, delete as it is easy to understand for an inter developer (Memechi Kekamoto, 2025-07-17)
-- Randomness could be [quantum ](https://aws.amazon.com/marketplace/pp/prodview-246kyrfjo3bag) (Alex Vyatkin, 2025-07-17)
+- Randomness could be [quantum](https://aws.amazon.com/marketplace/pp/prodview-246kyrfjo3bag) (Alex Vyatkin, 2025-07-17)
 - From an implementation standpoint, it's best to go from easiest to implement towards harder to implement to have a starting set (Memechi Kekamoto, 2025-07-17)
 - Go through ideas of the SDK brainstorm and maybe add something from that to the ADR (Memechi Kekamoto, 2025-07-17)
 - Question the need for a precompile for payment logic abstraction, as existing functions (account, transfer, check balance) allow developers to write this directly in smart contracts (Memechi Kekamoto, 2025-07-17)
