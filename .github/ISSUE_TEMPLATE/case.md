@@ -32,7 +32,6 @@ assignees: ''
 
 [What agents should be able to do after this case is complete]
 
-
 ## Value Proposition
 
 [Clear business / agent value that this case provides]
@@ -130,6 +129,7 @@ Business Constraints: [Business rules, resource, and timeline constraints]
 ## Risks Assessment
 
 **[Risk 1]**
+
 Impact: [High / Med / Low]
 Probability: [High / Med / Low]
 Mitigation Strategy: [Mitigation approach]
