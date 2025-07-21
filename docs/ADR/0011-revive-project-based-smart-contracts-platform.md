@@ -43,7 +43,7 @@ We will implement a smart contracts platform based on Parity Tech's Revive proje
 
 ## Context
 
-There was an effort to implement an in-house smart contracts platform by integrating PolkaVM into the blockchain and creating a Rust SDK for smart contracts.
+There was an effort to implement an in-house smart contracts platform by integrating PolkaVM into the blockchain and creating a Rust SDK for smart contracts. However, this approach proved too resource-intensive and expensive to develop, and the complexity of building a production-ready smart contracts platform from scratch became apparent as the project progressed. Denis Pisarev initially suggested investigating Parity Tech's Revive project as an alternative approach. The Polkadot SDK provides mature PolkaVM integration and a complete smart contracts platform, making our custom implementation redundant. QF Network requires smart contracts functionality for Mainnet launch, but resource constraints demand focus on QF-specific innovations rather than duplicating generic blockchain infrastructure.
 
 ## Options
 
