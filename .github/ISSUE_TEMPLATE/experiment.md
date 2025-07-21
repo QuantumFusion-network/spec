@@ -15,11 +15,12 @@ As evidenced by [measurable signal]
 
 ## System Context
 
-System Level: [Module/Interface/Integration/End-to-End]
+System Level: [Module / Interface / Integration / End-to-End]
 Component: [Specific system component being tested]
-Architecture Layer: [Presentation/Business/Data/Infrastructure]
+Architecture Layer: [Presentation / Business / Data / Infrastructure]
 
 ## Detailed Description
+
 [Provide engineering-level detail about what specific aspect of the system this hypothesis tests]
 
 **Technical Scope:**
@@ -34,7 +35,7 @@ Architecture Layer: [Presentation/Business/Data/Infrastructure]
 
 **Environment:**
 
-[Development/Testing/Production-like environment needs]
+[Development / Testing / Production-like environment needs]
 [Specific configuration requirements]
 
 **Data Requirements:**
@@ -49,7 +50,7 @@ Architecture Layer: [Presentation/Business/Data/Infrastructure]
 
 ### Test Methodology
 
-Approach: [Controlled experiment/A-B test/Spike/Prototype/etc.]
+Approach: [Controlled experiment / A-B test / Spike / Prototype / etc.]
 
 **Steps:**
 
@@ -67,8 +68,8 @@ Control Variables: [What we're keeping constant]
 
 **Expected Results:**
 
-- Key metric 1: [Expected range/value]
-- Key metric 2: [Expected range/value]
+- Key metric 1: [Expected range / value]
+- Key metric 2: [Expected range / value]
 
 **Validation Criteria:**
 
@@ -87,12 +88,14 @@ Timeline: [Estimated duration for setup, execution, analysis]
 **Risks & Mitigation:**
 
 **[Risk 1]**
+
 System Impact: [System impact]
-Probability: [High/Med/Low]
+Probability: [High / Med / Low]
 Mitigation Strategy: [Prevention]
 Rollback plan: [Recovery]
 
 ## Results
+
 [To be filled after experiment completion]
 
 **Data Collected:**
@@ -105,10 +108,11 @@ Rollback plan: [Recovery]
 
 **Conclusion:**
 
-[Hypothesis confirmed/rejected/inconclusive]
+[Hypothesis confirmed / rejected / inconclusive]
 [Confidence level in results]
 
 ## Learnings and Insights
+
 [To be filled after experiment completion]
 
 **Technical Learnings:**
@@ -122,12 +126,13 @@ Rollback plan: [Recovery]
 [Improvements for future hypotheses]
 
 ## Impact on Parent Case
+
 [How these results affect the parent case and its acceptance criteria]
 
 **Case Progression:**
 
 [How this moves the case forward]
-[What case assumptions were validated/invalidated]
+[What case assumptions were validated / invalidated]
 
 ## Next Steps
 
