@@ -84,6 +84,7 @@ See <https://github.com/paritytech/polkadot-sdk/issues/8366>.
 - `pallet-scheduler` for scheduling runtime calls to occur at a specified block number or at a specified period.
 - `pallet-multisig` to access existing multisig functionality from a smart contract.
 - `pallet-indices` for smart contracts to be able to use short form address.
+- `pallet-preimage` for storing byte-blobs.
 
 ### Option 5: XCM precompile
 
