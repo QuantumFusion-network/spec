@@ -115,7 +115,9 @@ As per <https://0g.ai/blog/0g-introducing-erc-7857>, ERC-7857 defines iNFTs whic
 
 ### Option 8: randomness source
 
-See advised options.
+- `pallet-insecure-randomness-collective-flip` precompile.
+- Centralized source oracle.
+- Moonbeam Randomness Precompile, see <https://docs.moonbeam.network/builders/ethereum/precompiles/features/randomness/>.
 
 ### Option 9: oracle framework
 
