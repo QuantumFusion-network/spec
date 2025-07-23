@@ -1,13 +1,9 @@
-# ADR Template
-
-## ADR_[ADR_id]: [Descriptive title of the architectural decision]
-
-*Note: This template maintains the Reader-focused design principle. Template sections can be completed out of order. Recommended sequence: Date → Status → People → Context → Consequences → Options → Decision. See ADR Guide for detailed working methods.*
+# ADR_0013: Native Rust SDK for smart contracts
 
 ## Date
 
-Decision date: YYYY-MM-DD
-Last status update: YYYY-MM-DD
+Decision date: YYYY-MM-DD.  
+Last status update: 2025-07-23.
 
 ## Status
 
@@ -26,58 +22,41 @@ Last status update: YYYY-MM-DD
 
 ## People
 
-### Author/Decision Owner (Single Point of Accountability)
+### Author/Decision Owner
 
-[Name of person or team accountable for this decision and point of contact for questions]
-
-- [Person 1]
-- [Person 2]
-- [Person 3]
+Alisher Khassanov, [@khssnv](https://github.com/khssnv).
 
 ### Consulted (Subject Matter Experts)
 
-[List of people with relevant expertise who provided advice]
+- Denis Pisarev, [@TriplEight](https://github.com/TriplEight).
+- Memechi Kekamoto, [@MemechiKekamoto](https://github.com/MemechiKekamoto).
 
-- [Person 1]
-- [Person 2]
-- [Person 3]
+### Informed
 
-### Informed (Affected Parties)
-
-[People/teams affected by this decision who should be aware]
-
-- [ ] [Person 1]
-- [ ] [Person 2]
-- [ ] [Person 3]
-
-*Note: People listed in "Informed" should submit a PR to check their name after reading this ADR. This can be done during the initial review process of the ADR upload/commit PR (when the file is first uploaded to GitHub and the author requests reviews), or in a separate PR after the ADR is merged.*
+- [ ] Alex Vyatkin, [@actinfer](https://github.com/actinfer).
+- [ ] Alexander Lygin, [@alexlygin](https://github.com/AlexLgn).
+- [ ] Sviatoslav Alekseev, [@zotho](https://github.com/zotho).
 
 ## Decision
 
-[Briefly describe the decision made in "We will..." format. This section should be concise - it's a declaration of intent for implementers. Detailed reasoning belongs in other sections.]
+We will develop a native Rust SDK for PolkaVM and Revive project smart contracts, focusing on delivering a developer-friendly and ergonomic API.
 
 ## Context
 
-[Describe the situation that calls for a decision. Focus on forces, constraints, and circumstances that led to needing this decision. Answer "What is the problem?" not "What's the solution?" Include:
+- The official Polkadot documentation, <https://docs.polkadot.com/develop/smart-contracts/>, offers ink! as the Rust option for smart contracts development. The other option offered is Solidity.
 
-- Technical, business, and organizational context
-- Applicable requirements (functional and cross-functional)
-- Current state and why change is needed
-- Key stakeholders and their concerns]
+- Native Rust smart contracts for PolkaVM exist only as test fixtures within the Polkadot SDK, see <https://github.com/paritytech/polkadot-sdk/tree/7a747ff/substrate/frame/revive/fixtures/contracts>.
 
-### Decision Criteria (Optional)
+- The QF Network's `qf-polkavm-sdk` project has a minimal set of abstractions, example contracts, and a CLI tool for deploying and invoking smart contracts, see <https://github.com/QuantumFusion-network/qf-polkavm-sdk/tree/850e169/>.
 
-[Explicit criteria for evaluating options, such as:
+## Problem
 
-- Performance requirements
-- Cost constraints
-- Security requirements
-- Maintainability needs
-- Time-to-market considerations]
+Developing native Rust smart contracts currently faces several challenges due to limitations in the platform's public API.
 
-## Problem (Optional)
-
-[Clearly state the problem being addressed. What issue or opportunity requires this architectural decision?]
+- Leaky abstractions. Smart contracts must directly interact with both PolkaVM and `pallet-revive` entities, exposing internal implementation details.
+- Excessive boilerplate. Developers need to repeatedly write similar code across different contracts.
+- Insufficient separation of concerns. Smart contract authors are required to handle low-level operations, rather than focusing solely on business logic.
+- Non-ergonomic API.
 
 ## Decision in Details (Optional)
 
@@ -88,24 +67,14 @@ Last status update: YYYY-MM-DD
 - Timeline considerations
 - Who is responsible for implementation]
 
-### Decision Drivers (Optional)
+### Decision Drivers
 
-- [Driver 1: Key force or requirement influencing the decision]
-- [Driver 2: Another key consideration]
-- [...]
+- Why are we doing this?
+- Why ink! isn't a sufficient replacement for Rust? What's the niche for native Rust smart contracts?
 
 ## Options
 
-[Briefly list the considered options. Each option is numbered for easy reference, with the selected option marked clearly as `(SELECTED)`. Aim for 3-5 options minimum. Always include at least "do nothing" option. A detailed description of each option can be written in the Consequences section below.]
-
-1. (SELECTED) [Name of selected option]
-2. [Name of alternative option]
-3. [Name of alternative option]
-4. [Do nothing / Status quo option]
-
-## Consequences (Optional)
-
-### Option 1: [Name of option] (SELECTED)
+### Option 1: Native Rust SDK for smart contracts
 
 [Brief description of this option.]
 
@@ -142,8 +111,6 @@ Last status update: YYYY-MM-DD
 
 - [Potential benefit 1 we're giving up]
 - [Potential benefit 2 we're giving up]
-
-*(Repeat for additional options if applicable)*
 
 ## Implementation Notes (Optional)
 
