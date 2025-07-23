@@ -60,12 +60,7 @@ Developing native Rust smart contracts currently faces several challenges due to
 
 ## Decision in Details (Optional)
 
-[Describe in details the decision made, including:
-
-- Key technical details
-- Implementation approach
-- Timeline considerations
-- Who is responsible for implementation]
+- Avoid implicit import (namespace pollution, poor discoverability). Provide "prelude" module.
 
 ### Decision Drivers
 
