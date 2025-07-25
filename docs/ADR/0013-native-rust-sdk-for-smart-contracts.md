@@ -126,10 +126,19 @@ Developing native Rust smart contracts currently faces several challenges due to
 
 ## Advice (Optional)
 
-[Raw, unfiltered contributions from people who offered advice. his section provides transparency into the decision process and serves as a learning resource.]
-
-- [Advice given] ([Advice-giver's name, role], YYYY-MM-DD)
-- [Advice given] ([Advice-giver's name, role], YYYY-MM-DD)
+- Avoid creating separate, language-specific SDKs for each language in future multiple language implementations; ideally, architecturally it needs to only require the language interpreter or compiler adopted to be compatible with PolkaVM and everything else like all the rest of the logic is dealt with by pallets and precompiles (Denis Pisarev, 2025-07-23)
+- Everything should be as minimalistic as possible. Meaning that if you integrate the language, you only integrate the language and... web2 language and that's it. Nothing blockchain specific, nothing additional to the language, no like overrides, no new standards, no nothing like that. So simply put the let's say the same Python or TypeScript work in PolkaVM as intended as the regular language (Denis Pisarev, 2025-07-23)
+- To minimize the job and maintenance and reduce the duplicated job we only do pallets and precompiles in Rust and make make sure that they are callable from this languages (Denis Pisarev, 2025-07-23)
+- An additional library may provide a more friendly interface to blockchain-specific functions, ensuring the language itself is not polluted with blockchain-specific entities (Denis Pisarev, 2025-07-23, Alisher Khassanov)
+- Use one of the prominent languages [Rust] and start with it (Denis Pisarev, 2025-07-23)
+- Go our own way [instead of promoting Ink!], aiming to be the first in Rust native smart contracts, which can lead others to adopt it (Denis Pisarev, 2025-07-23)
+- Lower the entry barrier for web2 developers by offering native Rust, as Ink! is seen as a niche of the niche and not particularly a Rust (Denis Pisarev, 2025-07-23)
+- Leverage existing Rust capacities and team enjoyment for Rust development, establishing our project as the locomotive for Rust native smart contracts (Denis Pisarev, 2025-07-23)
+- Adopt Rust Native as a low-hanging fruit because it's almost adopted (Denis Pisarev, 2025-07-23)
+- Improve code ergonomics for the Rust SDK by avoiding implicit imports, which "pollutes the name space" and are "not really discoverable", and instead "provide standard prelude module which will do that for very basic things" and "allow the users to import what they actually need" (Alisher Khassanov, 2025-07-23)
+- Do not create demos merely for the sake of it, such as a chess game, if they don't significantly highlight unique features or offer strong value propositions of the platform; I just kind of don't see the point of of this demo on chain (Denis Pisarev, 2025-07-23)
+- Introduce demos based on unique features of SPIN that are entertaining or offer good value propositions, rather than just basic games (Denis Pisarev, 2025-07-23)
+- Consider a payment application as a demo dApp to visually show how transactions below a threshold use fast finality, and those over use secure finality, serving as a template for payment providers (Denis Pisarev, 2025-07-23)
 
 ## Glossary (Optional)
 
