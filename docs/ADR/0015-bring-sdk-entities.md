@@ -1,17 +1,13 @@
-# ADR Template
-
-## ADR_[ADR_id]: [Descriptive title of the architectural decision]
-
-*Note: This template maintains the Reader-focused design principle. Template sections can be completed out of order. Recommended sequence: Date → Status → People → Context → Consequences → Options → Decision. See ADR Guide for detailed working methods.*
+# ADR_0015: Integrating SDK Entities
 
 ## Date
 
-Decision date: YYYY-MM-DD
-Last status update: YYYY-MM-DD
+Decision date: YYYY-MM-DD.  
+Last status update: 2025-08-06.
 
 ## Status
 
-- [ ] Proposed
+- [x] Proposed
 - [ ] Accepted
 - [ ] Deprecated
 - [ ] Superseded
@@ -26,172 +22,100 @@ Last status update: YYYY-MM-DD
 
 ## People
 
-### Author/Decision Owner (Single Point of Accountability)
+### Author/Decision Owner
 
-[Name of person or team accountable for this decision and point of contact for questions]
+Alisher Khassanov, [@khssnv](https://github.com/khssnv).
 
-- [Person 1]
-- [Person 2]
-- [Person 3]
+### Consulted
 
-### Consulted (Subject Matter Experts)
+- Denis Pisarev, [@TriplEight](https://github.com/TriplEight).
+- Memechi Kekamoto, [@MemechiKekamoto](https://github.com/MemechiKekamoto).
+- Sviatoslav Alekseev, [@zotho](https://github.com/zotho).
 
-[List of people with relevant expertise who provided advice]
+### Informed
 
-- [Person 1]
-- [Person 2]
-- [Person 3]
-
-### Informed (Affected Parties)
-
-[People/teams affected by this decision who should be aware]
-
-- [ ] [Person 1]
-- [ ] [Person 2]
-- [ ] [Person 3]
-
-*Note: People listed in "Informed" should submit a PR to check their name after reading this ADR. This can be done during the initial review process of the ADR upload/commit PR (when the file is first uploaded to GitHub and the author requests reviews), or in a separate PR after the ADR is merged.*
+- [x] Alex Vyatkin, [@actinfer](https://github.com/actinfer).
+- [x] Alexander Lygin, [@alexlygin](https://github.com/AlexLgn).
 
 ## Decision
 
-[Briefly describe the decision made in "We will..." format. This section should be concise - it's a declaration of intent for implementers. Detailed reasoning belongs in other sections.]
+We will choose how to include SDK entities into the smart contract scope.
 
 ## Context
 
-[Describe the situation that calls for a decision. Focus on forces, constraints, and circumstances that led to needing this decision. Answer "What is the problem?" not "What's the solution?" Include:
+## Problem
 
-- Technical, business, and organizational context
-- Applicable requirements (functional and cross-functional)
-- Current state and why change is needed
-- Key stakeholders and their concerns]
+```rust
+// hello_world/src/main.rs
 
-### Decision Criteria (Optional)
+#![no_std]
+#![no_main]
 
-[Explicit criteria for evaluating options, such as:
+use pallet_revive_uapi::{HostFn, HostFnImpl as api};
 
-- Performance requirements
-- Cost constraints
-- Security requirements
-- Maintainability needs
-- Time-to-market considerations]
+#[no_mangle]
+#[polkavm_derive::polkavm_export]
+/// Called once on deployment.
+pub extern "C" fn deploy() {}
 
-## Problem (Optional)
-
-[Clearly state the problem being addressed. What issue or opportunity requires this architectural decision?]
-
-## Decision in Details (Optional)
-
-[Describe in details the decision made, including:
-
-- Key technical details
-- Implementation approach
-- Timeline considerations
-- Who is responsible for implementation]
-
-### Decision Drivers (Optional)
-
-- [Driver 1: Key force or requirement influencing the decision]
-- [Driver 2: Another key consideration]
-- [...]
+#[no_mangle]
+#[polkavm_derive::polkavm_export]
+/// Entrypoint for smart contract calls.
+pub extern "C" fn call() {
+    api::deposit_event(&[], b"Hello, World!");
+}
+```
 
 ## Options
 
-[Briefly list the considered options. Each option is numbered for easy reference, with the selected option marked clearly as `(SELECTED)`. Aim for 3-5 options minimum. Always include at least "do nothing" option. A detailed description of each option can be written in the Consequences section below.]
+### Option 1: explicit invocation, macro-based
 
-1. (SELECTED) [Name of selected option]
-2. [Name of alternative option]
-3. [Name of alternative option]
-4. [Do nothing / Status quo option]
+```rust
+// print_number/src/main.rs
 
-## Consequences (Optional)
+// Crate-level attributes, can't add them by a macro.
+#![no_std]
+#![no_main]
 
-### Option 1: [Name of option] (SELECTED)
+extern crate alloc;
 
-[Brief description of this option.]
+use alloc::format; // init!() provides global allocator implementation
+use pallet_revive_uapi::{HostFn, HostFnImpl as api}
+use sdk::prelude::{init, export};
+
+// Includes SDK code to the smart contract.
+//   - `init!()` with no arguments executes default behavior.
+//   - `init!(entity_1, entity_2: entity_2_impl)` uses default implementation of the `entity_1` and user-provided implementation of the `entity_2`.
+init!();
+
+#[export]
+pub extern "C" fn deploy() {}
+
+#[export]
+pub extern "C" fn call() {
+    input!(parameter_1: u32,);
+
+    api::deposit_event(&[], format!("Input: {}", parameter_1).as_bytes());
+}
+```
 
 **Selected because:**
 
-- [Benefit 1 that led to selection]
-- [Benefit 2 that led to selection]
+- Simple by explicitness and transparency, not by abstraction.
+- `init!()` follows the general approach: sensible default, flexibility for those who need it.
 
-**Selected despite:**
+### Option 2: implicit invocation, macro-based
 
-- [Drawback 1 that we accept]
-- [Drawback 2 that we accept]
+### Option 3: custom CLI / compiler frontend
 
-**Risks and Mitigations:**
+Like `cargo-contract`.
 
-- [Risk 1]
-  - [Mitigation strategy 1]
-- [Risk 2]
-  - [Mitigation strategy 2]
+### Option 4: `build.rs` magic
 
-**Failure Recovery:**
-[How will we recover if this option fails?]
+```rust
+// hello_world/src/main.rs
+```
 
-### Option 2: [Name of alternative option]
-
-[Brief description of this option.]
-
-**Rejected because:**
-
-- [Critical drawback 1 - reason for rejection]
-- [Critical drawback 2 - reason for rejection]
-
-**Rejected despite:**
-
-- [Potential benefit 1 we're giving up]
-- [Potential benefit 2 we're giving up]
-
-*(Repeat for additional options if applicable)*
-
-## Implementation Notes (Optional)
-
-[Any specific guidance for implementing this decision, including:
-
-- Required dependencies
-- Migration steps
-- Testing considerations
-- Failure Recovery / Rollback procedures]
-
-## Confirmation (Optional)
-
-[Describe how the implementation of this decision will be verified. Include:
-
-- Acceptance criteria
-- Testing approach
-- Automated verification methods]
-
-## Advice (Optional)
-
-[Raw, unfiltered contributions from people who offered advice. his section provides transparency into the decision process and serves as a learning resource.]
-
-- [Advice given] ([Advice-giver's name, role], YYYY-MM-DD)
-- [Advice given] ([Advice-giver's name, role], YYYY-MM-DD)
-
-## Glossary (Optional)
-
-- **[Term]**: [Definition]
-
-## References
-
-- [Related documents, links, and research materials]
-- [Previous ADRs that influence this decision]
-- [External resources that informed this decision]
-- [Requirements or standards]
-
-## ADR Relationships
-
-[Fill in the section if applicable or leave blank for further filling.]
-
-### Supersedes
-
-- ADR #[X]: [Brief description of superseded decision]
-
-### Superseded By
-
-- ADR #[X]: [Brief description of superseding decision]
-
-### Related ADRs
-
-- ADR #[X]: [Brief description of relationship]
+```rust
+// hello_world/build.rs
+```
