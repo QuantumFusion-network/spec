@@ -68,10 +68,57 @@ pub extern "C" fn call() {
 
 ## Options
 
-### Option 1: explicit invocation, macro-based
+### Option 1: conditional compilation using "features"
+
+Take advantage of Cargo "features" to conditionally add entities such as an allocator or program failure (panic) handler.
+
+```toml
+# print-number/Cargo.toml
+[package]
+name = "print-number"
+
+[dependencies]
+polkavm-derive = { git = "https://github.com/paritytech/polkavm.git", tag = "v0.21.0" }
+pallet-revive-uapi = { tag = "polkadot-stable2503-6", git = "https://github.com/paritytech/polkadot-sdk.git", default-features = false }
+
+# Add SDK entities specifying features.
+sdk = { version = "0.1.0", features = ["global-allocator", "panic-handler"] }
+```
 
 ```rust
-// print_number/src/main.rs
+// print-number/src/main.rs
+
+// Crate-level attributes, can't add them from an external package.
+#![no_std]
+#![no_main]
+
+extern crate alloc;
+
+// `features = ["global-allocator"]` provides global allocator implementation.
+use alloc::format; 
+
+use pallet_revive_uapi::{HostFn, HostFnImpl as api}
+
+// At least one import required, otherwise other entities are not linked.
+use sdk::prelude::export;
+
+#[export] // better DX, explicitly add what makes sense in scope of the smart contract avoiding implementation details exposure
+fn deploy() {}
+
+#[export]
+fn call() {
+    input!(parameter_1: u32,);
+
+    api::deposit_event(&[], format!("Input: {}", parameter_1).as_bytes());
+}
+```
+
+### Option 2: macro-based, explicit invocation, implicit behavior
+
+C-style code inclusion using a macro
+
+```rust
+// print-number/src/main.rs
 
 // Crate-level attributes, can't add them by a macro.
 #![no_std]
@@ -79,7 +126,7 @@ pub extern "C" fn call() {
 
 extern crate alloc;
 
-use alloc::format; // init!() provides global allocator implementation
+use alloc::format; // init!() includes global allocator implementation
 use pallet_revive_uapi::{HostFn, HostFnImpl as api}
 use sdk::prelude::{init, export};
 
@@ -89,26 +136,33 @@ use sdk::prelude::{init, export};
 init!();
 
 #[export]
-pub extern "C" fn deploy() {}
+fn deploy() {}
 
 #[export]
-pub extern "C" fn call() {
+fn call() {
     input!(parameter_1: u32,);
 
     api::deposit_event(&[], format!("Input: {}", parameter_1).as_bytes());
 }
 ```
 
-**Selected because:**
+**Rejected despite:**
 
 - Simple by explicitness and transparency, not by abstraction.
 - `init!()` follows the general approach: sensible default, flexibility for those who need it.
 
-### Option 2: implicit invocation, macro-based
-
 ### Option 3: custom CLI / compiler frontend
 
 Like `cargo-contract`.
+
+**Rejected because:**
+
+- Complicates workflow requiring the developer to use an additional compilation tool.
+- Harder to implement and maintain.
+
+**Rejected despite:**
+
+- Provides full control of the SDK call-site compilation.
 
 ### Option 4: `build.rs` magic
 
