@@ -2,7 +2,7 @@
 
 ## Date
 
-Decision date: YYYY-MM-DD.  
+Decision date: 2025-08-13.  
 Last status update: 2025-08-06.
 
 ## Status
@@ -15,7 +15,7 @@ Last status update: 2025-08-06.
 ### Implementation Status
 
 - [ ] Planned
-- [ ] In Development
+- [x] In Development
 - [ ] Implemented
 - [ ] Verified
 - [ ] Discontinued
@@ -39,14 +39,18 @@ Alisher Khassanov, [@khssnv](https://github.com/khssnv).
 
 ## Decision
 
-We will choose how to include SDK entities into the smart contract scope.
+We will choose how to add SDK entities into the smart contract scope.
 
 ## Context
 
+The SDK is intended provide an ergonomic API for smart contracts developers [^1]. The next section demonstrates non-ergonomic integration of the existing `pallet-revive` API which we are aiming to improve.
+
 ## Problem
 
+See "ADR #0013 Native Rust SDK for smart contracts: Problem" [^2] for the description of existing API flaws.
+
 ```rust
-// hello_world/src/main.rs
+// hello-world/src/main.rs
 
 #![no_std]
 #![no_main]
@@ -67,6 +71,11 @@ pub extern "C" fn call() {
 ```
 
 ## Options
+
+1. (SELECTED) Conditional compilation using "features".
+2. Macro-based, explicit invocation, implicit behavior.
+3. Custom CLI / compiler frontend.
+4. `build.rs` magic.
 
 ### Option 1: conditional compilation using "features"
 
@@ -166,12 +175,14 @@ Like `cargo-contract`.
 
 ### Option 4: `build.rs` magic
 
+Provide initial `build.rs` for smart contracts project which will integrate SDK entities without imports in `src/*` files.
+
 ```rust
-// hello_world/src/main.rs
+// hello-world/src/main.rs
 ```
 
 ```rust
-// hello_world/build.rs
+// hello-world/build.rs
 ```
 
 ## Advice
@@ -179,3 +190,8 @@ Like `cargo-contract`.
 - Consider Anchor Framework, <https://www.anchor-lang.com/docs/basics/program-structure>. Abstract as much as we can, but keep the full control over what's happening in the smart contract (Sviatoslav Alekseev, 2025-08-06).
 - Custom CLI / compiler frontend is nice, but additional work for us (Sviatoslav Alekseev, 2025-08-06).
 - Add option number five. Just provide plain SDK code without any macro invocation required. Users will call it like library functions to work with structures and host functions (Sviatoslav Alekseev, 2025-08-06).
+
+### References
+
+[^1]: <https://github.com/QuantumFusion-network/spec/blob/khssnv/native-rust-sdk-for-smart-contracts/docs/ADR/0013-native-rust-sdk-for-smart-contracts.md#decision> "ADR #0013 Native Rust SDK for smart contracts: Decision".
+[^2]: <https://github.com/QuantumFusion-network/spec/blob/khssnv/native-rust-sdk-for-smart-contracts/docs/ADR/0013-native-rust-sdk-for-smart-contracts.md#Problem> "ADR #0013 Native Rust SDK for smart contracts: Problem".
