@@ -28,14 +28,12 @@ Alisher Khassanov, [@khssnv](https://github.com/khssnv).
 
 ### Consulted
 
-- Denis Pisarev, [@TriplEight](https://github.com/TriplEight).
-- Memechi Kekamoto, [@MemechiKekamoto](https://github.com/MemechiKekamoto).
 - Sviatoslav Alekseev, [@zotho](https://github.com/zotho).
 
 ### Informed
 
-- [x] Alex Vyatkin, [@actinfer](https://github.com/actinfer).
-- [x] Alexander Lygin, [@alexlygin](https://github.com/AlexLgn).
+- [ ] Alex Vyatkin, [@actinfer](https://github.com/actinfer).
+- [ ] Alexander Lygin, [@alexlygin](https://github.com/AlexLgn).
 
 ## Decision
 
@@ -43,7 +41,7 @@ We will choose how to add SDK entities into the smart contract scope.
 
 ## Context
 
-The SDK is intended provide an ergonomic API for smart contracts developers [^1]. The next section demonstrates non-ergonomic integration of the existing `pallet-revive` API which we are aiming to improve.
+The SDK is intended to provide an ergonomic API for smart contracts developers [^1]. The next section demonstrates a non-ergonomic integration of the existing `pallet-revive` API which we aim to improve.
 
 ## Problem
 
@@ -195,3 +193,13 @@ Provide initial `build.rs` for smart contracts project which will integrate SDK 
 
 [^1]: <https://github.com/QuantumFusion-network/spec/blob/khssnv/native-rust-sdk-for-smart-contracts/docs/ADR/0013-native-rust-sdk-for-smart-contracts.md#decision> "ADR #0013 Native Rust SDK for smart contracts: Decision".
 [^2]: <https://github.com/QuantumFusion-network/spec/blob/khssnv/native-rust-sdk-for-smart-contracts/docs/ADR/0013-native-rust-sdk-for-smart-contracts.md#Problem> "ADR #0013 Native Rust SDK for smart contracts: Problem".
+
+## ADR Relationships
+
+### Supersedes
+
+### Superseded By
+
+### Related ADRs
+
+- [ADR #0013: Native Rust SDK for smart contracts](https://github.com/QuantumFusion-network/spec/blob/khssnv/native-rust-sdk-for-smart-contracts/docs/ADR/0013-native-rust-sdk-for-smart-contracts.md#decision).
