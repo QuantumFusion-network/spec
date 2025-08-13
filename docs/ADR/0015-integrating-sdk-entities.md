@@ -188,6 +188,8 @@ Provide initial `build.rs` for smart contracts project which will integrate SDK 
 - Consider Anchor Framework, <https://www.anchor-lang.com/docs/basics/program-structure>. Abstract as much as we can, but keep the full control over what's happening in the smart contract (Sviatoslav Alekseev, 2025-08-06).
 - Custom CLI / compiler frontend is nice, but additional work for us (Sviatoslav Alekseev, 2025-08-06).
 - Add option number five. Just provide plain SDK code without any macro invocation required. Users will call it like library functions to work with structures and host functions (Sviatoslav Alekseev, 2025-08-06).
+- `#[export]` to add function parameters replacing raw arguments accessing (Sviatoslav Alekseev, 2025-08-13).
+- Reduce unexpected arguments usage such as `&[]` in `event_deposit` (Sviatoslav Alekseev, 2025-08-13).
 
 ### References
 
