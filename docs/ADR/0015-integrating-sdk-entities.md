@@ -7,8 +7,8 @@ Last status update: 2025-08-06.
 
 ## Status
 
-- [x] Proposed
-- [ ] Accepted
+- [ ] Proposed
+- [x] Accepted
 - [ ] Deprecated
 - [ ] Superseded
 
