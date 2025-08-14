@@ -1,9 +1,9 @@
-# ADR_007: Blockchain Integration and Network Management
+# ADR_0023: Scaffolding Service Blockchain Integration and Network Management
 
 ## Date
 
 Decision date: 2025-07-28
-Last status update: 2025-08-06
+Last status update: 2025-08-14
 
 ## Status
 
@@ -149,3 +149,7 @@ PAPI integration testing across multiple network configurations, network switchi
 ## ADR Relationships
 
 ### Related ADRs
+
+- ADR #0017: Scaffolding Service Core Runtime and Database Architecture - Leverages Bun performance for network configuration processing
+- ADR #0019: Scaffolding Service Template System and Development Tools - Integrates blockchain configurations into generated templates
+- ADR #0020: Scaffolding Service Frontend Application Architecture - Provides blockchain connectivity for React-based dApps
