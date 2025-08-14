@@ -1,9 +1,9 @@
-# ADR_0019: Template System and Development Tools
+# ADR_0019: Scaffolding Service Template System and Development Tools
 
 ## Date
 
 Decision date: 2025-07-28
-Last status update: 2025-08-06
+Last status update: 2025-08-14
 
 ## Status
 
@@ -137,6 +137,14 @@ Template processing enables project generation under 2-minute case requirement, 
 **Testing Approach:**
 Template processing performance testing with complex project configurations, generated project compilation and execution testing, template discovery testing with various directory structures, development tools integration testing across different environments, resource cleanup testing under extended operation scenarios
 
+## Advice
+
+- I thought that there is some general approach which will work with all expected templates. We have separated apps here then when they merge their router definition right but for other pages how will it look like will we merge source codes of them or are they just near by each other in different directories? (Alisher Khassanov, 2025-08-06)
+- How to deal with a code duplication? I mean suppose if we have three features: two of them use this this hook but third is not using the hook. Should we extract that to the base template? (Sviatoslav Alekseev, 2025-08-06)
+- What steps if we need as a developer to add a new template in the future? We need to perform some changes in wizard to include new template? (Sviatoslav Alekseev, 2025-08-06)
+- Is there some single source source of truth for the templates to understand what templates are enabled? (Sviatoslav Alekseev, 2025-08-06)
+- Architecture in modular. If there is a new use case we input a new template. That also means that we will need to add a new interface or maybe entire page into wizard and there won't be a single way of doing that. And need to add new test and documentation (Denis Pisarev, 2025-08-06)
+
 ## References
 
 - [Eta Template Engine Documentation and Performance](https://eta.js.org/)
@@ -149,3 +157,7 @@ Template processing performance testing with complex project configurations, gen
 ## ADR Relationships
 
 ### Related ADRs
+
+- ADR #0017: Scaffolding Service Core Runtime and Database Architecture - Leverages Bun file I/O performance for template processing
+- ADR #0018: Scaffolding Service API Framework and Request Processing - Integrates with job processing endpoints
+- ADR #0023: Scaffolding Service Blockchain Integration and Network Management - Uses generated chain configurations
