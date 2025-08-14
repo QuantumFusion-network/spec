@@ -1,9 +1,9 @@
-# ADR_0018: API Framework and Request Processing
+# ADR_0018: Scaffolding Service API Framework and Request Processing
 
 ## Date
 
 Decision date: 2025-07-28
-Last status update: 2025-08-06
+Last status update: 2025-08-14
 
 ## Status
 
@@ -131,6 +131,12 @@ API framework handles 1000+ concurrent users without performance degradation, wi
 **Testing Approach:**
 Load testing with 1000+ concurrent wizard interactions, validation testing with complex and edge-case configurations, error handling testing across all categorized failure types, rate limiting testing with various IP scenarios and proxy configurations
 
+## Advice
+
+- How do we collect logs and get a errors. Do we have some JavaScript libraries for that? (Sviatoslav Alekseev, 2025-08-06)
+- What time it's need to send to server and after to user. For example, when server get a request to generate the code you should somewhere in a Grafana have a chart with the average time for handling the request (Sviatoslav Alekseev, 2025-08-06)
+- We need to verify that they are in sync - the both states on a wizard side and our scaffolder side (Sviatoslav Alekseev, 2025-08-06)
+
 ## References
 
 - [Hono Framework Documentation and Performance Benchmarks](https://hono.dev/)
@@ -144,3 +150,7 @@ Load testing with 1000+ concurrent wizard interactions, validation testing with 
 ## ADR Relationships
 
 ### Related ADRs
+
+- ADR #0017: Scaffolding Service Core Runtime and Database Architecture - Runs on Bun runtime foundation
+- ADR #0020: Scaffolding Service Frontend Application Architecture - Serves API endpoints for React frontend
+- ADR #0021: Scaffolding Service Real-time Communication Strategy - Provides SSE endpoints and polling fallbacks
