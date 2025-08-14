@@ -1,9 +1,9 @@
-# ADR_001: Core Runtime and Database Architecture
+# ADR_0017: Scaffolding Service Core Runtime and Database Architecture
 
 ## Date
 
 Decision date: 2025-07-28
-Last status update: 2025-08-06
+Last status update: 2025-08-14
 
 ## Status
 
@@ -132,6 +132,11 @@ Template processing demonstrates 3x performance improvement over Node.js baselin
 **Testing Approach:**
 Performance benchmarking against Node.js baseline with identical workloads, concurrent user load testing with realistic usage patterns, database stress testing with high-frequency read/write operations, file I/O performance testing with large template sets
 
+## Advice
+
+- Cleanup generation after for example 5 minutes (Andreea Eftene, 2025-08-06)
+- What about retrying the scaffolder job? So suppose we have a failure. So user could manually resume. But should we also perform retry of failed job automatically? (Sviatoslav Alekseev, 2025-08-06)
+
 ## References
 
 - [Bun Runtime Documentation and Performance Benchmarks](https://bun.sh/)
@@ -144,3 +149,7 @@ Performance benchmarking against Node.js baseline with identical workloads, conc
 ## ADR Relationships
 
 ### Related ADRs
+
+- ADR #0018: Scaffolding Service API Framework and Request Processing - Uses Bun runtime foundation
+- ADR #0019: Scaffolding Service Template System and Development Tools - Leverages Bun file I/O performance  
+- ADR #0022: Scaffolding Service Authentication and Multi-User Security - Uses SQLite for user data storage
