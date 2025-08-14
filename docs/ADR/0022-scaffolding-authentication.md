@@ -1,9 +1,9 @@
-# ADR_0022: Authentication and Multi-User Security
+# ADR_0022: Scaffolding Service Authentication and Multi-User Security
 
 ## Date
 
 Decision date: 2025-07-28
-Last status update: 2025-08-06
+Last status update: 2025-08-14
 
 ## Status
 
@@ -138,6 +138,12 @@ GitHub OAuth authentication integrates seamlessly with developer workflows, proj
 **Testing Approach:**
 Authentication flow testing across different GitHub account types and permission levels, project isolation testing with simulated cross-user access attempts, repository creation testing under various GitHub API conditions, session management load testing with concurrent authentication requests, security penetration testing for authorization bypass attempts
 
+## Advice
+
+- If I'm a user and generating in some project using the Scaffolding Service - what if someone download with same link? (Sviatoslav Alekseev, 2025-08-06)
+- What if we start with GitHub credentials? If we going to store some user information in the future, we also need to consider the security part of the browser application. For example GitHub App token for identification  (Sviatoslav Alekseev, 2025-08-06)
+- Need to perform verification that user auth from given account (Sviatoslav Alekseev, 2025-08-06)
+
 ## References
 
 1. GitHub OAuth + JWT + Project Isolation + GitHub App (SELECTED)
@@ -151,3 +157,7 @@ Authentication flow testing across different GitHub account types and permission
 ## ADR Relationships
 
 ### Related ADRs
+
+- ADR #0017: Scaffolding Service Core Runtime and Database Architecture - Uses SQLite for user session and project ownership data
+- ADR #0018: Scaffolding Service API Framework and Request Processing - Integrates authentication middleware with API endpoints
+- ADR #0020: Scaffolding Service Frontend Application Architecture - Implements OAuth flows and authenticated user interfaces
