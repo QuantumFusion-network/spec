@@ -1,9 +1,9 @@
-# ADR_0020: Frontend Application Architecture
+# ADR_0020: Scaffolding Service Frontend Application Architecture
 
 ## Date
 
 Decision date: 2025-07-28
-Last status update: 2025-08-06
+Last status update: 2025-08-14
 
 ## Status
 
@@ -139,6 +139,11 @@ Dashboard loads all user projects within 3-second case requirement, wizard compl
 **Testing Approach:**
 Performance testing with dashboard load times and wizard interaction responsiveness, usability testing with Web2 developers for educational effectiveness, accessibility testing across assistive technologies and diverse user needs, mobile testing across device types and network conditions, state persistence testing with session recovery scenarios
 
+## Advice
+
+- Download immediately, upload to your own github OR you need to start again (Alisher Khassanov, 2025-08-06)
+- Track user activity on the client side. Then we may offer better default option for that (Alisher Khassanov, 2025-08-06)
+
 ## References
 
 - [React Documentation and TypeScript Integration](https://react.dev/)
@@ -158,3 +163,7 @@ Performance testing with dashboard load times and wizard interaction responsiven
 ## ADR Relationships
 
 ### Related ADRs
+
+- ADR #0018: Scaffolding Service API Framework and Request Processing - Consumes API endpoints for wizard and dashboard functionality
+- ADR #0021: Scaffolding Service Real-time Communication Strategy - Integrates SSE for job progress updates
+- ADR #0022: Scaffolding Service Authentication and Multi-User Security - Implements GitHub OAuth authentication flows
