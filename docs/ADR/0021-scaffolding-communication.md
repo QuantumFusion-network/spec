@@ -1,9 +1,9 @@
-# ADR_0021: Real-time Communication Strategy
+# ADR_0021: Scaffolding Service Real-time Communication Strategy
 
 ## Date
 
 Decision date: 2025-07-28
-Last status update: 2025-08-06
+Last status update: 2025-08-14
 
 ## Status
 
@@ -148,3 +148,7 @@ Connection stability testing under various network conditions including corporat
 ## ADR Relationships
 
 ### Related ADRs
+
+- ADR #0018: Scaffolding Service API Framework and Request Processing - Provides SSE endpoints and polling fallback infrastructure
+- ADR #0019: Scaffolding Service Template System and Development Tools - Receives progress updates from job processing system
+- ADR #0020: Scaffolding Service Frontend Application Architecture - Integrates with TanStack Query for real-time state management
