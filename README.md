@@ -1,4 +1,4 @@
-# QuantumFusion Network - Spec Repository  
+# QF Network - Spec Repository  
 
 The repository serves as the hub for accumulating and managing project knowledge. It is a living document that continuously evolves with the latest insights, decisions, and technical specifications. This repository is the foundation for our task and knowledge management processes, ensuring that development efforts are transparent, well-documented, and aligned with organizational goals.  
 
