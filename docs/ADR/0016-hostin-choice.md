@@ -98,21 +98,40 @@ Right now the portal runs on a VPS, which means manual setup, updates, and no pr
 
 ### Hosting Platform Comparison
 
-|| **Criterion**                     | Cloudflare Pages ✅   | Vercel ⚠️             | Netlify  ⚠️          | GitHub Pages ⚠️      |
-||------------------------------------|----------------------|-----------------------|----------------------|----------------------|
-||                                    |                      |                       |                      |                      |
-|| **CI/CD from Git**                 | Auto-deploy + preview| Auto-deploy + preview | Auto-deploy + preview| Only Actions         |
-||                                    |                      |                       |                      |                      |
-||                                    |                      |                       |                      |                      |
-|| **Build limitation**               | 500 builds/month     | 125 builds/month      | 300 build-minutes    | Free                 |
-||                                    |                      |                       |                      |                      |
-|| **Limitations on MB/traffic**      | 25 MB build          | 100 MB file           | 25 MB file           | 100 MB file          |
-||                                    |                      |                       |                      |                      |
-|| **DX (convenience)**               | Convenient           | Best for Next.js      | Average              | Minimal features     |
-|| **Already in use**                 | Yes                  | Yes                   | No                   | No                   |
-|| **Team experience**                | Yes                  | Yes                   | No                   | No                   |
+#### Cloudflare Pages ✅
+- **CI/CD from Git**:        Auto-deploy + preview
+- **Building App Limitation (deploy)**: 500 builds/month
+- **Limitations on MB/traffic**: 25 MB build
+- **DX (convenience)**: Convenient
+- **Already in use**: Yes
+- **Team experience**: Yes
+
+#### Vercel ⚠️
+- **CI/CD from Git**:        Auto-deploy + preview
+- **Building App Limitation (deploy)**: 125 builds/month
+- **Limitations on MB/traffic**: 100 MB file
+- **DX (convenience)**: Best for Next.js
+- **Already in use**: Yes
+- **Team experience**: Yes
+
+#### Netlify ⚠️
+- **CI/CD from Git**:        Auto-deploy + preview
+- **Building App Limitation (deploy)**: 300 build-minutes
+- **Limitations on MB/traffic**: 25 MB file
+- **DX (convenience)**: Average
+- **Already in use**: No
+- **Team experience**: No
+
+#### GitHub Pages ⚠️
+- **CI/CD from Git**:        Only Actions
+- **Building App Limitation (deploy)**: Free
+- **Limitations on MB/traffic**: 100 MB file
+- **DX (convenience)**: Minimal features
+- **Already in use**: Yes
+- **Team experience**: Yes
 
 
+limits 
 
 
 ## Consequences (Optional)
