@@ -73,6 +73,20 @@ What works best for each content type.
 
 ### Option 2
 
+## Advice
+
+- "I would exclude polkadot.com... I would generally start with docs.polkadot.com and wiki.polkadot.com." (Denis Pisarev, 2025-07-30)
+- "Paritytech.github.io is generally just Rustdoc, and it needs to be merged into this similar domain or docs.polkadot.com regardless." (Denis Pisarev, 2025-07-30)
+- "Let's conduct separate studies of what tools web projects use, and then compare and draw some conclusions." (Denis Pisarev, 2025-07-30)
+- "I plan for like built-in documentation so there will be like question mark buttons and explanations everywhere... content will be published on documentation portal and... there will be a link to documentation." (Denis Pisarev, 2025-07-30)
+- "Everything that supports a modern MD format is capable of having the links to the chapters, to the paragraphs, and that would be enough." (Denis Pisarev, 2025-07-30)
+- "The central source of truth will move to... the developer portal." (Denis Pisarev, 2025-07-30)
+
+### Option 1. What works best for each content type
+
+- "Rustdoc is unavoidable. It's the only thing for Rust documentation... Rustdoc kind of doesn't fit for it [MD documentation]." (Denis Pisarev, 2025-07-30)
+- "Making... the other documentation in MDbook or MK docs compatible in terms of linking or cross-linking between MDBook parts of portal and the Rustdoc part of portal that's going to be tricky and effectively no one is doing it." (Denis Pisarev, 2025-07-30)
+
 Unified platform.
 
 ## Glossary
