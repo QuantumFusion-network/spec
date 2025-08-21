@@ -91,35 +91,40 @@ Right now the portal runs on a VPS, which means manual setup, updates, and no pr
 
 [Briefly list the considered options. Each option is numbered for easy reference, with the selected option marked clearly as `(SELECTED)`. Aim for 3-5 options minimum. Always include at least "do nothing" option. A detailed description of each option can be written in the Consequences section below.]
 
-1. (SELECTED) [Name of selected option]
-2. [Name of alternative option]
-3. [Name of alternative option]
-4. [Do nothing / Status quo option]
+1. **(SELECTED) [Cloudflare Pages](https://pages.cloudflare.com/)**  
+2. [Vercel](https://vercel.com/)  
+3. [Netlify](https://www.netlify.com/)  
+4. [GitHub Pages](https://pages.github.com/)  
+5. Do nothing / Status quo (VPS)
 
 ### Hosting Platform Comparison
 
-| Criterion                 | Cloudflare Pages ✅   | Vercel ⚠️             | Netlify ⚠️            | GitHub Pages ⚠️   |
-| ------------------------- | --------------------- | --------------------- | --------------------- | ----------------- |
-| CI/CD from Git            | Auto-deploy + preview | Auto-deploy + preview | Auto-deploy + preview | Only Actions      |
-| Building App limitation   | 500 builds/month      | 125 builds/month      | 300 build-minutes     | Free              |
-| Limitations on MB/traffic | 25 MB build           | 100 MB file           | 25 MB file            | 100 MB file       |
-| DX (convenience)          | Convenient            | Best for Next.js      | Average               | Minimal features  |
-| Already in use            | Yes                   | Yes                   | No                    | Yes               |
-| Team experience           | Yes                   | Yes                   | No                    | Yes               |
+| **Criterion**                 | Cloudflare Pages ✅                          | Vercel ⚠️           | Netlify  ⚠️         | GitHub Pages ⚠️  |
+| ----------------------------- | -------------------------------------------- | --------------------- | --------------------- | ------------------ |
+| **CI/CD from Git**            | Auto-deploy + preview                        | Auto-deploy + preview | Auto-deploy + preview | Only Actions       |
+| **Deploy limits (per month)** | ✅ 500 deploys/month                         | 125 deploys/month     | 300 deploy-minutes    | Free               |
+| **Limitations on MB**         | 25 MB build                                  | 100 MB file           | 25 MB file            | 100 MB file        |
+| **Paid plans**                | ✅ $25/mo $20/yrr(5000 builds, 5 concurrent) | $20/user/mo           | $19/user/mo           | Free (no Pro plan) |
+| **DX (convenience)**          | Convenient                                   | Best for Next.js      | Average               | Minimal features   |
+| **Already in use**            | Yes                                          | Yes                   | No                    | No                 |
+| **Team experience**           | Yes                                          | Yes                   | No                    | No                 |
+   
 
 
-limits 
 
 
 ## Consequences (Optional)
 
-### Option 1: [Name of option] (SELECTED)
+### Option 1: Cloudflare Pages (SELECTED)
 
-[Brief description of this option.]
+Cloudflare Pages is a hosting platform for static sites with a global CDN, built-in preview deployments, support for Workers/Functions and WebSocket, as well as unlimited traffic. The platform also provides strong security (WAF, DDoS protection, HTTPS/HTTP/3), which is especially important for public projects.  
 
 **Selected because:**
-- [Benefit 1 that led to selection]
-- [Benefit 2 that led to selection]
+- Fixed Pro plan at $25/month (or $20/month with annual billing), not tied to the number of team members.  
+- Unlike Vercel and Netlify, the cost does not grow as the team scales.  
+- Rich functionality: global CDN, preview deployments, Workers, WebSocket, unlimited traffic.  
+- Powerful built-in security against attacks, included even in the base plan.  
+
 
 **Selected despite:**
 - [Drawback 1 that we accept]
