@@ -50,15 +50,13 @@ Last status update: YYYY-MM-DD
 
 ## Decision
 
-[Briefly describe the decision made in "We will..." format. This section should be concise - it's a declaration of intent for implementers. Detailed reasoning belongs in other sections.]
+We will migrate the Polkadot/Substrate portal hosting from the current VPS setup to a modern hosting platform with CI/CD and global CDN.
 
 ## Context
 
-[Describe the situation that calls for a decision. Focus on forces, constraints, and circumstances that led to needing this decision. Answer "What is the problem?" not "What's the solution?" Include:
-- Technical, business, and organizational context
-- Applicable requirements (functional and cross-functional)
-- Current state and why change is needed
-- Key stakeholders and their concerns]
+Currently, the Polkadot/Substrate portal is hosted on a VPS.  
+This approach requires manual administration, has no automated CI/CD or preview deployments, and does not scale well as the team and project grow.
+
 
 ### Decision Criteria (Optional)
 
@@ -71,7 +69,7 @@ Last status update: YYYY-MM-DD
 
 ## Problem (Optional)
 
-Right now the portal runs on a VPS, which means manual setup, updates, and no preview deployments. Therefore, we are considering modern hosting platforms with built-in CI/CD
+[Clearly state the problem being addressed. What issue or opportunity requires this architectural decision?]
 
 ## Decision in Details (Optional)
 
