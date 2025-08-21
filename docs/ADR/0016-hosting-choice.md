@@ -1,6 +1,5 @@
-# ADR Template
+# ADR_0016 Hosting choice
 
-## ADR_[ADR_id]: [Descriptive title of the architectural decision]
 
 *Note: This template maintains the Reader-focused design principle. Template sections can be completed out of order. Recommended sequence: Date → Status → People → Context → Consequences → Options → Decision. See ADR Guide for detailed working methods.*
 
