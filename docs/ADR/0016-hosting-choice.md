@@ -5,8 +5,8 @@
 
 ## Date
 
-Decision date: YYYY-MM-DD
-Last status update: YYYY-MM-DD
+Decision date: 2025-08-20
+Last status update: 2025-08-22
 
 ## Status
 
