@@ -44,13 +44,17 @@ Vsevolod Rusinskiy
 
 ## Decision
 
-We will migrate the Polkadot/Substrate portal hosting from the current VPS setup to a modern hosting platform with CI/CD and global CDN.
+We will migrate the Polkadot/Substrate portal hosting from the current manual setup to a modern hosting platform that provides built-in CI/CD.
 
 ## Context
 
-Currently, the Polkadot/Substrate portal is hosted on a VPS.  
-This approach requires manual administration, has no automated CI/CD or preview deployments, and does not scale well as the team and project grow.
+Currently, the Polkadot/Substrate portal is deployed manually without automated processes.  
+The current approach has several limitations:  
 
+- No CI/CD — there is no automated pipeline for build, tests, and deployment.  
+- No preview environments — it is not possible to quickly showcase changes before merging into the main branch.  
+- High dependence on individuals — releases and testing require specific team members, which slows down the workflow and reduces process resilience.  
+- Limited scalability — as the team and project grow, the process becomes a bottleneck.  
 
 ### Decision Criteria (Optional)
 
@@ -91,15 +95,15 @@ This approach requires manual administration, has no automated CI/CD or preview 
 
 ### Hosting Platform Comparison
 
-| **Criterion**                 | Cloudflare Pages ✅                          | Vercel ⚠️           | Netlify  ⚠️         | GitHub Pages ⚠️  |
-| ----------------------------- | -------------------------------------------- | --------------------- | --------------------- | ------------------ |
-| **CI/CD from Git**            | Auto-deploy + preview                        | Auto-deploy + preview | Auto-deploy + preview | Only Actions       |
-| **Deploy limits (per month)** | ✅ 500 deploys/month                         | 125 deploys/month     | 300 deploy-minutes    | Free               |
-| **Limitations on MB**         | 25 MB build                                  | 100 MB file           | 25 MB file            | 100 MB file        |
-| **Paid plans**                | ✅ $25/mo $20/yrr(5000 builds, 5 concurrent) | $20/user/mo           | $19/user/mo           | Free (no Pro plan) |
-| **DX (convenience)**          | Convenient                                   | Best for Next.js      | Average               | Minimal features   |
-| **Already in use**            | Yes                                          | Yes                   | No                    | No                 |
-| **Team experience**           | Yes                                          | Yes                   | No                    | No                 |
+| **Criterion**                 | Cloudflare Pages ✅                         | Vercel ⚠️           | Netlify  ⚠️         | GitHub Pages ⚠️  |
+| ----------------------------- | ------------------------------------------- | --------------------- | --------------------- | ------------------ |
+| **CI/CD from Git**            | Auto-deploy + preview                       | Auto-deploy + preview | Auto-deploy + preview | Only Actions       |
+| **Deploy limits (per month)** | ✅ 500 deploys/month                        | 125 deploys/month     | 300 deploy-minutes    | Free               |
+| **Limitations on MB**         | 25 MB build                                 | 100 MB file           | 25 MB file            | 100 MB file        |
+| **Paid plans**                | ✅ $25/mo $20/yr(5000 builds, 5 concurrent) | $20/user/mo           | $19/user/mo           | Free (no Pro plan) |
+| **DX (convenience)**          | Convenient                                  | Best for Next.js      | Average               | Minimal features   |
+| **Already in use**            | Yes                                         | Yes                   | No                    | No                 |
+| **Team experience**           | Yes                                         | Yes                   | No                    | No                 |
    
 
 
