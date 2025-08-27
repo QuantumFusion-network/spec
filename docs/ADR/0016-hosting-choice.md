@@ -161,12 +161,10 @@ Cloudflare Pages is a hosting platform for static sites with a global CDN, built
 - Testing approach
 - Automated verification methods]
 
-## Advice (Optional)
+## Advice
 
-[Raw, unfiltered contributions from people who offered advice. his section provides transparency into the decision process and serves as a learning resource.]
-
-- [Advice given] ([Advice-giver's name, role], YYYY-MM-DD)
-- [Advice given] ([Advice-giver's name, role], YYYY-MM-DD)
+- Define `build` and `deploy` in comparison table (Alisher Khassanov, 2025-08-20)
+- Check platform limits such as requests, number of custom domains, etc. (Alisher Khassanov, 2025-08-20)
 
 ## Glossary (Optional)
 
