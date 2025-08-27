@@ -95,15 +95,17 @@ The current approach has several limitations:
 
 ### Hosting Platform Comparison
 
-| **Criterion**                 | Cloudflare Pages ✅                         | Vercel ⚠️           | Netlify  ⚠️         | GitHub Pages ⚠️  |
-| ----------------------------- | ------------------------------------------- | --------------------- | --------------------- | ------------------ |
-| **CI/CD from Git**            | Auto-deploy + preview                       | Auto-deploy + preview | Auto-deploy + preview | Only Actions       |
-| **Deploy limits (per month)** | ✅ 500 deploys/month                        | 125 deploys/month     | 300 deploy-minutes    | Free               |
-| **Limitations on MB**         | 25 MB build                                 | 100 MB file           | 25 MB file            | 100 MB file        |
-| **Paid plans**                | ✅ $25/mo $20/yr(5000 builds, 5 concurrent) | $20/user/mo           | $19/user/mo           | Free (no Pro plan) |
-| **DX (convenience)**          | Convenient                                  | Best for Next.js      | Average               | Minimal features   |
-| **Already in use**            | Yes                                         | Yes                   | No                    | No                 |
-| **Team experience**           | Yes                                         | Yes                   | No                    | No                 |
+| **Criterion**                  | Cloudflare Pages ✅                                | Vercel ⚠️                  | Netlify  ⚠️                          | GitHub Pages ⚠️       |
+| ------------------------------ | -------------------------------------------------- | ---------------------------- | -------------------------------------- | ----------------------- |
+| **CI/CD from Git**             | Auto-deploy + preview                              | Auto-deploy + preview        | Auto-deploy + preview                  | Only Actions            |
+| **Builds per month**           | 500 (Free), 5 000 (Pro), 20 000 (Business)         | 125 (Hobby), 1 000 (Pro)     | 300 build-minutes (Free), 25 000 (Pro) | Free                    |
+| **Asset size limit**           | 25 MB per file                                     | 100 MB per file              | 25 MB per file                         | 100 MB per file         |
+| **Custom domains per project** | 100 (Free), 250 (Pro), 500 (Business)              | 50 (Hobby), Unlimited* (Pro) | ~100 per site                          | 1 per site              |
+| **Bandwidth / Requests**       | Unlimited static traffic                           | Unlimited static traffic     | 100 GB/mo (Free)                       | ~100 GB/mo (soft limit) |
+| **Paid plans**                 | $25/mo or $20/yr (Pro: 5 000 builds, 5 concurrent) | $20/user/mo                  | $19/user/mo                            | Free (no Pro plan)      |
+| **DX (convenience)**           | Convenient                                         | Best for Next.js             | Average                                | Minimal features        |
+| **Already in use**             | Yes                                                | Yes                          | No                                     | No                      |
+| **Team experience**            | Yes                                                | Yes                          | No                                     | No                      |
    
 
 
