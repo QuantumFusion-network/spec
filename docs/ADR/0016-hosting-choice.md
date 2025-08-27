@@ -10,7 +10,7 @@ Last status update: 2025-08-22
 
 ## Status
 
-- [ ] Proposed
+- [x] Proposed
 - [ ] Accepted
 - [ ] Deprecated
 - [ ] Superseded
