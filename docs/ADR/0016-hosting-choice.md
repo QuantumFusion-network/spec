@@ -1,8 +1,6 @@
 # ADR_0016: Hosting choice
 
 
-*Note: This template maintains the Reader-focused design principle. Template sections can be completed out of order. Recommended sequence: Date → Status → People → Context → Consequences → Options → Decision. See ADR Guide for detailed working methods.*
-
 ## Date
 
 Decision date: 2025-08-20
