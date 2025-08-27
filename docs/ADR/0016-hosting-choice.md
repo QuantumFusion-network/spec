@@ -24,10 +24,7 @@ Last status update: 2025-08-22
 ## People
 
 ### Author/Decision Owner (Single Point of Accountability)
-[Name of person or team accountable for this decision and point of contact for questions]
-  - [Person 1]
-  - [Person 2]
-  - [Person 3]
+Vsevolod Rusinskiy
 
 ### Consulted (Subject Matter Experts)
 [List of people with relevant expertise who provided advice]
