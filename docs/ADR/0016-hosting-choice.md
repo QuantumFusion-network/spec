@@ -169,8 +169,15 @@ Cloudflare Pages is a hosting platform for static sites with a global CDN, built
 
 ## Advice
 
+General adviсe:
 - Define `build` and `deploy` in comparison table (Alisher Khassanov, 2025-08-20)
 - Check platform limits such as requests, number of custom domains, etc. (Alisher Khassanov, 2025-08-20)
+- Write down what stages the source code goes through before it becomes a page for the user (Alisher Khassanov, 2025-08-27)
+- Create a table that defines these code change steps and think about the methods and artefacts (Alex Vyatkin, 2025-08-27)
+- Сonsider using Vercel, as it is planned to be used for the W3zard and the team has experience working with it (Andreea Eftene, 2025-08-29)
+
+Cloudflare Pages option:
+- How is the build configured in Cloudflare Pages? For example, for GitHub Actions we write a YAML file in the Actions Workflow format
 
 ## Glossary (Optional)
 
