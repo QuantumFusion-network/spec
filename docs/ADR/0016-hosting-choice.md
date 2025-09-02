@@ -1,6 +1,5 @@
 # ADR_0016: Web apps hosting
 
-
 ## Date
 
 Decision date: 2025-08-20
