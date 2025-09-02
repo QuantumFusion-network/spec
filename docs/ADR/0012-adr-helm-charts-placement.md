@@ -2,8 +2,8 @@
 
 ## Date
 
-Decision date: 2025-07-30.  
-Last status update: 2025-07-30.
+Decision date: 2025-07-30  
+Last status update: 2025-07-30
 
 ## Status
 - [x] Proposed
@@ -35,15 +35,23 @@ Alexey Karyagin, [@akablockchain2](https://github.com/akablockchain2).
 
 ### Informed
 
-- [x] Alisher Khassanov, [@khssnv](https://github.com/khssnv).
-- [x]  Denis Pisarev, [@TriplEight](https://github.com/TriplEight).
-- [x]  Alex Vyatkin, [@actinfer](https://github.com/actinfer).
-- [x]  Sviatoslav Alekseev, [@zotho](https://github.com/zotho).
-- [x]  Alexander Lygin, [@alexlygin](https://github.com/AlexLgn).
+- [ ] Alisher Khassanov, [@khssnv](https://github.com/khssnv).
+- [ ]  Denis Pisarev, [@TriplEight](https://github.com/TriplEight).
+- [ ]  Alex Vyatkin, [@actinfer](https://github.com/actinfer).
+- [ ]  Sviatoslav Alekseev, [@zotho](https://github.com/zotho).
+- [ ]  Alexander Lygin, [@alexlygin](https://github.com/AlexLgn).
 
 ## Decision
 
 The decision has not yet been made. We are choosing between centralized and distributed placement of Helm charts for QF infrastructure.
+
+## Context
+
+[Describe the situation that calls for a decision. Focus on forces, constraints, and circumstances that led to needing this decision. Answer "What is the problem?" not "What's the solution?" Include:
+- Technical, business, and organizational context
+- Applicable requirements (functional and cross-functional)
+- Current state and why change is needed
+- Key stakeholders and their concerns]
 
 ## Options
 
@@ -130,6 +138,37 @@ Infrastructure Helm charts are managed centrally while service-related Helm char
 **Rejected because/despite:**  
 - TBD
 
+## Advice
+
+- Why is one of options harder and why is one of them easier? Who is responsible for what in option? (Alisher Khassanov, 2025-07-30)
+- What is a platform? Is it something developers use just as a service, or is it something developers communicate with through the role who maintains it? (Alisher Khassanov, 2025-07-30)
+- How do developers access a platform? (Alisher Khassanov, 2025-07-30)
+- Who are responsible for maintaining - developer or DevOps? (Alisher Khassanov, 2025-07-30)
+- Advantage for the centralized approach - everything related to packaging is in one repository. So it's easier to maintain from the infrastructure maintainership perspective (Alisher Khassanov, 2025-07-30)
+- Indeed less maintenance overhead to keep everything in a monorepository. But both approaches are possible. Argo CD allows you specifying any standalone repository, like Git or any container sourcing whatsoever, at any point of time (Denis Pisarev, 2025-07-30)
+- Major architecture and major deployments can totally be held in a monorepository (Denis Pisarev, 2025-07-30)
+- Specific deployments, maybe some test deployments by developers, can be kept in standalone repositories and maintained separately by them (Denis Pisarev, 2025-07-30)
+- We can keep a template repository with everything relevant for deployment scaffolded, and any internal or external developer will be able to use that public template to spin off and run their own deployment if needed (Denis Pisarev, 2025-07-30)
+- Disadvantage of centralized template repository - developers who develop an application and are responsible for packaging will have to work with both repositories. With the monorepo (with the related infrastructure), and the application code (Alisher Khassanov, 2025-07-30)
+- From an application developer perspective, the 'dilution' is that part of an application is in the application repository and part of it is in the infrastructure monorepository (Alisher Khassanov, 2025-07-30)
+- If we put charts in the application repository how CI works?
+Update of chart will update Kubernetes whenever it sees an update of an app or the packaging files? (Alisher Khassanov, 2025-07-30)
+- Advantage of centralized approach - we have more knowledge on it  (Alisher Khassanov, 2025-07-30)
+- Are charts mainly come from external sources or we mainly use our own in-house developed applications? (Alisher Khassanov, 2025-07-30)
+
 ## References
 
 [Helm best practices](https://codefresh.io/docs/docs/ci-cd-guides/helm-best-practices/)
+
+## ADR Relationships
+
+[Fill in the section if applicable or leave blank for further filling.]
+
+### Supersedes
+- ADR #[X]: [Brief description of superseded decision]
+
+### Superseded By
+- ADR #[X]: [Brief description of superseding decision]
+
+### Related ADRs
+- ADR #[X]: [Brief description of relationship]
