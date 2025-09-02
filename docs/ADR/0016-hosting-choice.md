@@ -43,7 +43,7 @@ The current approach has several limitations:
 
 [Briefly list the considered options. Each option is numbered for easy reference, with the selected option marked clearly as `(SELECTED)`. Aim for 3-5 options minimum. Always include at least "do nothing" option. A detailed description of each option can be written in the Consequences section below.]
 
-1. **(SELECTED) [Cloudflare Pages](https://pages.cloudflare.com/)**  
+1. **(SELECTED) [Cloudflare Workers](https://workers.cloudflare.com/)**  
 2. [Vercel](https://vercel.com/)  
 3. [Netlify](https://www.netlify.com/)  
 4. [GitHub Pages](https://pages.github.com/)  
@@ -51,29 +51,29 @@ The current approach has several limitations:
 
 ### Hosting Platform Comparison
 
-| **Criterion**                  | Cloudflare Pages ✅                          | Vercel ⚠️                  | Netlify  ⚠️                          | GitHub Pages ⚠️       |
-| ------------------------------ | -------------------------------------------- | ---------------------------- | -------------------------------------- | ----------------------- |
-| **CI/CD from Git**             | Auto-deploy + preview                        | Auto-deploy + preview        | Auto-deploy + preview                  | Only Actions            |
-| **Builds per month**           | 500 (Free), 5 000 (Pro), 20 000 (Business)   | 125 (Hobby), 1 000 (Pro)     | 300 build-minutes (Free), 25 000 (Pro) | Free                    |
-| **Asset size limit**           | 25 MB per file                               | 100 MB per file              | 25 MB per file                         | 100 MB per file         |
-| **Custom domains per project** | 100 (Free), 250 (Pro), 500 (Business)        | 50 (Hobby), Unlimited* (Pro) | ~100 per site                          | 1 per site              |
-| **Bandwidth / Requests**       | Unlimited static traffic                     | Unlimited static traffic     | 100 GB/mo (Free)                       | ~100 GB/mo (soft limit) |
-| **Paid plans**                 | $$25/month, or $20/month with annual billing | $20/user/mo                  | $19/user/mo                            | Free (no Pro plan)      |
-| **DX (convenience)**           | Convenient                                   | Best for Next.js             | Average                                | Minimal features        |
-| **Already in use**             | Yes                                          | Yes                          | No                                     | No                      |
-| **Team experience**            | Yes                                          | Yes                          | No                                     | No                      |
+| **Criterion**                  | Cloudflare Workers ✅                                                 | Vercel ⚠️                  | Netlify  ⚠️                          | GitHub Pages ⚠️       |
+| ------------------------------ | --------------------------------------------------------------------- | ---------------------------- | -------------------------------------- | ----------------------- |
+| **CI/CD from Git**             | Auto-deploy + preview                                                 | Auto-deploy + preview        | Auto-deploy + preview                  | Only Actions            |
+| **Builds per month**           | no limits (deploy via Wrangler/GitHub Actions)                        | 125 (Hobby), 1 000 (Pro)     | 300 build-minutes (Free), 25 000 (Pro) | Free                    |
+| **Asset size limit**           | 25 MB per file                                                        | 100 MB per file              | 25 MB per file                         | 100 MB per file         |
+| **Custom domains per project** | Unlimited (via routes/zones)                                          | 50 (Hobby), Unlimited* (Pro) | ~100 per site                          | 1 per site              |
+| **Bandwidth / Requests**       | Free: 100k req/day, Paid: 10M req/mo incl. ($0.30 per 1M extra)       | Unlimited static traffic     | 100 GB/mo (Free)                       | ~100 GB/mo (soft limit) |
+| **Paid plans**                 | Free, or $5/month incl. 10M req + 30M CPU-ms ($0.30 per 1M req after) | $20/user/mo                  | $19/user/mo                            | Free (no Pro plan)      |
+| **DX (convenience)**           | Convenient                                                            | Best for Next.js             | Average                                | Minimal features        |
+| **Already in use**             | Yes                                                                   | Yes                          | No                                     | No                      |
+| **Team experience**            | Yes                                                                   | Yes                          | No                                     | No                      |
    
 ## Consequences (Optional)
 
-### Option 1: Cloudflare Pages (SELECTED)
+### Option 1: Cloudflare Workers (SELECTED)
 
-Cloudflare Pages is a hosting platform for static sites with a global CDN, built-in preview deployments, support for Workers/Functions and WebSocket, as well as unlimited traffic. The platform also provides strong security (WAF, DDoS protection, HTTPS/HTTP/3), which is especially important for public projects.  
+Cloudflare Workers is a serverless edge platform that can also host static assets via its integration with Pages. It provides a global CDN, built-in preview deployments, support for custom Workers/Functions and WebSockets, as well as unlimited static traffic. The platform also includes strong security features (WAF, DDoS protection, HTTPS/HTTP/3), which is especially important for public projects.
 
 **Selected because:**
-- Fixed Pro plan at $25/month (or $20/month with annual billing), not tied to the number of team members.  
-- Unlike Vercel and Netlify, the cost does not grow as the team scales.  
-- Rich functionality: global CDN, preview deployments, Workers, WebSocket, unlimited traffic.  
-- Powerful built-in security against attacks, included even in the base plan.  
+- Predictable entry-level plan at $5/month (includes 10M requests and 30M CPU-ms).  
+- Unlike Vercel and Netlify, the cost does not grow with the number of team members.  
+- Rich functionality: global CDN, preview deployments, Workers runtime, WebSockets, edge APIs.  
+- Strong built-in security (WAF, DDoS protection, HTTPS/HTTP/3) even on free tier.   
 
 ## Advice
 
@@ -84,5 +84,5 @@ General adviсe:
 - Create a table that defines these code change steps and think about the methods and artefacts (Alex Vyatkin, 2025-08-27)
 - Сonsider using Vercel, as it is planned to be used for the W3zard and the team has experience working with it (Andreea Eftene, 2025-08-29)
 
-Cloudflare Pages option:
-- How is the build configured in Cloudflare Pages? For example, for GitHub Actions we write a YAML file in the Actions Workflow format
+Cloudflare Workers option:
+- How is the build configured in Cloudflare Workers? For example, for GitHub Actions we write a YAML file in the Actions Workflow format
