@@ -1,4 +1,4 @@
-# ADR_0016: Hosting choice
+# ADR_0016: Web apps hosting
 
 
 ## Date
@@ -8,14 +8,14 @@ Last status update: 2025-08-22
 
 ## Status
 
-- [x] Proposed
-- [ ] Accepted
+- [ ] Proposed
+- [x] Accepted
 - [ ] Deprecated
 - [ ] Superseded
 
 ### Implementation Status
 
-- [ ] Planned
+- [x] Planned
 - [ ] In Development
 - [ ] Implemented
 - [ ] Verified
@@ -25,22 +25,6 @@ Last status update: 2025-08-22
 
 ### Author/Decision Owner (Single Point of Accountability)
 Vsevolod Rusinskiy
-
-### Consulted (Subject Matter Experts)
-[List of people with relevant expertise who provided advice]
-
-  - [Person 1]
-  - [Person 2]
-  - [Person 3]
-
-### Informed (Affected Parties)
-[People/teams affected by this decision who should be aware]
-
-  - [ ] [Person 1]
-  - [ ] [Person 2]
-  - [ ] [Person 3]
-
-*Note: People listed in "Informed" should submit a PR to check their name after reading this ADR. This can be done during the initial review process of the ADR upload/commit PR (when the file is first uploaded to GitHub and the author requests reviews), or in a separate PR after the ADR is merged.*
 
 ## Decision
 
@@ -55,33 +39,6 @@ The current approach has several limitations:
 - No preview environments — it is not possible to quickly showcase changes before merging into the main branch.  
 - High dependence on individuals — releases and testing require specific team members, which slows down the workflow and reduces process resilience.  
 - Limited scalability — as the team and project grow, the process becomes a bottleneck.  
-
-### Decision Criteria (Optional)
-
-[Explicit criteria for evaluating options, such as:
-- Performance requirements
-- Cost constraints
-- Security requirements
-- Maintainability needs
-- Time-to-market considerations]
-
-## Problem (Optional)
-
-[Clearly state the problem being addressed. What issue or opportunity requires this architectural decision?]
-
-## Decision in Details (Optional)
-
-[Describe in details the decision made, including:
-- Key technical details
-- Implementation approach
-- Timeline considerations
-- Who is responsible for implementation]
-
-### Decision Drivers (Optional)
-
-- [Driver 1: Key force or requirement influencing the decision]
-- [Driver 2: Another key consideration]
-- [...]
 
 ## Options
 
@@ -107,10 +64,6 @@ The current approach has several limitations:
 | **Already in use**             | Yes                                          | Yes                          | No                                     | No                      |
 | **Team experience**            | Yes                                          | Yes                          | No                                     | No                      |
    
-
-
-
-
 ## Consequences (Optional)
 
 ### Option 1: Cloudflare Pages (SELECTED)
@@ -123,50 +76,6 @@ Cloudflare Pages is a hosting platform for static sites with a global CDN, built
 - Rich functionality: global CDN, preview deployments, Workers, WebSocket, unlimited traffic.  
 - Powerful built-in security against attacks, included even in the base plan.  
 
-
-**Selected despite:**
-- [Drawback 1 that we accept]
-- [Drawback 2 that we accept]
-
-**Risks and Mitigations:**
-- [Risk 1]
-  - [Mitigation strategy 1]
-- [Risk 2]
-  - [Mitigation strategy 2]
-
-**Failure Recovery:**
-[How will we recover if this option fails?]
-
-### Option 2: [Name of alternative option]
-
-[Brief description of this option.]
-
-**Rejected because:**
-- [Critical drawback 1 - reason for rejection]
-- [Critical drawback 2 - reason for rejection]
-
-**Rejected despite:**
-- [Potential benefit 1 we're giving up]
-- [Potential benefit 2 we're giving up]
-
-*(Repeat for additional options if applicable)*
-
-
-## Implementation Notes (Optional)
-
-[Any specific guidance for implementing this decision, including:
-- Required dependencies
-- Migration steps
-- Testing considerations
-- Failure Recovery / Rollback procedures]
-
-## Confirmation (Optional)
-
-[Describe how the implementation of this decision will be verified. Include:
-- Acceptance criteria
-- Testing approach
-- Automated verification methods]
-
 ## Advice
 
 General adviсe:
@@ -178,27 +87,3 @@ General adviсe:
 
 Cloudflare Pages option:
 - How is the build configured in Cloudflare Pages? For example, for GitHub Actions we write a YAML file in the Actions Workflow format
-
-## Glossary (Optional)
-
-- **[Term]**: [Definition]
-
-## References
-
-- [Related documents, links, and research materials]
-- [Previous ADRs that influence this decision]
-- [External resources that informed this decision]
-- [Requirements or standards]
-
-## ADR Relationships
-
-[Fill in the section if applicable or leave blank for further filling.]
-
-### Supersedes
-- ADR #[X]: [Brief description of superseded decision]
-
-### Superseded By
-- ADR #[X]: [Brief description of superseding decision]
-
-### Related ADRs
-- ADR #[X]: [Brief description of relationship]
