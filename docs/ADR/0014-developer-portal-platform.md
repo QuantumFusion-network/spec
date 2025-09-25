@@ -40,7 +40,9 @@ Last status update: 2025-09-25
 
 ## Decision
 
-We will use Starlight/Astro as the unified platform for the QF developer portal, implementing the Diataxis documentation framework for content organization, with rustdoc integration for Rust-specific API documentation.
+We will use Starlight (Astro JS framework) for the QF Network Developer Portal.
+This portal will serve as the entry point for developers, providing educational materials and referencing additional documentation sources, e.g., rustdoc and mdBook-based API references for Rust projects.
+The Diataxis framework is recommended for organizing its content.
 
 ## Context
 
@@ -73,7 +75,7 @@ QF Network requires a comprehensive developer portal supporting multiple content
 
 1. Starlight/Astro-based Unified Platform (SELECTED)
 2. Docusaurus-based Platform
-3. Mixed Platform Approach (GitBook + rustdoc)
+3. SaaS (GitBook)
 4. Status Quo
 
 ## Consequences
@@ -126,20 +128,17 @@ React-based Docusaurus for documentation with separate rustdoc hosting.
 - More standardized choice in React ecosystem
 - Potentially lower learning curve for team
 
-### Option 3: Mixed Platform Approach (GitBook + rustdoc)
-
-Different tools for different content types:
-
-- GitBook for guides and tutorials (at docs.qfnetwork.xyz)
-- rustdoc and GitHub Pages for API docs and Rust projects such as `qf-solochain` and native Rust SDK for smart contracts, separate entry point.
+### Option 3: SaaS (GitBook)
 
 **Rejected because:**
 
-- Fragmented user experience across different platforms
-- Complex cross-linking between different documentation systems
-- Higher maintenance overhead across multiple platforms
-- Suboptimal search experience across platforms
-- Inconsistent branding and navigation
+- Less precise control of the website.
+
+**Rejected despite:**
+
+- Easier configuration.
+- Less maintenance overhead.
+- Doesn't bring new technology to the stack.
 
 ### Option 4: Status Quo
 
@@ -236,17 +235,3 @@ Different tools for different content types:
 - Polkadot documentation portals: <https://polkadot.com/> -> <https://polkadot.com/developers> -> <https://docs.polkadot.com/> -> <https://docs.polkadot.com/develop/>
 - [Modern Polkadot documentation portal built with rustdoc](https://paritytech.github.io/polkadot-sdk/)
 - [Build on Crust guide](https://wiki.crust.network/docs/en/build101)
-
-## ADR Relationships
-
-### Supersedes
-
-- ADR #[X]: [Brief description of superseded decision]
-
-### Superseded By
-
-- ADR #[X]: [Brief description of superseding decision]
-
-### Related ADRs
-
-- ADR #[X]: [Brief description of relationship]
