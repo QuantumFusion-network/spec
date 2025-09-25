@@ -22,18 +22,18 @@ Last status update: 2025-09-25
 
 ## People
 
-### Author/Decision Owner (Single Point of Accountability)
+### Author/Decision Owner
 
 - Alisher Khassanov, [@khssnv](https://github.com/khssnv)
 - Denis Pisarev, [@TriplEight](https://github.com/TriplEight)
 
-### Consulted (Subject Matter Experts)
+### Consulted
 
 - Andreea Eftene [@statictype](https://github.com/statictype)
 - Alexander Lygin, [@alexlgn](https://github.com/AlexLgn)
 - Memechi Kekamoto, [@MemechiKekamoto](https://github.com/MemechiKekamoto)
 
-### Informed (Affected Parties)
+### Informed
 
 - [ ] Alex Vyatkin, [@actinfer](https://github.com/actinfer)
 - [ ] Sviatoslav Alekseev, [@zotho](https://github.com/zotho)
