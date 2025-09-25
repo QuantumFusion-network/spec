@@ -47,6 +47,7 @@ We will use Starlight/Astro as the unified platform for the QF developer portal,
 QF Network requires a comprehensive developer portal supporting multiple content types and audiences. The decision involves selecting tools and platforms that balance technical capabilities, maintenance overhead, and team expertise while delivering an excellent developer experience.
 
 **Content Types:**
+
 - Entry point and developer onboarding
 - Guides and tutorials for various skill levels
 - Live documentation by w3zard
@@ -55,6 +56,7 @@ QF Network requires a comprehensive developer portal supporting multiple content
   - Native Rust SDK for smart contracts public documentation
 
 **Current Tech Stack:**
+
 - Main website: Svelte
 - Other applications: React
 
@@ -81,6 +83,7 @@ QF Network requires a comprehensive developer portal supporting multiple content
 Starlight built on Astro framework as the primary documentation platform, with rustdoc integration for Rust API documentation.
 
 **Selected because:**
+
 - Superior technical features (search, code snippets, SSR for islands)
 - SEO-friendly with server-side rendering capabilities
 - Framework-agnostic - can integrate existing React and Svelte components
@@ -90,12 +93,14 @@ Starlight built on Astro framework as the primary documentation platform, with r
 - Supports Diataxis documentation pattern effectively
 
 **Selected despite:**
+
 - Introduces new technology (Astro) to the team's stack
 - Learning curve for team members unfamiliar with Astro
 - Potential maintenance overhead from additional framework
 - Potential fragmentation concerns
 
 **Risks and Mitigations:**
+
 - **Risk**: Team skill gap with Astro framework
   - **Mitigation**: Astro uses familiar JavaScript/TypeScript concepts; documentation framework requires minimal ongoing development
 - **Risk**: Fragmented tooling and deployment complexity
@@ -109,12 +114,14 @@ Migration to Docusaurus or GitBook remains possible as content is primarily mark
 React-based Docusaurus for documentation with separate rustdoc hosting.
 
 **Rejected because:**
+
 - React components not SEO-friendly without SSR
 - Less advanced search and code snippet capabilities
 - More limited modern documentation features
 - Not significantly better aligned with existing React usage
 
 **Rejected despite:**
+
 - Familiarity with React ecosystem
 - More standardized choice in React ecosystem
 - Potentially lower learning curve for team
@@ -122,10 +129,12 @@ React-based Docusaurus for documentation with separate rustdoc hosting.
 ### Option 3: Mixed Platform Approach (GitBook + rustdoc)
 
 Different tools for different content types:
-  - GitBook for guides and tutorials (at docs.qfnetwork.xyz)
-  - rustdoc and GitHub Pages for API docs and Rust projects such as `qf-solochain` and native Rust SDK for smart contracts, separate entry point.
+
+- GitBook for guides and tutorials (at docs.qfnetwork.xyz)
+- rustdoc and GitHub Pages for API docs and Rust projects such as `qf-solochain` and native Rust SDK for smart contracts, separate entry point.
 
 **Rejected because:**
+
 - Fragmented user experience across different platforms
 - Complex cross-linking between different documentation systems
 - Higher maintenance overhead across multiple platforms
@@ -135,6 +144,7 @@ Different tools for different content types:
 ### Option 4: Status Quo
 
 **Rejected because:**
+
 - Fails to address developer portal requirements
 - Maintains poor developer onboarding experience
 - No unified content strategy
@@ -165,11 +175,12 @@ Different tools for different content types:
 - "Let's conduct separate studies of what tools web projects use, and then compare and draw some conclusions." (Denis Pisarev, 2025-07-30)
 - "I plan for like built-in documentation so there will be like question mark buttons and explanations everywhere... content will be published on documentation portal and... there will be a link to documentation." (Denis Pisarev, 2025-07-30)
 - "The central source of truth will move to... the developer portal." (Denis Pisarev, 2025-07-30)
-- "Have you considered diataxis? https://diataxis.fr/application/ the most useful docs for me follow this pattern. it is quite common in the JavaScript world. I find it more meaningful than what Astar has." (Andreea Eftene, 2025-09-17)
+- "Have you considered diataxis? <https://diataxis.fr/application/> the most useful docs for me follow this pattern. it is quite common in the JavaScript world. I find it more meaningful than what Astar has." (Andreea Eftene, 2025-09-17)
 
 ### Option 1: Starlight/Astro Platform
 
 **Technical Arguments Supporting Starlight:**
+
 - "In a nutshell, I like Starlight because of its focus on user friendly technical documentation and modern approaches. The search is better, the code snippets are better, it is the only one that supports SSR for its islands" (Andreea Eftene, 2025-09-17)
 - "The content that comes from React in a Docusaurus setup will not be SEO friendly" - highlighting SEO advantages (Andreea Eftene, 2025-09-17)
 - "I'd move from Docusaurus to it [Starlight]." (Denis Pisarev, 2025-09-17)
@@ -178,11 +189,13 @@ Different tools for different content types:
 ### Technology Stack Concerns and Responses
 
 **Concerns About Third Framework:**
+
 - "I'm a little concerned about the third JavaScript framework in the company, we already have the website built using Svelte and React for everything else" (Alisher Khassanov, 2025-09-16)
 - "This means all the typical considerations apply: weaker skill concentration, reduced code reuse, fragmented tooling/infra, probably higher hiring overhead, increased maintenance cost" (Alisher Khassanov, 2025-09-17)
 - "What do you think makes Starlight more compelling for us than, say, Docusaurus, which is probably be the default choice for teams working primarily with React?" (Alisher Khassanov, 2025-09-17)
 
 **Responses Addressing Technology Stack Concerns:**
+
 - "Astro is framework-agnostic. You can use both Svelte and React components with it" - addressing code reuse concerns (Andreea Eftene, 2025-09-17)
 - "... working with Astro Starlight and React vs working with Docusaurus and React should not be that different in terms of skills needed" (Andreea Eftene, 2025-09-17)
 - "You can deploy any JavaScript framework to any hosting platform (Cloudflare, Vercel etc) with more or less the same code. The instructions to do so are spoon-fed on each tool's website. Tooling is 100% the same." (Andreea Eftene, 2025-09-17)
@@ -227,10 +240,13 @@ Different tools for different content types:
 ## ADR Relationships
 
 ### Supersedes
+
 - ADR #[X]: [Brief description of superseded decision]
 
 ### Superseded By
+
 - ADR #[X]: [Brief description of superseding decision]
 
 ### Related ADRs
+
 - ADR #[X]: [Brief description of relationship]
