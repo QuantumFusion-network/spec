@@ -7,15 +7,15 @@ Last status update: 2025-09-25
 
 ## Status
 
-- [x] Proposed
-- [ ] Accepted
+- [ ] Proposed
+- [x] Accepted
 - [ ] Deprecated
 - [ ] Superseded
 
 ### Implementation Status
 
-- [x] Planned
-- [ ] In Development
+- [ ] Planned
+- [x] In Development
 - [ ] Implemented
 - [ ] Verified
 - [ ] Discontinued
