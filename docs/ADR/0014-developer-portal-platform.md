@@ -2,7 +2,7 @@
 
 ## Date
 
-Decision date: YYYY-MM-DD  
+Decision date: 2025-09-17  
 Last status update: 2025-09-25
 
 ## Status
