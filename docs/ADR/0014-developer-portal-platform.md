@@ -36,7 +36,7 @@ Last status update: 2025-09-25
 ### Informed
 
 - [x] Alex Vyatkin, [@actinfer](https://github.com/actinfer)
-- [ ] Sviatoslav Alekseev, [@zotho](https://github.com/zotho)
+- [x] Sviatoslav Alekseev, [@zotho](https://github.com/zotho)
 
 ## Decision
 
