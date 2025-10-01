@@ -3,7 +3,7 @@
 ## Date
 
 Decision date: YYYY-MM-DD  
-Last status update: YYYY-MM-DD
+Last status update: 2025-10-01
 
 ## Status
 
@@ -37,15 +37,31 @@ Alisher Khassanov, [@khssnv](https://github.com/khssnv).
 
 ## Decision
 
-We will add an API for on-chain storage.
+We will add an API for on-chain storage. It will improve storage operations ergonomics.
 
 ## Context
 
 ## Options
 
+Common properties:
+
+- Automatic key generation by default. Optional user-defined key.
+
+### Option 1: TODO
+
 ### Option 2: `qf-polkavm-sdk@v0.1.0::safe_api`
 
 Storage operations with SCALE codec serialization.
+
+**Rejected because:**
+
+- Insufficient encapsulation. Similar operations already available in `pallet-revive`'s API'.
+- Intended for adding API safety. Irrelevant for already safe API of the `pallet-revive`.
+
+**Rejected despite:**
+
+- Automatic SCALE encoding/decoding.
+- Simplified `StorageCell<T>` interface.
 
 #### Public API
 
@@ -75,12 +91,39 @@ impl StorageCell<T> {
 }
 ```
 
-**Rejected because:**
+### Option 3: REST-like
 
-- Insufficient encapsulation. Similar operations already available in `pallet-revive`'s API'.
-- Intended for adding API safety. Irrelevant for already safe API of the `pallet-revive`.
+Focus on resources and operations on them.
+On-chain storage is accessible through an object (similar to an endpoint) with a given set of operations (similar to HTTP verbs).
+Could look familiar to frontend engineers.
 
-**Rejected despite:**
+```rust
+use sdk::storage;
 
-- Automatic SCALE encoding/decoding.
-- Simplified `StorageCell<T>` interface.
+struct StudentId(u32);
+struct Student {
+    name: String
+}
+
+let alice = Student { name: "Alice".to_string() };
+let id: StudentId = storage::post(alice);
+
+let mut bob = storage::get(id);
+
+bob.name = "Bob".to_string();
+storage::put(id, &bob);
+```
+
+### Option 4: CRUD
+
+Could look familiar to backend engineers.
+
+### Option 5: Substrate-like
+
+The storage layout of the smart contract is defined by a set of structs annotated with a macro that makes them the interface to the on-chain storage.
+
+## References
+
+1. Rust API Guidelines, <https://rust-lang.github.io/api-guidelines/about.html>.
+1. Elegant Library APIs in Rust, <https://deterministic.space/elegant-apis-in-rust.html>
+1. Pragmatic Rust Guidelines, <https://microsoft.github.io/rust-guidelines/>
