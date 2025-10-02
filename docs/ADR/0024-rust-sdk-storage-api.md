@@ -114,11 +114,20 @@ bob.name = "Bob".to_string();
 storage::put(id, &bob);
 ```
 
-### Option 4: CRUD
+### Option 4: GraphQL-like
+
+GraphQL ideas: schema-first, selection-driven i/o, mutations, partial errors, subscriptions.
+Could look familiar to frontend engineers.
+
+**Rejected because**:
+
+- Core ideas of the approach address another set of problems and irrelevant for smart contracts case.
+
+### Option 5: CRUD-like
 
 Could look familiar to backend engineers.
 
-### Option 5: Substrate-like
+### Option 6: Substrate-like
 
 The storage layout of the smart contract is defined by a set of structs annotated with a macro that makes them the interface to the on-chain storage.
 
@@ -127,3 +136,4 @@ The storage layout of the smart contract is defined by a set of structs annotate
 1. Rust API Guidelines, <https://rust-lang.github.io/api-guidelines/about.html>.
 1. Elegant Library APIs in Rust, <https://deterministic.space/elegant-apis-in-rust.html>
 1. Pragmatic Rust Guidelines, <https://microsoft.github.io/rust-guidelines/>
+1. GraphQL Core Concepts, <https://www.howtographql.com/basics/2-core-concepts/>.
