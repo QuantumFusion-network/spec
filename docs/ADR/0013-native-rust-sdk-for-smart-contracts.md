@@ -22,11 +22,11 @@ Last status update: 2025-07-23.
 
 ## People
 
-### Author/Decision Owner
+### Decision Owner
 
 Alisher Khassanov, [@khssnv](https://github.com/khssnv).
 
-### Consulted (Subject Matter Experts)
+### Consulted
 
 - Denis Pisarev, [@TriplEight](https://github.com/TriplEight).
 - Memechi Kekamoto, [@MemechiKekamoto](https://github.com/MemechiKekamoto).
@@ -39,7 +39,7 @@ Alisher Khassanov, [@khssnv](https://github.com/khssnv).
 
 ## Decision
 
-We will develop a native Rust SDK for PolkaVM and Revive project smart contracts, focusing on delivering a developer-friendly and ergonomic API.
+We will develop a native Rust SDK for `pallet-revive` smart contracts, a lightweight extension to `pallet-revive-uapi` to enhance developer ergonomics and provide the missing functionality for common use cases.
 
 ## Context
 
@@ -48,6 +48,36 @@ We will develop a native Rust SDK for PolkaVM and Revive project smart contracts
 - Native Rust smart contracts for PolkaVM exist only as test fixtures within the Polkadot SDK, see <https://github.com/paritytech/polkadot-sdk/tree/7a747ff/substrate/frame/revive/fixtures/contracts>.
 
 - The QF Network's `qf-polkavm-sdk` project has a minimal set of abstractions, example contracts, and a CLI tool for deploying and invoking smart contracts, see <https://github.com/QuantumFusion-network/qf-polkavm-sdk/tree/850e169/>.
+
+### Competitive landscape
+
+#### Polkadot ecosystem
+
+#### pallet-revive-uapi
+
+See [Problem](#problem) section.
+
+<!-- markdownlint-disable-next-line MD026 -->
+#### ink!
+
+Developer may choose our SDK because:
+
+- It provides native Rust developer experience.
+- There is no additional DSL to learn (e.g., `message`, `contract`).
+- Minimal API, small set of new entities to learn in addition to `pallet-revive`.
+- Friendly to unsafe optimizations.
+
+#### Solidity
+
+Same as other "Rust over Solidity" rationale, see <https://www.parity.io/blog/what-is-paritys-ink>.
+
+#### Smart contract platforms
+
+Out of scope for this ADR.
+
+#### dApp platforms
+
+Out of scope for this ADR.
 
 ## Problem
 
@@ -58,9 +88,11 @@ Developing native Rust smart contracts currently faces several challenges due to
 - Insufficient separation of concerns. Smart contract authors are required to handle low-level operations, rather than focusing solely on business logic.
 - Non-ergonomic API.
 
-## Decision in Details (Optional)
+## Decision in Details
 
-- Avoid implicit import (namespace pollution, poor discoverability). Provide "prelude" module.
+- Avoid implicit import (namespace pollution, poor discoverability).
+- Provide "prelude" module.
+- Where possible try to expand `pallet-revive-uapi`, not replace it.
 
 ### Decision Drivers
 
@@ -71,58 +103,11 @@ Developing native Rust smart contracts currently faces several challenges due to
 
 ### Option 1: Native Rust SDK for smart contracts
 
-[Brief description of this option.]
+TODO
 
-**Selected because:**
+### Option 2: use the existing technology, don't create a new SDK
 
-- [Benefit 1 that led to selection]
-- [Benefit 2 that led to selection]
-
-**Selected despite:**
-
-- [Drawback 1 that we accept]
-- [Drawback 2 that we accept]
-
-**Risks and Mitigations:**
-
-- [Risk 1]
-  - [Mitigation strategy 1]
-- [Risk 2]
-  - [Mitigation strategy 2]
-
-**Failure Recovery:**
-[How will we recover if this option fails?]
-
-### Option 2: [Name of alternative option]
-
-[Brief description of this option.]
-
-**Rejected because:**
-
-- [Critical drawback 1 - reason for rejection]
-- [Critical drawback 2 - reason for rejection]
-
-**Rejected despite:**
-
-- [Potential benefit 1 we're giving up]
-- [Potential benefit 2 we're giving up]
-
-## Implementation Notes (Optional)
-
-[Any specific guidance for implementing this decision, including:
-
-- Required dependencies
-- Migration steps
-- Testing considerations
-- Failure Recovery / Rollback procedures]
-
-## Confirmation (Optional)
-
-[Describe how the implementation of this decision will be verified. Include:
-
-- Acceptance criteria
-- Testing approach
-- Automated verification methods]
+TODO
 
 ## Advice (Optional)
 
@@ -139,30 +124,3 @@ Developing native Rust smart contracts currently faces several challenges due to
 - Do not create demos merely for the sake of it, such as a chess game, if they don't significantly highlight unique features or offer strong value propositions of the platform; I just kind of don't see the point of of this demo on chain (Denis Pisarev, 2025-07-23)
 - Introduce demos based on unique features of SPIN that are entertaining or offer good value propositions, rather than just basic games (Denis Pisarev, 2025-07-23)
 - Consider a payment application as a demo dApp to visually show how transactions below a threshold use fast finality, and those over use secure finality, serving as a template for payment providers (Denis Pisarev, 2025-07-23)
-
-## Glossary (Optional)
-
-- **[Term]**: [Definition]
-
-## References
-
-- [Related documents, links, and research materials]
-- [Previous ADRs that influence this decision]
-- [External resources that informed this decision]
-- [Requirements or standards]
-
-## ADR Relationships
-
-[Fill in the section if applicable or leave blank for further filling.]
-
-### Supersedes
-
-- ADR #[X]: [Brief description of superseded decision]
-
-### Superseded By
-
-- ADR #[X]: [Brief description of superseding decision]
-
-### Related ADRs
-
-- ADR #[X]: [Brief description of relationship]
