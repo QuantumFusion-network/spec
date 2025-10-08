@@ -1,220 +1,226 @@
 ---
-name: Experiment
-about: Engineering-level testable statement that validates part of a case
+name: Implementation Experiment
+about: Hypothesis-driven technical implementation - validates specific technical approach
 title: '[EXPERIMENT] [Brief descriptive title]'
 labels: 'experiment'
 assignees: ''
-
 ---
 
-## Implementation Phase
+[Experiment writing rules:
+- Hypothesis-Driven: Clear technical assumption being tested
+- Lightweight: Minimal verification - focus on validating hypothesis
+- Engineer Freedom: Choose verification approach that fits hypothesis
+- Run Fast: Code may be thrown away if hypothesis fails
+- Technical Focus: Success criteria are technical, not product/user outcomes. Product criteria live in Case Brief
+- Link, Don't Copy: Reference Case Brief, Architecture docs - don't duplicate]
 
-### Hypothesis
+## Experiment Type & Hypothesis
 
-**Technical Approach**: [What we're implementing or testing - specific technology, method, or component]
-**Expected Technical Outcome**: [Measurable technical results we expect to achieve]
-**Validation Method**: [How we'll measure and verify the technical results → see Validation Design]
-**Parent Case Impact**: [How these technical results support parent case acceptance criteria]
+**Type:** [Implementation / Research / Analysis / Proof-of-Concept]
 
-[*Example: Technical Approach - Implement Redis caching for API responses; Expected Technical Outcome - API response times under 200ms for 95% of requests; Validation Method - Load testing with 1000 concurrent users measuring response times; Parent Case Impact - Enables "Users can search products within 1 second" acceptance criterion*]
+**What we believe:** [Technical approach or assumption we're testing]
 
-### Experiment System Context & Boundaries 
+**Expected outcome:** [Measurable technical result we expect]
 
-*Note: For complete system context, integration points, and dependencies, refer to parent case*
+**How we'll verify:** [Brief verification approach - detailed in Success Criteria below, expand in Verification Approach if non-standard]
 
-#### Experiment System Scope 
-Implementation Scope: [What specific part of the system will be built/modified]
-Component Focus: [Specific components, APIs, integrations being developed]
-Architecture Layer: [Where this fits in overall system architecture]
-In Scope: [What the Experiment System will do and the boundaries included]
-Out of Scope: [What explicitly will not be addressed - link to other experiments handling these]
+## Implementation Scope
 
-#### Experiment Integration Points & Dependencies
+[What we're building/testing in 1-2 sentences - keep brief and specific]
 
-**Technical Interfaces**
-- [APIs, protocols, data formats this experiment will provide/require]
+**In Scope:**
+- [Specific technical work included]
+- [Component/feature being implemented]
 
-[Interfaces Examples:
-  REST API endpoints: POST /api/contracts/deploy
-  WebSocket connections for real-time updates
-  JSON message format for configuration data
-  HTTPS communication with external payment service]
+**Out of Scope:**
+- [What's explicitly not included - link to other experiments if applicable]
 
-**System Dependencies**
-- [Other systems this experiment requires to function]
-  
-**Experiment Dependencies**
-- [Other experiments that must complete first]
+## Technical Approach *Optional*
 
-**External Dependencies**
-- [Outside decisions, resources, approvals needed specific to this experiment]
+[Optional - use if you need to document specific implementation approach, tech choices, or setup]
 
-**Critical Path**
-- [Blocking factors and their resolution timeline]
+**Implementation Notes:** 
+[Key technical decisions or approach details]
 
-[Dependencies Examples:
-  Experiment Dependencies: Authentication system (Experiment #55) must be complete
-  External Dependencies: Legal approval for terms of service
-  Technical Dependencies: PostgreSQL database cluster must be deployed]
+**Technology Stack:** [If relevant to hypothesis]
+- [Technology/tool/Library] - [Optional - brief reason. Detailed "why" in ADRs if architectural decision]
 
-### Detailed Description
+## Engineered System Context *Optional*
 
-[Provide engineering-level detail about what specific aspect of the system this hypothesis tests]
+[Optional - use if experiment context isn't obvious from Case Brief and Architecture docs]
 
-### Implementation Requirements
+**Engineered System Focus:** [Which part of the system this experiment addresses]
 
-**Core Deliverables**:
-- [ ] [Specific technical deliverable with clear requirement]
-- [ ] [Specific technical deliverable with clear requirement]
-- [ ] [Specific technical deliverable with clear requirement]
+**Component:** [Specific component being modified/created/tested]
 
-**Technical Specifications**:
-- **Tech Stack**: [Enumerate tech names and version if applicable]
-- **Performance Requirements**: [Response times, throughput, etc.]
-- **Quality & Security Requirements**: [Error handling, logging, auth, compliance notes]
+**Architecture Layer:** [Where this fits - e.g., Presentation / Business Logic / Data / Infrastructure]
 
-### Definition of Done
+**Integration Points:** [Only if relevant to this experiment]
+- [Interface/API this experiment provides or consumes]
+- [System this experiment integrates with]
 
-**Code Complete Criteria**:
-- [ ] All core deliverables implemented and unit tested
-- [ ] Integration points working and tested
-- [ ] Performance requirements met in development environment
-- [ ] Code reviewed and documented
-- [ ] Deployment/setup instructions complete
+*Example Integration Points:*
+- *REST API endpoint: POST /api/contracts/deploy*
+- *WebSocket connection for real-time updates*
+- *Integration with external payment service via HTTPS*
 
-**Ready for Validation Criteria**:
-- [ ] System deployable in validation environment
-- [ ] Test data and scenarios prepared (versioned)
-- [ ] Monitoring/measurement tools configured
-- [ ] Validation participants can access system
+*For complete integration architecture, see: [Architecture Documentation](link)*
 
-### Risks Assessment
+**Critical Path:**
 
-|Risk|Impact|Probability|Mitigation|Owner|Experiment|
-|---|---|---|---|---|---|
-|[Implementation risk description]|[High/Med/Low]|[High/Med/Low]|[Prevention strategy]|[Responsible person]|[Link if applicable]|
-|[Validation risk description]|[High/Med/Low]|[High/Med/Low]|[Alternative approach]|[Responsible person]|[Link if applicable]|
+*Impediments* (Active obstacles):
+- [Active obstacle preventing work] - Status: [Active/Resolved]
 
-## Validation Phase
+*Bottlenecks* (Resource constraints):
+- [Resource constraint slowing progress]
 
-### Validation Design
+*External Blockers* (Third-party dependencies):
+- [Dependency causing delays] - Expected resolution: [Timeline]
 
-**Validation Approach**: [User testing / Performance testing / Technical validation / Mixed]
+*Blocking this experiment:*
+- [Experiment/System #X must complete first]
 
-**Setup Requirements**:
-- **Environment**: [Technical infrastructure needed]
-- **Data Requirements**: [Test data, scenarios, participant needs]
-- **Tool Requirements**: [Measurement tools, monitoring, analysis tools]
+## Outcomes
 
-**Validation Methodology**:
-- **Technical Validation**: [Performance tests, integration tests, scalability tests]
-  1. [Detailed validation step with expected outcome]
-  2. [Detailed validation step with expected outcome]
-- **User Validation**: [If applicable - user research methodology]
-  1. [Detailed validation step with expected outcome]
-  2. [Detailed validation step with expected outcome]
+[Checkbox list - when all checked, experiment is ready to close]
 
-### Success Criteria & Metrics
+**Code/Artifacts:**
+- [ ] [Specific code module/component committed to branch X]
+- [ ] [Configuration file updated]
+- [ ] [Database migration script created]
+- [ ] [API endpoint implemented]
+- [ ] [Test suite added]
 
-**Technical Success Criteria**:
-- [ ] [Measurable technical outcome with threshold]
+**Documentation:**
+- [ ] [Technical specification document created]
+- [ ] [API documentation updated]
+- [ ] [Architecture diagram added to wiki]
+
+**Analysis/Research:**
+- [ ] [Performance analysis report completed]
+- [ ] [Technology comparison matrix documented]
+- [ ] [Proof-of-concept demo recorded]
+
+**Required Completion Items:**
+- [ ] Hypothesis outcome documented in Results section (Confirmed/Rejected/Inconclusive)
+- [ ] Key learnings captured in Results section
+- [ ] Impact on parent case documented in Results section
+- [ ] Next steps identified based on outcome
+
+## Success Criteria & Metrics
+
+[Focus on technical criteria - product criteria are in Case Brief]
+
+**Hypothesis Confirmed If:**
+- [ ] [Specific measurable technical criterion with threshold]
 - [ ] [Performance metric with acceptable range]
-- [ ] [Quality/Security metric with pass/fail criteria]
+- [ ] [Quality/capability demonstrated]
 
-**Research Success Criteria** *(if applicable)*:
-- [ ] [User behavior metric with threshold]
-- [ ] [Adoption metric with success range]
+**Hypothesis Rejected If:**
+- [ ] [Specific technical failure condition]
+- [ ] [Performance below minimum threshold]
+- [ ] [Critical quality requirement not met]
 
-**Overall Success Determination**:
+**Inconclusive If:**
+- [ ] [Conditions requiring further investigation]
+- [ ] [Mixed results needing additional experiments]
 
-- [ ] Hypothesis Confirmed If: [Specific measurable criterion - all success criteria met]
-- [ ] Inconclusive If: [Conditions requiring further investigation - mixed results or technical issues]
-- [ ] Hypothesis Rejected If: [Specific measurable criterion - critical criteria not met]
+## Verification Approach *Optional*
 
-## Execution Planning
+[Optional - Document only if you're NOT doing standard code review + basic testing]
 
-### Resources & Timeline
-**Implementation Phase**:
-- **Team**: [Developer roles and time commitment]
-- **Duration**: [Implementation timeline]
-- **Dependencies**: [What must be ready before starting]
+**Standard approach assumed:** Code review + linter + basic testing to verify hypothesis
 
-**Validation Phase**:
-- **Team**: [Researcher/analyst roles and time commitment]  
-- **Duration**: [Validation and analysis timeline]
-- **Resources**: [Participants, tools, environments needed]
+**Special verification for this experiment:**
+- [Document only non-standard verification needs, e.g.:
+  - Load testing with specific parameters
+  - Security review due to sensitive operations
+  - Integration testing with specific external system]
 
-**Total Timeline**: [End-to-end experiment duration]
+## Resources & Timeline
 
-[*Example:*
-- *Implementation Phase (4 weeks)*: Frontend Developer (4 weeks full-time), Content Creator (1 week), QF Technical Specialist (0.5 weeks)
-- *Validation Phase (3 weeks)*: User Researcher (3 weeks), 30 Test Participants (2 hours each), Developer Support (on-call)
-- *Total Timeline*: 7 weeks end-to-end]
+**Team:**
+- [Role/Person] - [Time commitment]
 
-### Impact on Parent Case
+**Timeline:** [Estimated duration for experiment]
 
-[How these results affect the parent case and its acceptance criteria]
+## Decision Log
 
-**Case Progression:**
+[Enumeration of related ADRs - decisions themselves live in ADR documents]
 
-[How this moves the case forward]
-[What case assumptions were validated / invalidated]
-### Next Steps
+- [Date] - ADR #[XXXX] - [Case decomposition decision] - [Link to ADR]
+  Status: [Active/Superseded by ADR #[XXXX]]
+- [Date] - ADR #[XXXX] - [Brief description] - [Link to ADR]
+  Status: [Active/Superseded by ADR #[XXXX]]
 
-**If Hypothesis Confirmed:**
+## References & Links
 
-- [ ] [Specific next actions]
-- [ ] [Additional hypotheses to test]
+**Case Brief:** [Link] - See acceptance criteria for product context
 
-**If Hypothesis Rejected:**
+**Full Case Details:**
+- [Case Product Specification](link-to-coda) - Extended product analysis, detailed agent journeys, business context
 
-- [ ] [Alternative approaches to investigate]
-- [ ] [Case pivot considerations]
+**Architecture Docs:** [Link if exists] - Technical architecture and design decisions
 
-**If Inconclusive:**
-
-- [ ] [Additional experiments needed]
-- [ ] [Refinements to experimental design]
+**Additional Resources:** [Optional]
+- [Tool documentation]
+- [Best practices guide]
+- [Research paper]
+- [Meeting notes]
+- [Related experiments]
 
 ## Results & Learning
 
-### Results
+[Fill after experiment completion]
 
-[To be filled after experiment completion]
+**What Happened:**
+[Actual results compared to expected outcome]
 
-**Technical Results:**
-[Implementation outcomes, performance achieved]
+**Hypothesis Outcome:** [Confirmed / Rejected / Inconclusive]
 
-**Validation Results:**
-[Testing outcomes, metrics achieved]
+**Confidence Level:** [High / Medium / Low]
 
-**Analysis:**
-[Interpretation of results against success criteria, statistical analysis, trend analysis]
+**Key Insights:**
+- [What we learned about the technical approach]
+- [Unexpected technical discoveries]
 
-**Conclusion:**
-[Hypothesis confirmed / rejected / inconclusive]
-[Confidence level in results]
+**Impact on Parent Case:**
+- [How these results affect parent case acceptance criteria]
+- [What case assumptions were validated/invalidated]
 
-### Learnings and Insights
+**Next Steps:**
 
-[To be filled after experiment completion]
+*If Confirmed:*
+- [ ] [Specific next action]
+- [ ] [Next experiment to validate]
 
-**Technical Learnings:**
+*If Rejected:*
+- [ ] [Alternative approach to investigate]
+- [ ] [Case pivot consideration]
 
-[What we learned about the system]
-[Unexpected technical discoveries]
-
-**Process Learnings:**
-
-[What we learned about our experimental approach]
-[Improvements for future hypotheses]
+*If Inconclusive:*
+- [ ] [Additional investigation needed]
+- [ ] [Refinement to experiment design]
 
 ## Review & Acknowledgment
 
-[People/teams involved/affected by this experiment who should be aware]
+[People who should review and acknowledge understanding of this experiment]
 
 - [ ] [Person 1]
 - [ ] [Person 2]
 - [ ] [Person 3]
 
-*Note: People listed here should check their name after reading and understanding experiment. This aims to reduce communication and increase traceability of the review process.*
+*Note: Check your name after reading and understanding this case to confirm awareness and reduce communication overhead.*
+
+---
+
+**Final Checklist Before Submitting:**
+- [ ] Is hypothesis clear and testable?
+- [ ] Are success criteria measurable and technical (not product-focused)?
+- [ ] Is scope limited and specific to this experiment?
+- [ ] Are links to Case Brief and Architecture docs present?
+- [ ] Are only critical dependencies listed?
+- [ ] Is verification approach appropriate (standard or documented special needs)?
+- [ ] Is this lightweight enough for experimental approach (not production feature development)?
+- [ ] Does Decision Log enumerate relevant ADRs?
+- [ ] Are Outcomes specific and actionable?

@@ -1,231 +1,171 @@
 ---
-name: Case
-about: Product-level description in stakeholder language - defines system boundaries and value propositions
+name: Case Brief
+about: Product-level overview for stakeholders - defines engineered system and acceptance criteria
 title: '[CASE] [Brief descriptive title]'
 labels: 'case'
 assignees: ''
-
 ---
 
-[Case writing rules:
+[Case Brief writing rules:
 - Product Focus: Define agent value and experience, not technical implementation
+- Problem Analysis: Lives in Case Product Specification - Brief references Spec for context
 - Agent Priority: List agents by % importance with Human/System distinction (even if similar to other cases)
-- Target System Clarity: Explicitly identify target system and distinguish from consumer/dependency systems
-- System Boundaries: Explicitly state what's included/excluded from this case
-- Integration Points: Technical interfaces (Clearly separate from project dependencies)
 - Basic English: Write for non-native speakers, avoid complex technical terms
-- Scope Limit: Target achievable milestones of 3–6 months only
-- Agent-Driven: Focus on agent behaviour and adoption, rather than system performance
-- Experiment Mapping: Link agent outcomes to experiments when available, update during experiment planning phase]
+- Stakeholder Language: This brief is for business/product stakeholders
+- Minimal Content: Engineers need context to understand "what" and "why", not extensive product analysis
+- System Boundaries: Explicitly state what's included/excluded
+- Link to Details: Extended analysis lives in Coda, link from here
+- Scenario-Driven: Focus on agent behavior and acceptance, not system performance
+- Scope Limit: Target 3-6 month achievable milestones
+- Experiment Mapping: Link acceptance criteria to implementing experiments
+- Metrics Cascade: Case Product Specification defines product success metrics → Case Brief translates to verifiable acceptance criteria → Experiments validate technical implementation
+- Link Don't Duplicate: Reference specifications, don't copy content]
 
-## Target System
+## Engineered System
 
-[Which system does this case address and what is its position in the larger system architecture?]
+[Which specific system/subsystem are we building and what is its position in the larger system architecture?]
 
-## Problem Statement
+*For detailed system context, complete problem analysis including current/desired agent experience, see: [Case Product Specification](link-to-coda)*
 
-[Describe the agent/business problem this case solves. What needs to change in the current state and why? Focus on WHAT agents need and WHY it matters. Leave technical details for experiments]
+## Agent Priority Overview
 
-### Current Agent Experience
+[High-level stakeholder priorities with percentages. Detailed analysis in Case Product Specification in Coda.]
 
-[What agents experience today that needs improvement]
+**Priority Distribution:** [e.g., "Primary: 60% Developers; Secondary: 30% System Integrators; Minimal: 10% End Users"]
 
-### Desired Agent Experience
+**Rationale:** *Optional* [1-2 sentence justification for these priorities]
 
-[What agents should be able to do after this case is complete]
-
-## Value Proposition
-
-[Clear business / agent value that this case provides]
-
-## Agent Analysis
-
-[Map all agents (human and system) by priority with percentages. Focus on WHO / WHAT will interact with or benefit from the Target System]
-
-**Agent Priority Overview**: [e.g., "Primary: 60% Developers; Secondary: 30% Monitoring Systems; Minimal: 10% End Users"]
-
-[Optional: Include an evaluation / justification for why these priorities make sense for this case]
-
-*Note: Initially, experiment links may show "TBD - [description]". Update with actual experiment links during experiment planning phase. When experiment scope changes significantly, review and update corresponding agent outcomes.*
-
-### [Primary Agent Name] ([X%] - Primary)
-- **Agent Type**: [Human Agent: group of people/person/role] OR [System Agent: machine/service/system]
-- **Current Pain Points**: [What problems do they have today with existing systems]
-- **Desired Outcomes**: [What success looks like]
-  - *Outcome 1* → **Experiment**: [Title/Link when available]
-  - *Outcome 2* → **Experiment**: [Title/Link when available]
-- **Agent Journey**: [Action] → [Action] → [Successful Outcome]
-- **Integration Requirements**: [For System Agents: APIs, data formats, protocols needed]
-  
-  *Note: This details the specific technical interfaces this agent needs (see Technical Interfaces section for system-wide view)*
-
-### [Secondary Agent Name] ([Y%] - Secondary)
-
-[Same structure as above]
-
-[Continue the pattern for all Agents, ordered by priority]
+*For detailed agent analysis with agent journeys and integration requirements, see: [Case Product Specification](link-to-coda)*
 
 ## Expected Agent Experience & Acceptance
 
-[Scenarios that define both the Target System behaviour and the acceptance criteria. Describe what agents will experience, NOT how the Target System works internally. Focus on acceptance testing, not repeating the desired outcomes already listed in Agent Analysis. Validation priorities are derived from Agent Priority Overview above – no separate priority statement needed here]
+[Define scenarios the Engineered System must handle and acceptance criteria. Focus on observable outcomes, not internal system operations.]
+
+*Note: Link acceptance criteria to implementing experiments during experiment planning phase.*
 
 ### Agent Acceptance Scenarios
 
-**Scenario 1: [Primary Happy Path for Human Agent]**
-- Given [agent context / starting point]
+**Scenario 1: [Primary Scenario for Primary Agent]**
+- Given [detailed initial conditions]
 - When [agent performs action]
 - Then [agent experiences result]
 - And [additional agent benefit]
 
 **Acceptance Criteria:**
+[Each criterion should be demonstrable within 5-10 minutes by non-developers or through developer demo. Validation methods: Observable (UI/logs/behavior), Measurable (counted/timed), Testable (test scripts), User-Validated (actual users)]
 
-[Each criterion should be demonstrable to non-developers within 5-10 minutes]
-[Prefer outcomes that non-developers can verify directly, but developer demos are acceptable]
+- [ ] [Specific criterion] → **Experiment**: [Link #XXX when available or TBD]
+  - *Validation: [How to verify - e.g., "Dashboard shows metric within target"]*
+- [ ] [Performance/quality requirement] → **Experiment**: [Link #XXX when available or TBD]
+  - *Validation: [Verification method]*
 
-*Demonstration Examples: Screen Demo - Show working feature in browser/app; Metrics Dashboard - Display performance/usage numbers; Test Results - Show automated test passes/results; User Validation - Have actual user complete task successfully; Live Demo - Demonstrate feature working end-to-end*
-
-[Each criterion must be verifiable through one of these methods:]
-[Observable] - Can be seen in UI/logs/behavior
-[Measurable] - Can be counted/timed/quantified  
-[Testable] - Can be validated through test scripts
-[User-Validated] - Can be confirmed by actual users/stakeholders
-
-- [ ] [Specific criterion] [Validation method: ]
-- [ ] [Performance requirement] [e.g. Dashboard showing metrics within targets]
-
-**Scenario 2: [Primary Happy Path for System Agent]**
-
-- Given [system agent needs specific data / functionality]
-- When [system agent makes API call / integration request]
-- Then [target system provides required response / data]
-- And [system agent can successfully complete its function]
+**Scenario 2: [Secondary Scenario - Success path for Secondary Agent]**
+- Given [different initial conditions]
+- When [alternative agent action]
+- Then [expected alternative outcome]
 
 **Acceptance Criteria:**
+- [ ] [Specific criterion] → **Experiment**: [Link #XXX when available or TBD]
+  - *Validation: [Verification method]*
 
-[How to verify system agent integration works, e.g. API tests, data format checks]
-
-- [ ] [Specific criterion] [Validation method: Observable/Measurable/Testable/User-Validated]
-
-**Scenario 3: [Alternative Path]**
-
-Given [Different initial conditions]
-When [Alternative stakeholder action]
-Then [Expected alternative response]
+**Scenario 3: [Alternative Scenario - Different approach or edge case]**
+- Given [edge case conditions]
+- When [action that triggers alternative path]
+- Then [expected handling]
 
 **Acceptance Criteria:**
+- [ ] [Specific criterion] → **Experiment**: [Link #XXX when available or TBD]
+  - *Validation: [Verification method]*
 
-- [ ] [Specific criterion for this scenario] [Validation method: Observable/Measurable/Testable/User-Validated]
-
-**Scenario 4: [Error/Edge Case Handling]**
-
-Given [Error conditions]
-When [Action that triggers error]
-Then [Expected error handling behavior]
+**Scenario 4: [Error Scenario - Failure case and recovery]**
+- Given [error conditions]
+- When [action that triggers error]
+- Then [expected error handling and recovery]
 
 **Acceptance Criteria:**
+- [ ] [Error handling criterion] → **Experiment**: [Link #XXX when available or TBD]
+  - *Validation: [Verification method]*
 
-- [ ] [Specific measurable criterion for error handling] [Validation method: Observable/Measurable/Testable/User-Validated]
+## Scope Summary
 
-## Target System Context & Boundaries
+### Engineered System Scope
 
-### Target System Scope
+**In Scope:** [What this system will do - boundaries included]
 
-In Scope: [What the Target System will do and the boundaries included]
-Out of Scope: [What explicitly will not be addressed - link to other cases handling these]
+**Out of Scope:** [What explicitly will not be addressed - link to other cases handling these]
 
-### Integration Points & Dependencies
+*For detailed interfaces and integration points, see: [Case Architecture Specification](link-to-arch-doc)*
 
-**Technical Interfaces**
-[APIs, protocols, data formats this case will provide/require]
+## Critical Dependencies & Blockers
 
-- [Interface 1]: [Description and purpose]
-- [Interface 2]: [Description and purpose]
+**Blocking This Case:**
+- [Case/System #X]: [What must complete before we can proceed]
 
-*Examples: REST API endpoints (POST /api/contracts/deploy), WebSocket connections for real-time updates, JSON message format for configuration data, HTTPS communication with external payment service*
+**This Case Blocks:**
+- [Case/System #Y]: [What depends on this case's completion]
 
-**System Dependencies**  
-- [Other systems this case requires to function]
-  
-**Case Dependencies**  
-- [Other cases that must complete first]
+**Bottlenecks** (Resource constraints):
+- [Resource constraint] - Impact: [Description]
 
-**External Dependencies**
-- [Outside decisions, resources, approvals needed]
+**External Blockers** (Third-party dependencies):
+- [Third-party dependency] - Expected resolution: [Timeline]
 
-**Critical Path**
-- [Blocking factors and their resolution timeline]
+**Critical Path Items:**
+- [Dependency with resolution date]
+- [Risk requiring immediate attention]
 
-*Examples: Case Dependencies - Authentication system (Case #45) must be complete; External Dependencies - Legal approval for terms of service; Technical Dependencies - PostgreSQL database cluster must be deployed*
-
-### Quality Attributes
-
-[High-level requirements overview. May duplicate metrics from Acceptance Criteria for stakeholder clarity]
-
-**Performance**: [Response time, throughput requirements]
-**Scalability**: [Growth expectations and constraints]
-**Reliability**: [Uptime, error rate expectations]
-**Security**: [Security requirements and compliance needs]
-**Usability**: [User experience requirements]
-
-### Constraints
-
-**Technical Constraints**: 
-- [Technical limitations and requirements]
-- [Platform requirements, compatibility needs, performance limits]
-
-**Business Constraints**: 
-- [Business rules and regulatory requirements]
-- [Human resource: Total estimated resources across all planned experiments]
-- [Timeline constraints]
-
-## Risks Assessment
-
-|Risk|Impact|Probability|Mitigation|Owner|Experiment|
-|---|---|---|---|---|---|
-|[Risk description]|[High/Med/Low]|[High/Med/Low]|[Mitigation approach]|[Responsible person]|[Link to experiment if applicable]|
+*For complete dependency analysis and technical interfaces, see: [Case Product Specification](link-to-coda) and [Case Architecture Specification](link-to-arch-doc)*
 
 ## Decision Log
 
-[Record key architectural and design decisions]
+[Enumeration of related ADRs - decisions themselves live in ADR documents]
 
-[Date] - [Decision] - [Rationale] - [Impact on agents]
-Status: [Active/Superseded]
+- [Date] - ADR #[XXXX] - [Case decomposition decision] - [Link to ADR]
+  Status: [Active/Superseded by ADR #[XXXX]]
+- [Date] - ADR #[XXXX] - [Brief description] - [Link to ADR]
+  Status: [Active/Superseded by ADR #[XXXX]]
+
+## References & Links
+
+**Full Case Details:**
+- [Case Product Specification](link-to-coda) - Extended product analysis, detailed agent journeys, business context
+
+**Related Architecture:**
+- [Case Architecture Specification](link-to-arch-doc) - Technical architecture, interfaces, integration points
 
 ## Learning Outcomes
 
-[To be filled in during and after the case has been completed]
+[To be filled during and after case completion]
 
 **What we learned:**
-
-Key insights gained:
-Assumptions validated/invalidated:
-Unexpected discoveries:
+- Key insights gained:
+- Assumptions validated/invalidated:
+- Unexpected discoveries:
 
 **What we would do differently:**
-
-Process improvements:
-Technical approach changes:
+- Process improvements:
+- Technical approach changes:
 
 ## Review & Acknowledgment
 
-[People/teams involved/affected by this case who should be aware]
+[People who should review and acknowledge understanding of this experiment]
 
 - [ ] [Person 1]
 - [ ] [Person 2]
 - [ ] [Person 3]
 
-*Note: People listed here should check their name after reading and understanding case. This aims to reduce communication and increase traceability of the review process.*
+*Note: Check your name after reading and understanding this case to confirm awareness and reduce communication overhead.*
 
-[
+---
+
 **Final Checklist Before Submitting:**
-- [ ] Does this describe Agent value, not technical implementation?
-- [ ] Are agents prioritized with clear percentages and Human / System distinction?
-- [ ] Is the Target System clearly identified and distinguished from consumer / dependency systems?
-- [ ] Are Integration Points clearly separated from Dependencies?
-- [ ] Are system boundaries clearly defined?
-- [ ] Is the language simple enough for non-native speakers?
-- [ ] Is the scope limited to 3-6 months of achievable work?
-- [ ] Do scenarios focus on agent behavior, not system performance?
-- [ ] Are experiment links updated where available?
-- [ ] Is the Review & Acknowledgment section completed?
-]
+- [ ] Does this describe agent value, not technical implementation?
+- [ ] Is problem analysis referenced (not duplicated) from Case Product Specification?
+- [ ] Is Agent Priority Overview high-level with justification?
+- [ ] Are acceptance criteria clear and verifiable?
+- [ ] Do scenarios use correct terminology (Primary/Secondary/Alternative/Error)?
+- [ ] Is scope limited to 3-6 months of achievable work?
+- [ ] Are only critical dependencies and blockers listed?
+- [ ] Are links to Case Product Specification and Architecture docs present?
+- [ ] Are experiment links marked as TBD where not yet planned?
+- [ ] Is Review & Acknowledgment section complete?
