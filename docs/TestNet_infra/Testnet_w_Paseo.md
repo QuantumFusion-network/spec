@@ -32,3 +32,7 @@ Complete system architecture documentation & references for QF TestNet with Pase
 - [Provisioning & CI/CD](https://github.com/QuantumFusion-network/infra/blob/main/docs/provisioning_and_telemetry.md)
 - [How we work with versions & upstream updates](https://github.com/QuantumFusion-network/spec/blob/main/docs/proc/how_we_work_in_the_team.md)
 
+**Outdated versions**
+- [Testnet schema as a drawio file](https://github.com/QuantumFusion-network/spec/blob/9aba1a9613b2be64b1081698393f9fe6589b1920/docs/TestNet_infra/TestNet.drawio)
+- [Testnet schema as a png file](https://github.com/QuantumFusion-network/spec/blob/9aba1a9613b2be64b1081698393f9fe6589b1920/docs/TestNet_infra/TestNet.drawio.png)
+- [Testnet schema description](https://github.com/QuantumFusion-network/spec/blob/9aba1a9613b2be64b1081698393f9fe6589b1920/docs/TestNet_infra/test_net.md)
