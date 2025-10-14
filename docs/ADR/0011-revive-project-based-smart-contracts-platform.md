@@ -98,7 +98,7 @@ This is a popular choice for EVM compatibility in Polkadot SDK-based blockchains
 
 ## References
 
-- Revive project review, <https://coda.io/d/QF-Network_df6rzXCWZj8/Revive-project-review_suwtiLjr>.
+- Revive project review, <https://coda.io/d/_dJod6n5YCYy/Revive-project-review_suwtiLjr>.
 
 ## ADR Relationships
 
