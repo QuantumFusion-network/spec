@@ -372,6 +372,10 @@ The status quo doesn't meet our scaling needs or provide the consistency, securi
 - "Does it... catches the our project structure? So we have separate `spec` repository and it have a project. does it... understand that if I submit a pull request to `qf-solochain` repository it should catch like context from... this project from the issue" (Sviatoslav Alekseev, 2025-10-29)
 - "Did you measure time for review and then compare tools in your usage or ... compare tools [with] manual review" (Alexander Lygin, 2025-10-29)
 
+- I think [Codex] have auto code review function. So it's not like manual things... and you could have a code review guidelines and automatically code review the new pull requests from the set of repositories ... Yeah, it obviously requests the at least ChatGPT Plus subscription (Sviatoslav Alekseev, 2025-11-05)
+- Same about Copilot... you can add it as your reviewer. At least in an open pull request, I can see that when I request reviews, I can request review from a Copilot added to reviewers list and so it's probably not IDE only (Alisher Khassanov, 2025-11-05)
+- What if could I enable ... Codex agent into our repository? ... For example, if I am suggesting the pull request here. ... Is there admin privileges required or what? ... I mean, if we don't want to buy another subscription, I could just share mine and use the Codex inside the pull request ... if you want to test it and check how it works (Sviatoslav Alekseev, 2025-11-05)
+
 ## Glossary
 
 * **Static Code Analysis**: Analyzing source code without executing it to find bugs, security vulnerabilities, and code quality issues  
@@ -396,7 +400,8 @@ The status quo doesn't meet our scaling needs or provide the consistency, securi
 * **Claude API**: [https://docs.claude.com/en/api/overview](https://docs.claude.com/en/api/overview)  
 * **GitHub Actions**: [https://docs.github.com/en/actions](https://docs.github.com/en/actions)  
 * **CodeRabbit**: [https://coderabbit.ai/docs](https://coderabbit.ai/docs)  
-* **GitHub Copilot**: [https://docs.github.com/en/copilot](https://docs.github.com/en/copilot)
+* **GitHub Copilot**: [https://docs.github.com/en/copilot](https://docs.github.com/en/copilot). [How to request code review from Copilot](https://docs.github.com/en/copilot/how-tos/use-copilot-agents/request-a-code-review/use-code-review)
+* **OpenAI Codex/ChatGPT**: [https://developers.openai.com/codex/cloud/code-review/](https://developers.openai.com/codex/cloud/code-review/)
 
 ### Standards and Best Practices
 
