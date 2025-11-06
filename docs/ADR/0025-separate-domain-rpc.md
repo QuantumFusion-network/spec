@@ -32,7 +32,7 @@ Last status update: 2025-10-29
 ### Informed (Affected Parties)
 [People/teams affected by this decision who should be aware]
 
-  - [ ] [Person 1]
+  - [x] Alisher Khassanov, @khssnv
   - [ ] [Person 2]
   - [ ] [Person 3]
 
