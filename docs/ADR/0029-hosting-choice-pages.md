@@ -26,3 +26,9 @@ Cloudflare Pages is chosen because:
 - Supports preview deployments for QA
 
 Supersedes: ADR-0016
+
+---
+
+## Additional Consideration
+
+Cloudflare does recommend starting new full-stack projects on Workers; however, this guidance applies primarily to dynamic applications that rely on SSR or edge logic. At the same time, Cloudflare has not announced any deprecation of Pages: in the official article “Pages and Workers are converging into one experience” (https://blog.cloudflare.com/pages-and-workers-are-converging-into-one-experience/) Cloudflare explicitly states that Pages remain a supported part of the platform.
