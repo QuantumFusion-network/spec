@@ -8,9 +8,9 @@ Last status update: 2025-08-22
 ## Status
 
 - [ ] Proposed
-- [x] Accepted
-- [ ] Deprecated
-- [ ] Superseded
+- [ ] Accepted
+- [x] Deprecated (2025-11-13)
+- [x] Superseded by ADR-0029
 
 ### Implementation Status
 
@@ -18,7 +18,7 @@ Last status update: 2025-08-22
 - [ ] In Development
 - [ ] Implemented
 - [ ] Verified
-- [ ] Discontinued
+- [x] Discontinued (replaced by ADR-0029)
 
 ## People
 
