@@ -12,28 +12,22 @@ assignees: ''
 - Engineer Freedom: Choose verification approach that fits hypothesis
 - Run Fast: Code may be thrown away if hypothesis fails
 - Technical Focus: Success criteria are technical, not product/user outcomes. Product criteria live in Case Brief
-- Link, Don't Copy: Reference Case Brief, Architecture docs - don't duplicate]
+- DRY: Reference Case Brief, Architecture docs - don't duplicate
+- Dependencies: Use GitHub issue status ('Blocked') and comments for blockers. Don't list dependencies in the experiment description - that's project management, not technical specification
+- ADRs Optional: Create Architecture Decision Records (ADRs) only when decisions affect other teams or have long-term consequences. Engineers have freedom for local implementation choices]
 
-## Experiment Type & Hypothesis
+## Experiment Hypothesis
 
-**Type:** [Implementation / Research / Analysis / Proof-of-Concept]
+**Hypothesis:** [Technical approach or assumption we're testing]
 
-**What we believe:** [Technical approach or assumption we're testing]
+**Rationale:** [Optional - brief rationale if not obvious]
 
-**Expected outcome:** [Measurable technical result we expect]
+## Out of Scope
 
-**How we'll verify:** [Brief verification approach - detailed in Success Criteria below, expand in Verification Approach if non-standard]
+[What's explicitly not included - prevents scope creep]
 
-## Implementation Scope
-
-[What we're building/testing in 1-2 sentences - keep brief and specific]
-
-**In Scope:**
-- [Specific technical work included]
-- [Component/feature being implemented]
-
-**Out of Scope:**
-- [What's explicitly not included - link to other experiments if applicable]
+- [Exclusion with brief reason]
+- [Link to other experiment handling this if applicable]
 
 ## Technical Approach *Optional*
 
@@ -43,7 +37,7 @@ assignees: ''
 [Key technical decisions or approach details]
 
 **Technology Stack:** [If relevant to hypothesis]
-- [Technology/tool/Library] - [Optional - brief reason. Detailed "why" in ADRs if architectural decision]
+- [Technology/Tool/Library] - [Optional - brief reason. Detailed "why" in ADRs if architectural decision]
 
 ## Engineered System Context *Optional*
 
@@ -66,23 +60,9 @@ assignees: ''
 
 *For complete integration architecture, see: [Architecture Documentation](link)*
 
-**Critical Path:**
-
-*Impediments* (Active obstacles):
-- [Active obstacle preventing work] - Status: [Active/Resolved]
-
-*Bottlenecks* (Resource constraints):
-- [Resource constraint slowing progress]
-
-*External Blockers* (Third-party dependencies):
-- [Dependency causing delays] - Expected resolution: [Timeline]
-
-*Blocking this experiment:*
-- [Experiment/System #X must complete first]
-
 ## Outcomes
 
-[Checkbox list - when all checked, experiment is ready to close]
+[Checkbox list of concrete deliverables - when all checked, experiment is complete. If needed create categories that match your work. The following provides examples of the categories and outcomes]
 
 **Code/Artifacts:**
 - [ ] [Specific code module/component committed to branch X]
@@ -132,19 +112,9 @@ assignees: ''
 **Standard approach assumed:** Code review + linter + basic testing to verify hypothesis
 
 **Special verification for this experiment:**
-- [Document only non-standard verification needs, e.g.:
-  - Load testing with specific parameters
-  - Security review due to sensitive operations
-  - Integration testing with specific external system]
+- [Document only non-standard verification needs, e.g., load testing, security audit, manual testing protocol, etc.]
 
-## Resources & Timeline
-
-**Team:**
-- [Role/Person] - [Time commitment]
-
-**Timeline:** [Estimated duration for experiment]
-
-## Decision Log
+## Decision Log *Optional*
 
 [Enumeration of related ADRs - decisions themselves live in ADR documents]
 
@@ -153,19 +123,19 @@ assignees: ''
 - [Date] - ADR #[XXXX] - [Brief description] - [Link to ADR]
   Status: [Active/Superseded by ADR #[XXXX]]
 
-## References & Links
+## References & Links *Optional*
 
-**Case Brief:** [Link] - See acceptance criteria for product context
-
-**Full Case Details:**
-- [Case Product Specification](link-to-coda) - Extended product analysis, detailed agent journeys, business context
+[Include this section when you need to reference external context, related work, or technical background. Delete if not applicable.]
 
 **Architecture Docs:** [Link if exists] - Technical architecture and design decisions
 
-**Additional Resources:** [Optional]
-- [Tool documentation]
-- [Best practices guide]
-- [Research paper]
+**Technical Documentation:**
+- [Architecture docs, API specs, standards]
+
+**External Resources:**
+- [Research papers, library docs, similar implementations]
+
+**Additional Resources:**
 - [Meeting notes]
 - [Related experiments]
 
@@ -206,21 +176,20 @@ assignees: ''
 
 [People who should review and acknowledge understanding of this experiment]
 
-- [ ] [Person 1]
-- [ ] [Person 2]
-- [ ] [Person 3]
+- [ ] @github-handle-1
+- [ ] @github-handle-2
+- [ ] @github-handle-3
 
 *Note: Check your name after reading and understanding this case to confirm awareness and reduce communication overhead.*
 
 ---
 
-**Final Checklist Before Submitting:**
+[Note: Delete this checklist section once the experiment is submitted]
+
+[Final Checklist Before Submitting:
 - [ ] Is hypothesis clear and testable?
-- [ ] Are success criteria measurable and technical (not product-focused)?
-- [ ] Is scope limited and specific to this experiment?
-- [ ] Are links to Case Brief and Architecture docs present?
-- [ ] Are only critical dependencies listed?
-- [ ] Is verification approach appropriate (standard or documented special needs)?
-- [ ] Is this lightweight enough for experimental approach (not production feature development)?
-- [ ] Does Decision Log enumerate relevant ADRs?
-- [ ] Are Outcomes specific and actionable?
+- [ ] Are outcomes concrete and verifiable?
+- [ ] Are success criteria specific with measurable thresholds?
+- [ ] Is scope limited (what's excluded is clear)?
+- [ ] Is this focused on validating one specific technical approach?
+- [ ] Are we running fast to test the hypothesis, not building the perfect solution?]
