@@ -180,7 +180,7 @@ assignees: ''
 - [ ] @github-handle-2
 - [ ] @github-handle-3
 
-*Note: Check your name after reading and understanding this case to confirm awareness and reduce communication overhead.*
+*Note: Check your name after reading and understanding this experiment to confirm awareness and reduce communication overhead.*
 
 ---
 
