@@ -2,20 +2,20 @@
 
 ## Date
 
-Decision date: YYYY-MM-DD.  
-Last status update: 2025-07-23.
+Decision date: 2025-07-23.  
+Last status update: 2025-11-24.
 
 ## Status
 
 - [ ] Proposed
-- [ ] Accepted
+- [x] Accepted
 - [ ] Deprecated
 - [ ] Superseded
 
 ### Implementation Status
 
 - [ ] Planned
-- [ ] In Development
+- [x] In Development
 - [ ] Implemented
 - [ ] Verified
 - [ ] Discontinued
@@ -99,17 +99,33 @@ Developing native Rust smart contracts currently faces several challenges due to
 - Why are we doing this?
 - Why ink! isn't a sufficient replacement for Rust? What's the niche for native Rust smart contracts?
 
+See [Advice](#advice) section for a rationale answering these questions.
+
 ## Options
 
 ### Option 1: Native Rust SDK for smart contracts
 
-TODO
+We will develop a native Rust SDK for `pallet-revive` smart contracts, a lightweight extension to `pallet-revive-uapi` to enhance developer ergonomics and provide the missing functionality for common use cases.
+
+**Selected because:**
+
+- Provides native Rust developer experience
+- Addresses the previously mentioned [Problems](#problem)
+
+**Selected despite:**
+
+- Higher cost of ownership
+- Needs significant communication effort for successful adoption
+
+**Failure Recovery:**
+
+If the decision turns out to be wrong, we can fall back to other supported smart contract development options for pallet-revive such as ink! and Solidity.
 
 ### Option 2: use the existing technology, don't create a new SDK
 
-TODO
+Offer ink! and / or Solidity for smart contracts development on QF Network.
 
-## Advice (Optional)
+## Advice
 
 - Avoid creating separate, language-specific SDKs for each language in future multiple language implementations; ideally, architecturally it needs to only require the language interpreter or compiler adopted to be compatible with PolkaVM and everything else like all the rest of the logic is dealt with by pallets and precompiles (Denis Pisarev, 2025-07-23)
 - Everything should be as minimalistic as possible. Meaning that if you integrate the language, you only integrate the language and... web2 language and that's it. Nothing blockchain specific, nothing additional to the language, no like overrides, no new standards, no nothing like that. So simply put the let's say the same Python or TypeScript work in PolkaVM as intended as the regular language (Denis Pisarev, 2025-07-23)
