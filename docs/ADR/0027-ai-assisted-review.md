@@ -3,7 +3,7 @@
 ## Date
 
 Decision date: 
-Last status update: 2025-11-03
+Last status update: 2025-11-25
 
 ## Status
 
@@ -29,11 +29,15 @@ Last status update: 2025-11-03
 - Sviatoslav Alekseev
 
 ### Informed (Affected Parties)
-[People/teams affected by this decision who should be aware]
 
-  - [ ] [Person 1]
-  - [ ] [Person 2]
-  - [ ] [Person 3]
+  - [ ] Vsevolod Rusinskiy, @Vsevolod-Rusinskiy
+  - [ ] Vadim Khafizov @khafizov-v
+  - [x] Alex Lygin, @alexlygin
+  - [ ] Leonardo Malik, @leonardoqfn
+  - [ ] Alisher Khassanov, @khssnv
+  - [ ] Denis Pisarev, @TriplEight
+  - [ ] Alex Vyatkin, @actinfer
+  - [ ] Memechi Kekamoto, @MemechiKekamoto
 
 ## Decision
 
