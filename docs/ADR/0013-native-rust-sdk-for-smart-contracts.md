@@ -35,7 +35,7 @@ Alisher Khassanov, [@khssnv](https://github.com/khssnv).
 
 - [x] Alex Vyatkin, [@actinfer](https://github.com/actinfer).
 - [x] Alexander Lygin, [@alexlygin](https://github.com/AlexLgn).
-- [ ] Sviatoslav Alekseev, [@zotho](https://github.com/zotho).
+- [x] Sviatoslav Alekseev, [@zotho](https://github.com/zotho).
 
 ## Decision
 
