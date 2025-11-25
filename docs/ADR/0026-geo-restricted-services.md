@@ -2,21 +2,21 @@
 
 ## Date
 
-Decision date: 
+Decision date: 2025-11-05
 Last status update: 2025-10-30
 
 ## Status
 
-- [x] Proposed
-- [ ] Accepted
+- [ ] Proposed
+- [x] Accepted
 - [ ] Deprecated
 - [ ] Superseded
 
 ### Implementation Status
 
-- [x] Planned
+- [ ] Planned
 - [ ] In Development
-- [ ] Implemented
+- [x] Implemented
 - [ ] Verified
 - [ ] Discontinued
 
@@ -30,21 +30,26 @@ Last status update: 2025-10-30
 - Alisher Khassanov
 
 ### Informed (Affected Parties)
-[People/teams affected by this decision who should be aware]
 
- [Person 1]
-
- [Person 2]
-
- [Person 3]
+  - [ ] Sviatoslav Alekseev, @zotho
+  - [ ] Vadim Khafizov @khafizov-v
+  - [ ] Alex Vyatkin, @actinfer
+  - [x] Alex Lygin, @alexlygin
+  - [ ] Denis Pisarev, @TriplEight
+  - [ ] Memechi Kekamoto, @MemechiKekamoto
 
 Note: People listed in "Informed" should submit a PR to check their name after reading this ADR.
 
 ## Decision
 
-[To be completed after advice gathering and option analysis]
+We will first confirm with each potentially restricted service provider whether geographic restrictions apply to our use case or if exceptions can be granted. This involves:
 
-We will...
+1. Directly contacting service providers to clarify policies
+2. Obtaining written confirmation of any exceptions or waivers
+3. Documenting all communications for compliance records
+4. Establishing backup accounts with team members from unrestricted regions as contingency
+
+If providers confirm restrictions apply and no exceptions are granted, we will implement Option 2 (company VPN), or Option 4 (Segregated Access) for critical infrastructure.
 
 ## Context
 
