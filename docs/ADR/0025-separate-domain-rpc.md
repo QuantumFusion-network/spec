@@ -2,21 +2,21 @@
 
 ## Date
 
-Decision date: 
-Last status update: 2025-10-29
+Decision date: 2025-11-19
+Last status update: 2025-11-25
 
 ## Status
 
-- [x] Proposed
-- [ ] Accepted
+- [ ] Proposed
+- [x] Accepted
 - [ ] Deprecated
 - [ ] Superseded
 
 ### Implementation Status
 
-- [x] Planned
+- [ ] Planned
 - [ ] In Development
-- [ ] Implemented
+- [x] Implemented
 - [ ] Verified
 - [ ] Discontinued
 
@@ -30,11 +30,13 @@ Last status update: 2025-10-29
 - Denis Pisarev
 
 ### Informed (Affected Parties)
-[People/teams affected by this decision who should be aware]
 
   - [x] Alisher Khassanov, @khssnv
-  - [ ] [Person 2]
-  - [ ] [Person 3]
+  - [ ] Sviatoslav Alekseev, @zotho
+  - [ ] Vadim Khafizov @khafizov-v
+  - [ ] Alex Vyatkin, @actinfer
+  - [x] Alex Lygin, @alexlygin
+  - [ ] Memechi Kekamoto, @MemechiKekamoto
 
 *Note: People listed in "Informed" should submit a PR to check their name after reading this ADR.*
 
@@ -68,7 +70,7 @@ Currently, QF Network uses a single domain (qfnetwork.xyz) for all infrastructur
 
 ### Option 1: Separate Dedicated Domain (SELECTED)
 
-Create entirely new domain (e.g., qf-rpc.network, qf-infra.network, qfnode.network) for all infrastructure and RPC services.
+Create entirely new domains (qfnode.net and theqfnetwork.xyz) for all infrastructure and RPC services.
 
 **Selected because:**
 - Complete separation between production brand and infrastructure services
